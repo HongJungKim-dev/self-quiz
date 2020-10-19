@@ -32,4 +32,12 @@ router.patch('/edit', loginChecker, errorCatcher(async (req, res) => {
   res.status(200).json({ message: 'Complete to edit quiz' });
 }));
 
+router.patch('/pass', loginChecker, errorCatcher(async (req, res) => {
+  const { userId, quizId } = req.body;
+
+  await quizRepo.passQuiz(userId, quizId);
+
+  res.status(200).json({ message: 'Complete to make quiz pass' });
+}));
+
 module.exports = router;
