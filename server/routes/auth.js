@@ -2,32 +2,11 @@ const express = require('express');
 
 const router = express.Router();
 
-const jwt = require('jsonwebtoken');
-
-const userRepo = require('../repository/user.repository.js');
-
 const errorCatcher = require('../middlewares/errorCatcher.js');
 
-router.post('/signup', errorCatcher(async (req, res) => {
-  const { userId, userPw, userName } = req.body;
+const authService = require('../service/auth.service.js');
 
-  await userRepo.signUpNewUser(userId, userPw, userName);
-
-  res.status(200).json({ message: 'Complete to sign up' });
-}));
-
-router.post('/login', errorCatcher(async(req, res) => {
-  const { userId, userPw } = req.body;
-
-  const user = await userRepo.findUserById(userId);
-
-  if (!user || user.pw !== userPw) {
-    res.status(401).json({ message: 'Invalid id or password' });
-    return;
-  }
-
-  const token = jwt.sign({ userId }, process.env.JWT_SECRET);
-  res.status(200).json({ token });
-}));
+router.post('/signup', errorCatcher(authService.signUp));
+router.post('/login', errorCatcher(authService.login));
 
 module.exports = router;
