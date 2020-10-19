@@ -4,17 +4,12 @@ const cors = require('cors');
 
 const app = express();
 
-const port = process.env.PORT || 3000;
-
 require('dotenv').config();
+
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors({ origin: "*", credentials: true }));
-
-// TODO: 아래 라우트 제거
-app.get('/', (req, res) => {
-  res.send('hello woomin');
-});
 
 app.use('/', require('./routes'));
 
