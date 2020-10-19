@@ -37,4 +37,8 @@ module.exports = {
       },
     );
   },
+
+  async removeQuiz(userId, quizId) {
+    await Quiz.deleteOne({ userId, _id: quizId });
+  },
 };

@@ -55,4 +55,13 @@ router.patch('/pass', loginChecker, errorCatcher(async (req, res) => {
   res.status(200).json({ message: 'Complete to make quiz pass' });
 }));
 
+router.delete('/:quizId', loginChecker, errorCatcher(async (req, res) => {
+  const { userId } = req.body;
+  const { quizId } = req.params;
+
+  await quizRepo.removeQuiz(userId, quizId);
+
+  res.status(200).json({ message: 'Complete to remove quiz' });
+}));
+
 module.exports = router;
