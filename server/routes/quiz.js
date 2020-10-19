@@ -2,24 +2,14 @@ const express = require('express');
 
 const router = express.Router();
 
-const jwt = require('jsonwebtoken');
+const loginChecker = require('../middlewares/loginChecker.js');
 
 const quizRepo = require('../repository/quiz.repository.js');
 
 const errorCatcher = require('../middlewares/errorCatcher.js');
 
-router.post('/', errorCatcher(async (req, res) => {
-  const { authorization } = req.headers;
-  const token = authorization.replace(/Bearer /g, "");
-
-  const data = jwt.verify(token, process.env.JWT_SECRET);
-
+router.post('/', loginChecker, errorCatcher(async (req, res) => {
   const { userId, question, answer, lastSolved, layer, tags } = req.body;
-
-  if (data.userId !== userId) {
-    res.status(403).json({ message: 'Invalid request' });
-    return;
-  }
 
   const quizId = await quizRepo.createNewQuiz(userId, question, answer, lastSolved, layer, tags);
 
