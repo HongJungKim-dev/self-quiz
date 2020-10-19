@@ -8,4 +8,8 @@ const getCurrentDate = () => {
   return `${year}-${month}-${date}`;
 };
 
-module.exports = { getCurrentDate };
+const isParamsFull = (...params) => {
+  return params.every(param => !!param);
+};
+
+module.exports = { getCurrentDate, isParamsFull };
