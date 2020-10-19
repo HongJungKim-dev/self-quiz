@@ -8,4 +8,10 @@ module.exports = {
 
     return quiz._id;
   },
+
+  async getQuizzesById(userId) {
+    const quizzes = await Quiz.find({ userId });
+
+    return quizzes;
+  },
 };

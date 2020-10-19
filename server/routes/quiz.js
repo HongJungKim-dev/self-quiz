@@ -16,4 +16,12 @@ router.post('/', loginChecker, errorCatcher(async (req, res) => {
   res.status(200).json({ message: 'Complete to add a new quiz', data: { quizId } });
 }));
 
+router.get('/', loginChecker, errorCatcher(async (req, res) => {
+  const { userId } = req.body;
+
+  const quizzes = await quizRepo.getQuizzesById(userId);
+
+  res.status(200).json({ message: 'Successfully access to data', data: { quizzes } });
+}));
+
 module.exports = router;
