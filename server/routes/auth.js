@@ -16,11 +16,10 @@ router.post('/signup', errorCatcher(async (req, res) => {
   res.status(200).json({ message: 'Complete to sign up' });
 }));
 
-router.post('/login', (req, res) => {
+router.post('/login', errorCatcher(async(req, res) => {
   const { userId, userPw } = req.body;
 
-  // TODO: Implement
-  const validation = checkIsValidUser(userId, userPw);
+  const validation = await userRepo.checkIsValidUser(userId, userPw);
 
   if (!validation) {
     res.status(401).json({ message: 'Invalid id or password' });
@@ -29,6 +28,6 @@ router.post('/login', (req, res) => {
 
   const token = jwt.sign({ userId }, process.env.JWT_SECRET);
   res.status(200).json({ token });
-});
+}));
 
 module.exports = router;
