@@ -4,9 +4,17 @@ const router = express.Router();
 
 const jwt = require('jsonwebtoken');
 
-router.post('/signup', (req, res) => {
-  // TODO: Implement
-  res.send();
+const userRepo = require('../repository/user.repository.js');
+
+router.post('/signup', async (req, res, next) => {
+  const { userId, userPw, userName } = req.body;
+
+  try {
+    await userRepo.signUpNewUser(userId, userPw, userName);
+    res.status(200).json({ message: 'Complete to sign up' });
+  } catch (error) {
+    next(error);
+  }
 });
 
 router.post('/login', (req, res) => {
