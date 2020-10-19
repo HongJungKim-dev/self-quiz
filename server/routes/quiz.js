@@ -24,4 +24,12 @@ router.get('/', loginChecker, errorCatcher(async (req, res) => {
   res.status(200).json({ message: 'Successfully access to data', data: { quizzes } });
 }));
 
+router.patch('/edit', loginChecker, errorCatcher(async (req, res) => {
+  const { userId, quizId, question, answer, tags } = req.body;
+
+  await quizRepo.editQuiz(userId, quizId, question, answer, tags);
+
+  res.status(200).json({ message: 'Complete to edit quiz' });
+}));
+
 module.exports = router;

@@ -14,4 +14,11 @@ module.exports = {
 
     return quizzes;
   },
+
+  async editQuiz(userId, quizId, question, answer, tags) {
+    await Quiz.updateOne(
+      { userId, _id: quizId },
+      { $set: { question, answer, tags } },
+    );
+  },
 };
