@@ -9,4 +9,4 @@ const quizSchema = new mongoose.Schema({
   tags: { type: Array, required: true },
 });
 
-module.exports = mongoose.model('User', quizSchema);
+module.exports = mongoose.model('Quiz', quizSchema);
