@@ -19,9 +19,9 @@ router.post('/signup', errorCatcher(async (req, res) => {
 router.post('/login', errorCatcher(async(req, res) => {
   const { userId, userPw } = req.body;
 
-  const validation = await userRepo.checkIsValidUser(userId, userPw);
+  const user = await userRepo.findUserById(userId);
 
-  if (!validation) {
+  if (!user || user.pw !== userPw) {
     res.status(401).json({ message: 'Invalid id or password' });
     return;
   }

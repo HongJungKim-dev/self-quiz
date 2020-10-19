@@ -5,9 +5,9 @@ module.exports = {
     await User.create({ id, pw, name });
   },
 
-  async checkIsValidUser(id, pw) {
+  async findUserById(id) {
     const user = await User.findOne({ id });
 
-    return user.pw === pw;
+    return user;
   },
 };
