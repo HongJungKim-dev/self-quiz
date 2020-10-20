@@ -14,9 +14,9 @@ module.exports = {
     const lastSolved = getCurrentDate();
     const layer = 1;
 
-    const quizId = await quizRepo.createNewQuiz(userId, question, answer, lastSolved, layer, tags);
+    const newQuiz = await quizRepo.createNewQuiz(userId, question, answer, lastSolved, layer, tags);
 
-    res.status(200).json({ message: 'Complete to add a new quiz', data: { quizId } });
+    res.status(200).json({ message: 'Complete to add a new quiz', newQuiz });
   },
 
   async getQuizzes(req, res) {

@@ -8,7 +8,7 @@ module.exports = {
       userId, question, answer, lastSolved, layer, tags,
     });
 
-    return quiz._id;
+    return quiz;
   },
 
   async getQuizzesById(userId) {
