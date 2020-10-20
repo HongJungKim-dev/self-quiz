@@ -1,5 +1,11 @@
 import React from 'react';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+
 import LoginForm from './components/LoginForm';
 
 const styles = {
@@ -14,7 +20,16 @@ export default function App() {
   return (
     <>
       <div css={styles.emotion}>Quick Start React</div>
-      <LoginForm />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <LoginForm />
+          </Route>
+          <Route path="/quiz">
+            <div>quiz here</div>
+          </Route>
+        </Switch>
+      </Router>
     </>
   );
 }
