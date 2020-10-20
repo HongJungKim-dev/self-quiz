@@ -4,9 +4,13 @@ import { URL } from '../config';
 
 export default {
   async login(userId, userPw) {
-    const { data } = await axios.post(`${URL}/auth/login`, { userId, userPw });
-    const { token } = data;
+    try {
+      const { data } = await axios.post(`${URL}/auth/login`, { userId, userPw });
+      const { token } = data;
 
-    return token;
+      return token;
+    } catch (error) {
+      return null;
+    }
   },
 };
