@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { setLoginId, setLoginPw } from '../slice';
 
+import api from '../apis/login';
+
 import Input from './Input';
 import Button from './Button';
 
@@ -19,8 +21,10 @@ export default function LoginForm() {
     dispatch(setLoginPw(event.target.value));
   };
 
-  const handleLoginButtonClick = () => {
-    console.log(id, pw);
+  const handleLoginButtonClick = async () => {
+    const token = await api.login(id, pw);
+
+    localStorage.setItem('token', token);
   };
 
   return (
