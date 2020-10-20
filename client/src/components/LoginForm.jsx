@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { setLoginId, setLoginPw } from '../slice';
 
+import { popupMessages } from '../util';
+
 import api from '../apis/login';
 
 import Input from './Input';
@@ -54,6 +56,13 @@ export default function LoginForm() {
 
   const handleLoginButtonClick = async () => {
     const token = await api.login(id, pw);
+
+    if (!token) {
+      await popupMessages.fail('아이디 혹은 패스워드가 일치하지 않습니다.');
+      return;
+    }
+
+    await popupMessages.success('로그인 성공');
 
     localStorage.setItem('token', token);
     history.push('/quiz');
