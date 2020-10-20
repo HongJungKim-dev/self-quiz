@@ -9,6 +9,11 @@ export const { reducer, actions } = createSlice({
     },
     token: localStorage.getItem('token'),
     quizzes: [],
+    quizForm: {
+      question: '',
+      answer: '',
+      tags: [],
+    },
   },
   reducers: {
     setLoginId(state, { payload }) {
@@ -23,6 +28,15 @@ export const { reducer, actions } = createSlice({
     setQuizzes(state, { payload }) {
       return { ...state, quizzes: payload };
     },
+    setQuizFormQuestion(state, { payload }) {
+      return { ...state, quizForm: { ...state.quizForm, question: payload } };
+    },
+    setQuizFormAnswer(state, { payload }) {
+      return { ...state, quizForm: { ...state.quizForm, answer: payload } };
+    },
+    setQuizFormTags(state, { payload }) {
+      return { ...state, quizForm: { ...state.quizForm, tags: payload } };
+    },
   },
 });
 
@@ -31,6 +45,9 @@ export const {
   setLoginPw,
   setToken,
   setQuizzes,
+  setQuizFormQuestion,
+  setQuizFormAnswer,
+  setQuizFormTags,
 } = actions;
 
 export default reducer;
