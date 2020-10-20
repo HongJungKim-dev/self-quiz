@@ -6,14 +6,22 @@ import {
   Route,
 } from 'react-router-dom';
 
-import MainPage from './pages/MainPage';
+import HomePage from './pages/HomePage';
+import QuizAddingPage from './pages/QuizAddingPage';
+import ArchivePage from './pages/ArchivePage';
 
 export default function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <MainPage />
+          <HomePage />
+        </Route>
+        <Route path="/adding">
+          <QuizAddingPage />
+        </Route>
+        <Route path="/archive">
+          <ArchivePage />
         </Route>
       </Switch>
     </Router>
