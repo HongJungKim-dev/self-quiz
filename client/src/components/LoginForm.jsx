@@ -26,15 +26,15 @@ export default function LoginForm() {
   return (
     <>
       <Input
-        inputValue={id}
+        value={id}
         onChange={handleLoginIdInput}
       />
       <Input
-        inputValue={pw}
+        value={pw}
         onChange={handleLoginPwInput}
       />
       <Button
-        buttonName="로그인"
+        title="로그인"
         onClick={handleLoginButtonClick}
       />
     </>
