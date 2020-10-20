@@ -1,5 +1,7 @@
 import React from 'react';
 
+import LoginForm from './components/LoginForm';
+
 const styles = {
   emotion: {
     fontSize: '50px',
@@ -10,6 +12,9 @@ const styles = {
 
 export default function App() {
   return (
-    <div css={styles.emotion}>Quick Start React</div>
+    <>
+      <div css={styles.emotion}>Quick Start React</div>
+      <LoginForm />
+    </>
   );
 }
