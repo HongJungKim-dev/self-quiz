@@ -2,11 +2,12 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setToken } from '../slice';
+import { setToken, setQuizzes } from '../slice';
 
 import { popupMessages } from '../util';
 
-import api from '../apis/login';
+import loginAPI from '../apis/login';
+import quizAPI from '../apis/quiz';
 
 import Button from './Button';
 
@@ -28,7 +29,7 @@ export default function LoginForm() {
   const { id, pw } = useSelector(({ selfQuizReducer }) => selfQuizReducer.login);
 
   const handleLoginButtonClick = async () => {
-    const token = await api.login(id, pw);
+    const token = await loginAPI.login(id, pw);
 
     if (!token) {
       await popupMessages.fail('아이디 혹은 패스워드가 일치하지 않습니다.');
@@ -39,6 +40,9 @@ export default function LoginForm() {
 
     localStorage.setItem('token', token);
     dispatch(setToken(token));
+
+    const quizzes = await quizAPI.getQuizzes();
+    dispatch(setQuizzes(quizzes));
   };
 
   return (
