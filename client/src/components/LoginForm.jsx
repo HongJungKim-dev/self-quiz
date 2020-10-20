@@ -11,6 +11,34 @@ import api from '../apis/login';
 import Input from './Input';
 import Button from './Button';
 
+const styles = {
+  layout: {
+    display: 'table',
+    margin: '20rem auto 0 auto',
+    padding: '3rem',
+    borderRadius: '1rem',
+    boxShadow: '0 0 11px 0px #3e7cbc',
+  },
+  input: {
+    display: 'block',
+    fontSize: '1rem',
+    width: '20rem',
+    height: '2rem',
+    border: 'none',
+    borderBottom: '1px solid #3e7cbc',
+  },
+  button: {
+    fontSize: '1rem',
+    fontWeight: 'bold',
+    color: 'white',
+    backgroundColor: '#3e7cbc',
+    width: '20rem',
+    height: '2rem',
+    border: 'none',
+    marginTop: '2rem',
+  },
+};
+
 export default function LoginForm() {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -32,19 +60,22 @@ export default function LoginForm() {
   };
 
   return (
-    <>
+    <div css={styles.layout}>
       <Input
         value={id}
         onChange={handleLoginIdInput}
+        emotion={styles.input}
       />
       <Input
         value={pw}
         onChange={handleLoginPwInput}
+        emotion={styles.input}
       />
       <Button
         title="로그인"
         onClick={handleLoginButtonClick}
+        emotion={styles.button}
       />
-    </>
+    </div>
   );
 }
