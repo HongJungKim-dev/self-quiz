@@ -24,7 +24,7 @@ module.exports = {
 
     const quizzes = await quizRepo.getQuizzesById(userId);
 
-    res.status(200).json({ message: 'Successfully access to data', data: { quizzes } });
+    res.status(200).json({ message: 'Successfully access to data', quizzes });
   },
 
   async editQuiz(req, res) {
