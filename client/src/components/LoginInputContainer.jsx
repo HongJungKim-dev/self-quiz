@@ -2,9 +2,9 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setLoginId, setLoginPw } from '../../slice';
+import { setLoginId, setLoginPw } from '../slice';
 
-import Input from '../Input';
+import Input from './Input';
 
 const styles = {
   input: {

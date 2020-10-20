@@ -2,13 +2,13 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setToken } from '../../slice';
+import { setToken } from '../slice';
 
-import { popupMessages } from '../../util';
+import { popupMessages } from '../util';
 
-import api from '../../apis/login';
+import api from '../apis/login';
 
-import Button from '../Button';
+import Button from './Button';
 
 const styles = {
   button: {
