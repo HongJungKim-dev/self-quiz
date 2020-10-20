@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "NotoSansKR-Medium";
+  src: local(※), url("NotoSansKR-Medium.otf") format("opentype");
+}
+
+* {
+  font-family: "NotoSansKR-Medium";
+  margin: 0;
+  padding: 0;
+}
