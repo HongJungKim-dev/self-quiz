@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { useHistory } from 'react-router-dom';
-
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setLoginId, setLoginPw } from '../slice';
+import { setLoginId, setLoginPw, setToken } from '../slice';
 
 import { popupMessages } from '../util';
 
@@ -42,7 +40,6 @@ const styles = {
 };
 
 export default function LoginForm() {
-  const history = useHistory();
   const dispatch = useDispatch();
   const { id, pw } = useSelector(({ selfQuizReducer }) => selfQuizReducer.login);
 
@@ -65,7 +62,7 @@ export default function LoginForm() {
     await popupMessages.success('로그인 성공');
 
     localStorage.setItem('token', token);
-    history.push('/quiz');
+    dispatch(setToken(token));
   };
 
   return (

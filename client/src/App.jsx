@@ -15,9 +15,6 @@ export default function App() {
         <Route exact path="/">
           <LoginPage />
         </Route>
-        <Route path="/quiz">
-          <div>quiz here</div>
-        </Route>
       </Switch>
     </Router>
   );

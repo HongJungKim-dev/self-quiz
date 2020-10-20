@@ -7,6 +7,7 @@ export const { reducer, actions } = createSlice({
       id: '',
       pw: '',
     },
+    token: localStorage.getItem('token'),
     quizzes: [],
   },
   reducers: {
@@ -15,6 +16,9 @@ export const { reducer, actions } = createSlice({
     },
     setLoginPw(state, { payload }) {
       return { ...state, login: { ...state.login, pw: payload } };
+    },
+    setToken(state, { payload }) {
+      return { ...state, token: payload };
     },
     setQuizzes(state, { payload }) {
       return { ...state, quizzes: payload };
@@ -25,6 +29,7 @@ export const { reducer, actions } = createSlice({
 export const {
   setLoginId,
   setLoginPw,
+  setToken,
   setQuizzes,
 } = actions;
 
