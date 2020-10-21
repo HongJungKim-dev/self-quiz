@@ -6,6 +6,7 @@ import QuizFormButtonContainer from './QuizFormButtonContainer';
 const styles = {
   layout: {
     display: 'table',
+    position: 'absolute',
     width: '40rem',
     height: '40rem',
     margin: '5rem auto',
