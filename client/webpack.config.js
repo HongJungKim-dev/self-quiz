@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, '../server/public/'),
-    filename: 'main.js[hash]',
+    filename: 'main.js',
   },
   module: {
     rules: [
