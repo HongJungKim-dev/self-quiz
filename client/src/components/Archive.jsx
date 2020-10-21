@@ -30,8 +30,8 @@ export default function Archive() {
       {editting && <ArchiveEditModal />}
       <div css={styles.layout}>
         <div css={styles.title}>아카이브</div>
-        {quizzes.map((quiz, index) => (
-          <div key={index}>
+        {quizzes.map((quiz) => (
+          <div key={quiz._id}>
             <ArchiveQuizContainer quiz={quiz} />
           </div>
         ))}
