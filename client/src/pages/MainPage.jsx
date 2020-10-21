@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useHistory } from 'react-router-dom';
 
-import { setAddingModal, setOverlay } from '../slice';
+import { setAddingModal, setOverlay, setQuizzes } from '../slice';
 
 import QuizForm from '../components/QuizForm';
+
+import api from '../apis/quiz';
 
 const styles = {
   layout: {
@@ -24,10 +26,23 @@ const styles = {
   },
 };
 
+const getDataFromServer = async (dispatch) => {
+  const data = await api.getQuizzes();
+
+  dispatch(setQuizzes(data));
+};
+
 export default function MainPage() {
   const dispatch = useDispatch();
-  const history = useHistory();
+  const quizzes = useSelector(({ selfQuizReducer }) => selfQuizReducer.quizzes);
   const { adding } = useSelector(({ selfQuizReducer }) => selfQuizReducer.modal);
+  const history = useHistory();
+
+  useEffect(() => {
+    if (quizzes.length === 0) {
+      getDataFromServer(dispatch);
+    }
+  }, []);
 
   const handleAddingButton = () => {
     dispatch(setAddingModal(true));
