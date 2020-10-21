@@ -1,17 +1,7 @@
 import React from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
-
-import { popupMessages } from '../util';
-
-import {
-  setArchiveQuizModal, setOverlay, removeQuiz, setEdittingModal,
-} from '../slice';
-
-import api from '../apis/api';
-
-import Textarea from './Textarea';
-import Button from './Button';
+import ArchiveQuizModalInputContainer from './ArchiveQuizModalInputContainer';
+import ArchiveQuizModalButtonContainer from './ArchiveQuizModalButtonContainer';
 
 const styles = {
   layout: {
@@ -34,93 +24,18 @@ const styles = {
     boxSizing: 'border-box',
     borderRadius: '0.5rem 0.5rem 0 0',
   },
-  text: {
-    fontWeight: 'bold',
-    fontSize: '1.3rem',
-    marginTop: '1rem',
-  },
-  input: {
-    display: 'block',
-    width: '100%',
-    fontSize: '1rem',
-    padding: '0.7rem',
-    boxSizing: 'border-box',
-    borderRadius: '0.4rem',
-    background: 'white',
-    border: 'none',
-  },
   container: {
     padding: '2rem',
-  },
-  tag: {
-    margin: '1rem 0',
-  },
-  button: {
-    width: '50%',
-    height: '2rem',
-    border: 'none',
-    color: 'white',
-    fontSize: '1rem',
-    fontWeight: 'bold',
-    borderRadius: '0.4rem',
-    cursor: 'pointer',
   },
 };
 
 export default function ArchiveQuizModal() {
-  const dispatch = useDispatch();
-  const { modal } = useSelector(({ selfQuizReducer }) => selfQuizReducer);
-  const { archive } = modal;
-
-  const {
-    question, answer, tags, _id,
-  } = archive;
-
-  const handleEditButton = async () => {
-    dispatch(setEdittingModal(true));
-  };
-
-  const handleDeleteButton = async () => {
-    const success = await api.deleteQuiz(_id);
-
-    if (!success) {
-      await popupMessages.fail('삭제하지 못했습니다. 다시 시도해주세요.');
-      return;
-    }
-
-    await popupMessages.success('해당 퀴즈를 삭제하였습니다.');
-    dispatch(setArchiveQuizModal({}));
-    dispatch(removeQuiz(_id));
-    dispatch(setOverlay(false));
-  };
-
   return (
     <div css={styles.layout}>
       <div css={styles.title}>Quiz</div>
       <div css={styles.container}>
-        <div css={styles.text}>문제</div>
-        <Textarea
-          value={question}
-          emotion={{ ...styles.input, height: '7rem' }}
-          disabled="disabled"
-        />
-        <div css={styles.text}>정답</div>
-        <Textarea
-          value={answer}
-          emotion={{ ...styles.input, height: '16rem' }}
-          disabled="disabled"
-        />
-        <div css={styles.tag}>{tags.map((tag) => `#${tag} `)}</div>
-        <Button
-          title="수정"
-          emotion={{ ...styles.button, background: '#244a72' }}
-          onClick={handleEditButton}
-        />
-        <Button
-          title="삭제"
-          emotion={{ ...styles.button, background: 'black' }}
-          onClick={handleDeleteButton}
-        />
+        <ArchiveQuizModalInputContainer />
+        <ArchiveQuizModalButtonContainer />
       </div>
     </div>
   );
