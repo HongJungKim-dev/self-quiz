@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import ArchiveQuiz from './ArchiveQuiz';
+import ArchiveQuizContainer from './ArchiveQuizContainer';
 
 const styles = {
   layout: {
@@ -19,7 +19,7 @@ export default function Archive() {
       <div css={styles.layout}>
         {quizzes.map((quiz, index) => (
           <div key={index}>
-            <ArchiveQuiz quiz={quiz} />
+            <ArchiveQuizContainer quiz={quiz} />
           </div>
         ))}
       </div>

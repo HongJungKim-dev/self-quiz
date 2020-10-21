@@ -15,13 +15,13 @@ const styles = {
   },
 };
 
-export default function ArchiveQuiz({ quiz }) {
+export default function ArchiveQuiz({ quiz, onClick }) {
   const {
     question, answer, lastSolved, layer, tags,
   } = quiz;
 
   return (
-    <div css={styles.layout}>
+    <div onClick={onClick} css={styles.layout}>
       <div>Q. {question}</div>
     </div>
   );
