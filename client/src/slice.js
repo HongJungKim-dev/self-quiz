@@ -30,7 +30,7 @@ export const { reducer, actions } = createSlice({
       return { ...state, token: payload };
     },
     setQuizzes(state, { payload }) {
-      return { ...state, quizzes: payload };
+      return { ...state, quizzes: [...state.quizzes, ...payload] };
     },
     setQuizFormQuestion(state, { payload }) {
       return { ...state, quizForm: { ...state.quizForm, question: payload } };
@@ -47,6 +47,17 @@ export const { reducer, actions } = createSlice({
     setAddingModal(state, { payload }) {
       return { ...state, modal: { ...state.modal, adding: payload } };
     },
+    resetQuizForm(state) {
+      return {
+        ...state,
+        quizForm: {
+          ...state.modal,
+          question: '',
+          answer: '',
+          tags: [],
+        },
+      };
+    },
   },
 });
 
@@ -60,6 +71,7 @@ export const {
   setQuizFormTags,
   setOverlay,
   setAddingModal,
+  resetQuizForm,
 } = actions;
 
 export default reducer;
