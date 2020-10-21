@@ -4,16 +4,13 @@ import QuizFormInputContainer from './QuizFormInputContainer';
 import QuizFormButtonContainer from './QuizFormButtonContainer';
 
 const styles = {
-  modal: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
   layout: {
-    display: 'table',
+    top: '15%',
+    left: '50%',
+    transform: 'translate(-50%, 0)',
     position: 'absolute',
     width: '40rem',
     height: '40rem',
-    margin: '5rem auto',
     borderRadius: '0.5rem',
     background: 'white',
     boxShadow: '0 0 11px 0px #244a72',
@@ -34,13 +31,11 @@ const styles = {
 
 export default function QuizForm() {
   return (
-    <div css={styles.modal}>
-      <div css={styles.layout}>
-        <div css={styles.title}>문제 만들기</div>
-        <div css={styles.container}>
-          <QuizFormInputContainer />
-          <QuizFormButtonContainer />
-        </div>
+    <div css={styles.layout}>
+      <div css={styles.title}>문제 만들기</div>
+      <div css={styles.container}>
+        <QuizFormInputContainer />
+        <QuizFormButtonContainer />
       </div>
     </div>
   );
