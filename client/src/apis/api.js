@@ -54,6 +54,19 @@ export default {
     }
   },
 
+  async editQuiz(quizId, question, answer, tags) {
+    try {
+      const body = {
+        quizId, question, answer, tags,
+      };
+      await axios.patch(`${URL}/quiz/edit`, body, getHeaders());
+
+      return true;
+    } catch (error) {
+      return false;
+    }
+  },
+
   async deleteQuiz(_id) {
     try {
       await axios.delete(`${URL}/quiz/${_id}`, getHeaders());
