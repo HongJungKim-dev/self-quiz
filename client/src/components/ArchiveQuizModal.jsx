@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { popupMessages } from '../util';
 
-import { setArchiveQuizModal, setOverlay, removeQuiz } from '../slice';
+import {
+  setArchiveQuizModal, setOverlay, removeQuiz, setEdittingModal,
+} from '../slice';
 
 import api from '../apis/api';
 
@@ -51,8 +53,7 @@ const styles = {
     padding: '2rem',
   },
   tag: {
-    marginTop: '2rem',
-    textAlign: 'end',
+    margin: '1rem 0',
   },
   button: {
     width: '50%',
@@ -70,25 +71,24 @@ export default function ArchiveQuizModal() {
   const dispatch = useDispatch();
   const { modal } = useSelector(({ selfQuizReducer }) => selfQuizReducer);
   const { archive } = modal;
-  const isArchiveEmpty = Object.keys(archive).length === 0;
-
-  if (isArchiveEmpty) {
-    return <></>;
-  }
 
   const {
     question, answer, tags, _id,
   } = archive;
 
+  const handleEditButton = async () => {
+    dispatch(setEdittingModal(true));
+  };
+
   const handleDeleteButton = async () => {
     const success = await api.deleteQuiz(_id);
 
     if (!success) {
-      popupMessages.fail('삭제하지 못했습니다. 다시 시도해주세요.');
+      await popupMessages.fail('삭제하지 못했습니다. 다시 시도해주세요.');
       return;
     }
 
-    popupMessages.success('해당 퀴즈를 삭제하였습니다.');
+    await popupMessages.success('해당 퀴즈를 삭제하였습니다.');
     dispatch(setArchiveQuizModal({}));
     dispatch(removeQuiz(_id));
     dispatch(setOverlay(false));
@@ -114,6 +114,7 @@ export default function ArchiveQuizModal() {
         <Button
           title="수정"
           emotion={{ ...styles.button, background: '#244a72' }}
+          onClick={handleEditButton}
         />
         <Button
           title="삭제"
