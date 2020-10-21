@@ -10,29 +10,6 @@ import UserTitle from '../components/UserTitle';
 
 import api from '../apis/api';
 
-const styles = {
-  modal: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  title: {
-    width: '60rem',
-    display: 'table',
-    margin: '0 auto',
-  },
-  name: {
-    fontSize: '3rem',
-    fontWeight: 'bold',
-    color: 'white',
-    marginTop: '10rem',
-  },
-  text: {
-    fontSize: '1.5rem',
-    color: 'white',
-    marginBottom: '10rem',
-  },
-};
-
 const getQuizzesFromServer = async (dispatch) => {
   const data = await api.getQuizzes();
   dispatch(setQuizzes(data));
@@ -52,9 +29,7 @@ export default function MainPage() {
 
   return (
     <div>
-      <div css={styles.modal}>
-        {adding && <QuizForm />}
-      </div>
+      {adding && <QuizForm />}
       <UserTitle />
       <Tab />
     </div>
