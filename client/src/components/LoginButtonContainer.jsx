@@ -15,7 +15,7 @@ const styles = {
     fontSize: '1rem',
     fontWeight: 'bold',
     color: 'white',
-    backgroundColor: '#3e7cbc',
+    backgroundColor: '#244a72',
     width: '20rem',
     height: '2rem',
     border: 'none',

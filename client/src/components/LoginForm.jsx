@@ -10,6 +10,7 @@ const styles = {
     padding: '3rem',
     borderRadius: '1rem',
     boxShadow: '0 0 11px 0px #3e7cbc',
+    background: 'white',
   },
 };
 
