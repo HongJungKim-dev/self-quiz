@@ -7,6 +7,11 @@ const styles = {
     boxShadow: '0 0 7px 1px #cfcfcf',
     borderRadius: '1rem',
     marginTop: '0.5rem',
+    color: 'white',
+    cursor: 'pointer',
+    '&:hover': {
+      background: 'black',
+    },
   },
 };
 
@@ -18,10 +23,6 @@ export default function ArchiveQuiz({ quiz }) {
   return (
     <div css={styles.layout}>
       <div>Q. {question}</div>
-      <div>A. {answer}</div>
-      <div>최근 해결: {lastSolved}</div>
-      <div>레이어: {layer}</div>
-      <div>태그: {tags.join(', ')}</div>
     </div>
   );
 }
