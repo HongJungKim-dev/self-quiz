@@ -1,8 +1,15 @@
 import React from 'react';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { popupMessages } from '../util';
+
+import { setArchiveQuizModal, setOverlay, removeQuiz } from '../slice';
+
+import api from '../apis/api';
 
 import Textarea from './Textarea';
+import Button from './Button';
 
 const styles = {
   layout: {
@@ -47,18 +54,45 @@ const styles = {
     marginTop: '2rem',
     textAlign: 'end',
   },
+  button: {
+    width: '50%',
+    height: '2rem',
+    border: 'none',
+    color: 'white',
+    fontSize: '1rem',
+    fontWeight: 'bold',
+    borderRadius: '0.4rem',
+    cursor: 'pointer',
+  },
 };
 
 export default function ArchiveQuizModal() {
-  const { archive } = useSelector(({ selfQuizReducer }) => selfQuizReducer.modal);
-
+  const dispatch = useDispatch();
+  const { modal } = useSelector(({ selfQuizReducer }) => selfQuizReducer);
+  const { archive } = modal;
   const isArchiveEmpty = Object.keys(archive).length === 0;
 
   if (isArchiveEmpty) {
     return <></>;
   }
 
-  const { question, answer, tags } = archive;
+  const {
+    question, answer, tags, _id,
+  } = archive;
+
+  const handleDeleteButton = async () => {
+    const success = await api.deleteQuiz(_id);
+
+    if (!success) {
+      popupMessages.fail('삭제하지 못했습니다. 다시 시도해주세요.');
+      return;
+    }
+
+    popupMessages.success('해당 퀴즈를 삭제하였습니다.');
+    dispatch(setArchiveQuizModal({}));
+    dispatch(removeQuiz(_id));
+    dispatch(setOverlay(false));
+  };
 
   return (
     <div css={styles.layout}>
@@ -77,6 +111,15 @@ export default function ArchiveQuizModal() {
           disabled="disabled"
         />
         <div css={styles.tag}>{tags.map((tag) => `#${tag} `)}</div>
+        <Button
+          title="수정"
+          emotion={{ ...styles.button, background: '#244a72' }}
+        />
+        <Button
+          title="삭제"
+          emotion={{ ...styles.button, background: 'black' }}
+          onClick={handleDeleteButton}
+        />
       </div>
     </div>
   );

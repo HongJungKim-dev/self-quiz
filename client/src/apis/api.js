@@ -53,4 +53,14 @@ export default {
       return [];
     }
   },
+
+  async deleteQuiz(_id) {
+    try {
+      await axios.delete(`${URL}/quiz/${_id}`, getHeaders());
+
+      return true;
+    } catch (error) {
+      return false;
+    }
+  },
 };

@@ -39,6 +39,10 @@ export const { reducer, actions } = createSlice({
     setQuizzes(state, { payload }) {
       return { ...state, quizzes: [...state.quizzes, ...payload] };
     },
+    removeQuiz(state, { payload: _id }) {
+      const filteredQuizzes = state.quizzes.filter((quiz) => quiz._id !== _id);
+      return { ...state, quizzes: filteredQuizzes };
+    },
     setQuizFormQuestion(state, { payload }) {
       return { ...state, quizForm: { ...state.quizForm, question: payload } };
     },
@@ -83,6 +87,7 @@ export const {
   setLoginPw,
   setToken,
   setQuizzes,
+  removeQuiz,
   setQuizFormQuestion,
   setQuizFormAnswer,
   setQuizFormTags,

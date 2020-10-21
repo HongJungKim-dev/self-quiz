@@ -10,12 +10,12 @@ export default function ArchiveQuizContainer({ quiz }) {
   const dispatch = useDispatch();
 
   const {
-    question, answer, lastSolved, layer, tags,
+    question, answer, lastSolved, layer, tags, _id,
   } = quiz;
 
   const handleQuizClick = () => {
     dispatch(setArchiveQuizModal({
-      question, answer, lastSolved, layer, tags,
+      question, answer, lastSolved, layer, tags, _id,
     }));
     dispatch(setOverlay(true));
   };
