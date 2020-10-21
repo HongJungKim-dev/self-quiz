@@ -20,6 +20,17 @@ export default {
     }
   },
 
+  async getUserName() {
+    try {
+      const { data } = await axios.get(`${URL}/auth`, getHeaders());
+      const { user: userName } = data;
+
+      return userName;
+    } catch (error) {
+      return null;
+    }
+  },
+
   async addQuiz(question, answer, tags) {
     try {
       const body = { question, answer, tags };

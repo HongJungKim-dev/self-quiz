@@ -3,6 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 export const { reducer, actions } = createSlice({
   name: 'self-quiz',
   initialState: {
+    user: {
+      name: '',
+    },
     login: {
       id: '',
       pw: '',
@@ -20,6 +23,9 @@ export const { reducer, actions } = createSlice({
     },
   },
   reducers: {
+    setUserName(state, { payload }) {
+      return { ...state, user: { ...state.user, name: payload } };
+    },
     setLoginId(state, { payload }) {
       return { ...state, login: { ...state.login, id: payload } };
     },
@@ -62,6 +68,7 @@ export const { reducer, actions } = createSlice({
 });
 
 export const {
+  setUserName,
   setLoginId,
   setLoginPw,
   setToken,

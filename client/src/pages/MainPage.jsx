@@ -4,11 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { useHistory } from 'react-router-dom';
 
-import { setAddingModal, setOverlay, setQuizzes } from '../slice';
+import {
+  setAddingModal, setOverlay, setQuizzes, setUserName,
+} from '../slice';
 
 import QuizForm from '../components/QuizForm';
 
-import api from '../apis/quiz';
+import api from '../apis/api';
 
 const styles = {
   layout: {
@@ -26,21 +28,31 @@ const styles = {
   },
 };
 
-const getDataFromServer = async (dispatch) => {
+const getQuizzesFromServer = async (dispatch) => {
   const data = await api.getQuizzes();
-
   dispatch(setQuizzes(data));
+};
+
+const getUserNameFromServer = async (dispatch) => {
+  const userName = await api.getUserName();
+  dispatch(setUserName(userName));
 };
 
 export default function MainPage() {
   const dispatch = useDispatch();
-  const quizzes = useSelector(({ selfQuizReducer }) => selfQuizReducer.quizzes);
-  const { adding } = useSelector(({ selfQuizReducer }) => selfQuizReducer.modal);
+  const states = useSelector(({ selfQuizReducer }) => selfQuizReducer);
+  const { quizzes, modal, user } = states;
+  const { adding } = modal;
+  const { name } = user;
   const history = useHistory();
 
   useEffect(() => {
     if (quizzes.length === 0) {
-      getDataFromServer(dispatch);
+      getQuizzesFromServer(dispatch);
+    }
+
+    if (!name) {
+      getUserNameFromServer(dispatch);
     }
   }, []);
 
@@ -50,17 +62,20 @@ export default function MainPage() {
   };
 
   return (
-    <div css={styles.layout}>
-      {adding && <QuizForm />}
-      <button onClick={handleAddingButton} css={styles.selection} type="button">
-        문제 추가
-      </button>
-      <button onClick={() => history.push('/')} css={styles.selection} type="button">
-        오늘의 문제
-      </button>
-      <button onClick={() => history.push('/archive')} css={styles.selection} type="button">
-        아카이브
-      </button>
-    </div>
+    <>
+      <div>{name}</div>
+      <div css={styles.layout}>
+        {adding && <QuizForm />}
+        <button onClick={handleAddingButton} css={styles.selection} type="button">
+          문제 추가
+        </button>
+        <button onClick={() => history.push('/')} css={styles.selection} type="button">
+          오늘의 문제
+        </button>
+        <button onClick={() => history.push('/archive')} css={styles.selection} type="button">
+          아카이브
+        </button>
+      </div>
+    </>
   );
 }
