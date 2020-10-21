@@ -6,6 +6,8 @@ import { useHistory } from 'react-router-dom';
 
 import { setAddingModal, setOverlay } from '../slice';
 
+import Button from './Button';
+
 const styles = {
   tab: {
     display: 'flex',
@@ -44,15 +46,21 @@ export default function Tab() {
 
   return (
     <div css={styles.tab}>
-      <button onClick={handleAddingButton} css={styles.selection} type="button">
-        문제 추가
-      </button>
-      <button onClick={() => history.push('/')} css={styles.selection} type="button">
-        오늘의 문제
-      </button>
-      <button onClick={() => history.push('/archive')} css={styles.selection} type="button">
-        아카이브
-      </button>
+      <Button
+        title="문제 추가"
+        onClick={handleAddingButton}
+        emotion={styles.selection}
+      />
+      <Button
+        title="오늘의 문제"
+        onClick={() => history.push('/')}
+        emotion={styles.selection}
+      />
+      <Button
+        title="아카이브"
+        onClick={() => history.push('/archive')}
+        emotion={styles.selection}
+      />
     </div>
   );
 }
