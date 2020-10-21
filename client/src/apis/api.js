@@ -9,6 +9,17 @@ const getHeaders = () => ({
 });
 
 export default {
+  async login(userId, userPw) {
+    try {
+      const { data } = await axios.post(`${URL}/auth/login`, { userId, userPw });
+      const { token } = data;
+
+      return token;
+    } catch (error) {
+      return null;
+    }
+  },
+
   async addQuiz(question, answer, tags) {
     try {
       const body = { question, answer, tags };

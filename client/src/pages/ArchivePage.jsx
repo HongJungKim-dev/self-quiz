@@ -6,7 +6,7 @@ import Archive from '../components/Archive';
 
 import { setQuizzes } from '../slice';
 
-import api from '../apis/quiz';
+import api from '../apis/api';
 
 const getDataFromServer = async (dispatch) => {
   const data = await api.getQuizzes();

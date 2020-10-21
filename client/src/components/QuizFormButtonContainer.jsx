@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { setQuizzes, resetQuizForm } from '../slice';
 
-import api from '../apis/quiz';
+import api from '../apis/api';
 
 import { popupMessages } from '../util';
 

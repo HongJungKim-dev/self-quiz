@@ -6,8 +6,7 @@ import { setToken, setQuizzes } from '../slice';
 
 import { popupMessages } from '../util';
 
-import loginAPI from '../apis/login';
-import quizAPI from '../apis/quiz';
+import api from '../apis/api';
 
 import Button from './Button';
 
@@ -29,7 +28,7 @@ export default function LoginForm() {
   const { id, pw } = useSelector(({ selfQuizReducer }) => selfQuizReducer.login);
 
   const handleLoginButtonClick = async () => {
-    const token = await loginAPI.login(id, pw);
+    const token = await api.login(id, pw);
 
     if (!token) {
       await popupMessages.fail('아이디 혹은 패스워드가 일치하지 않습니다.');
@@ -41,7 +40,7 @@ export default function LoginForm() {
     localStorage.setItem('token', token);
     dispatch(setToken(token));
 
-    const quizzes = await quizAPI.getQuizzes();
+    const quizzes = await api.getQuizzes();
     dispatch(setQuizzes(quizzes));
   };
 
