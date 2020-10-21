@@ -24,4 +24,17 @@ module.exports = {
     const token = jwt.sign({ userId }, process.env.JWT_SECRET);
     res.status(200).json({ token });
   },
+
+  async userInfo(req, res) {
+    const { userId } = req.body;
+
+    if (!userId) {
+      res.status(403).json({ message: 'Need to login' });
+      return;
+    }
+
+    const user = await userRepo.findUserById(userId);
+
+    res.status(200).json({ user: user.name });
+  },
 };
