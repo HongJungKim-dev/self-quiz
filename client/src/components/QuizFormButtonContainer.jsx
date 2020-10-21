@@ -13,12 +13,14 @@ import Button from './Button';
 const styles = {
   button: {
     width: '100%',
-    marginTop: '1rem',
+    marginTop: '2rem',
     height: '3rem',
     fontSize: '1.4rem',
     fontWeight: 'bold',
     color: 'white',
     background: '#3e7cbc',
+    border: 'none',
+    borderRadius: '0.5rem',
   },
 };
 
