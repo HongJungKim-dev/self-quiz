@@ -21,6 +21,7 @@ export const { reducer, actions } = createSlice({
       overlay: false,
       adding: false,
       archive: {},
+      editting: false,
     },
   },
   reducers: {
@@ -42,6 +43,18 @@ export const { reducer, actions } = createSlice({
     removeQuiz(state, { payload: _id }) {
       const filteredQuizzes = state.quizzes.filter((quiz) => quiz._id !== _id);
       return { ...state, quizzes: filteredQuizzes };
+    },
+    editQuiz(state, { payload }) {
+      const {
+        _id, question, answer, tags,
+      } = payload;
+      const index = state.quizzes.findIndex((quiz) => quiz._id === _id);
+      const copy = [...state.quizzes];
+      copy[index] = {
+        ...copy[index], question, answer, tags,
+      };
+
+      return { ...state, quizzes: copy };
     },
     setQuizFormQuestion(state, { payload }) {
       return { ...state, quizForm: { ...state.quizForm, question: payload } };
@@ -78,6 +91,9 @@ export const { reducer, actions } = createSlice({
         },
       };
     },
+    setEdittingModal(state, { payload }) {
+      return { ...state, modal: { ...state.modal, editting: payload } };
+    },
   },
 });
 
@@ -88,6 +104,7 @@ export const {
   setToken,
   setQuizzes,
   removeQuiz,
+  editQuiz,
   setQuizFormQuestion,
   setQuizFormAnswer,
   setQuizFormTags,
@@ -95,6 +112,7 @@ export const {
   setAddingModal,
   resetQuizForm,
   setArchiveQuizModal,
+  setEdittingModal,
 } = actions;
 
 export default reducer;
