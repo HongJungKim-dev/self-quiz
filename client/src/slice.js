@@ -20,6 +20,7 @@ export const { reducer, actions } = createSlice({
     modal: {
       overlay: false,
       adding: false,
+      archive: {},
     },
   },
   reducers: {
@@ -64,6 +65,15 @@ export const { reducer, actions } = createSlice({
         },
       };
     },
+    setArchiveQuizModal(state, { payload }) {
+      return {
+        ...state,
+        modal: {
+          ...state.modal,
+          archive: { ...payload },
+        },
+      };
+    },
   },
 });
 
@@ -79,6 +89,7 @@ export const {
   setOverlay,
   setAddingModal,
   resetQuizForm,
+  setArchiveQuizModal,
 } = actions;
 
 export default reducer;

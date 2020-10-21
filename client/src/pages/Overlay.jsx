@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useDispatch } from 'react-redux';
 
-import { setOverlay, setAddingModal } from '../slice';
+import { setOverlay, setAddingModal, setArchiveQuizModal } from '../slice';
 
 const styles = {
   overlay: {
@@ -19,6 +19,7 @@ export default function Overlay() {
   const handleOverlay = () => {
     dispatch(setOverlay(false));
     dispatch(setAddingModal(false));
+    dispatch(setArchiveQuizModal({}));
   };
 
   return (
