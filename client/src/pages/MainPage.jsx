@@ -13,7 +13,23 @@ import QuizForm from '../components/QuizForm';
 import api from '../apis/api';
 
 const styles = {
-  layout: {
+  title: {
+    width: '60rem',
+    display: 'table',
+    margin: '0 auto',
+  },
+  name: {
+    fontSize: '3rem',
+    fontWeight: 'bold',
+    color: 'white',
+    marginTop: '10rem',
+  },
+  text: {
+    fontSize: '1.5rem',
+    color: 'white',
+    marginBottom: '10rem',
+  },
+  tab: {
     display: 'flex',
     justifyContent: 'center',
   },
@@ -62,10 +78,15 @@ export default function MainPage() {
   };
 
   return (
-    <>
-      <div>{name}</div>
-      <div css={styles.layout}>
+    <div>
+      <div css={styles.tab}>
         {adding && <QuizForm />}
+      </div>
+      <div css={styles.title}>
+        <div css={styles.name}>{name}님,</div>
+        <div css={styles.text}>오늘 복습해야 할 문제는 총 {12}문제 입니다.</div>
+      </div>
+      <div css={styles.tab}>
         <button onClick={handleAddingButton} css={styles.selection} type="button">
           문제 추가
         </button>
@@ -76,6 +97,6 @@ export default function MainPage() {
           아카이브
         </button>
       </div>
-    </>
+    </div>
   );
 }

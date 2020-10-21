@@ -18,7 +18,7 @@ const styles = {
     fontSize: '1.4rem',
     fontWeight: 'bold',
     color: 'white',
-    background: '#3e7cbc',
+    background: '#244a72',
     border: 'none',
     borderRadius: '0.5rem',
   },
