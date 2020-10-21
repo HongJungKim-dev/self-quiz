@@ -2,16 +2,19 @@ import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  setQuizzes, setUserName,
-} from '../slice';
+import { setQuizzes } from '../slice';
 
 import QuizForm from '../components/QuizForm';
 import Tab from '../components/Tab';
+import UserTitle from '../components/UserTitle';
 
 import api from '../apis/api';
 
 const styles = {
+  modal: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
   title: {
     width: '60rem',
     display: 'table',
@@ -35,37 +38,24 @@ const getQuizzesFromServer = async (dispatch) => {
   dispatch(setQuizzes(data));
 };
 
-const getUserNameFromServer = async (dispatch) => {
-  const userName = await api.getUserName();
-  dispatch(setUserName(userName));
-};
-
 export default function MainPage() {
   const dispatch = useDispatch();
   const states = useSelector(({ selfQuizReducer }) => selfQuizReducer);
-  const { quizzes, modal, user } = states;
+  const { quizzes, modal } = states;
   const { adding } = modal;
-  const { name } = user;
 
   useEffect(() => {
     if (quizzes.length === 0) {
       getQuizzesFromServer(dispatch);
     }
-
-    if (!name) {
-      getUserNameFromServer(dispatch);
-    }
   }, []);
 
   return (
     <div>
-      <div css={styles.tab}>
+      <div css={styles.modal}>
         {adding && <QuizForm />}
       </div>
-      <div css={styles.title}>
-        <div css={styles.name}>{name}님,</div>
-        <div css={styles.text}>오늘 복습해야 할 문제는 총 {12}문제 입니다.</div>
-      </div>
+      <UserTitle />
       <Tab />
     </div>
   );
