@@ -27,10 +27,7 @@ const styles = {
 
 export default function ArchiveQuizModalButtonContainer() {
   const dispatch = useDispatch();
-  const { modal } = useSelector(({ selfQuizReducer }) => selfQuizReducer);
-  const { archive } = modal;
-
-  const { _id } = archive;
+  const { _id } = useSelector(({ selfQuizReducer }) => selfQuizReducer.modal.archive);
 
   const handleEditButton = async () => {
     dispatch(setEdittingModal(true));
@@ -45,8 +42,8 @@ export default function ArchiveQuizModalButtonContainer() {
     }
 
     await popupMessages.success('해당 퀴즈를 삭제하였습니다.');
-    dispatch(setArchiveQuizModal({}));
     dispatch(removeQuiz(_id));
+    dispatch(setArchiveQuizModal({}));
     dispatch(setOverlay(false));
   };
 

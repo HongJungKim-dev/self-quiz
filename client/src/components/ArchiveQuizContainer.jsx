@@ -17,6 +17,7 @@ export default function ArchiveQuizContainer({ quiz }) {
 
   const handleQuizClick = () => {
     const tagString = convertTagsToTagString(tags);
+
     dispatch(setArchiveQuizModal({
       question, answer, lastSolved, layer, tagString, _id,
     }));

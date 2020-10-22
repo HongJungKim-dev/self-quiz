@@ -29,12 +29,8 @@ const styles = {
 };
 
 export default function ArchiveQuizModalInput() {
-  const { modal } = useSelector(({ selfQuizReducer }) => selfQuizReducer);
-  const { archive } = modal;
-
-  const {
-    question, answer, tagString,
-  } = archive;
+  const { archive } = useSelector(({ selfQuizReducer }) => selfQuizReducer.modal);
+  const { question, answer, tagString } = archive;
 
   return (
     <>
