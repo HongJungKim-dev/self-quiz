@@ -93,6 +93,23 @@ export const { reducer, actions } = createSlice({
     setEdittingModal(state, { payload }) {
       return { ...state, modal: { ...state.modal, editting: payload } };
     },
+    closeEditModal(state) {
+      return {
+        ...state,
+        modal: {
+          ...state.modal,
+          archive: {},
+          overlay: false,
+          editting: false,
+        },
+        quizForm: {
+          ...state.modal,
+          question: '',
+          answer: '',
+          tagString: '',
+        },
+      };
+    },
   },
 });
 
@@ -110,6 +127,7 @@ export const {
   resetQuizForm,
   setArchiveQuizModal,
   setEdittingModal,
+  closeEditModal,
 } = actions;
 
 export default reducer;

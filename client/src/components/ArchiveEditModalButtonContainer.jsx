@@ -4,9 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { popupMessages, convertTagStringToTags } from '../util';
 
-import {
-  setArchiveQuizModal, setOverlay, editQuiz, setEdittingModal, resetQuizForm,
-} from '../slice';
+import { editQuiz, closeEditModal } from '../slice';
 
 import api from '../apis/api';
 
@@ -43,13 +41,10 @@ export default function ArchiveEditModalButtonContainer() {
     }
 
     await popupMessages.success('해당 퀴즈를 수정하였습니다.');
-    dispatch(setArchiveQuizModal({}));
-    dispatch(setOverlay(false));
-    dispatch(setEdittingModal(false));
+    dispatch(closeEditModal());
     dispatch(editQuiz({
       _id, question, answer, tagString,
     }));
-    dispatch(resetQuizForm());
   };
 
   return (
