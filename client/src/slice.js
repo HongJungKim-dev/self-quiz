@@ -61,14 +61,8 @@ export const { reducer, actions } = createSlice({
 
       return { ...state, quizzes: copy };
     },
-    setQuizFormQuestion(state, { payload }) {
-      return { ...state, quizForm: { ...state.quizForm, question: payload } };
-    },
-    setQuizFormAnswer(state, { payload }) {
-      return { ...state, quizForm: { ...state.quizForm, answer: payload } };
-    },
-    setQuizFormTags(state, { payload }) {
-      return { ...state, quizForm: { ...state.quizForm, tagString: payload } };
+    setQuizForm(state, { payload }) {
+      return { ...state, quizForm: { ...state.quizForm, ...payload } };
     },
     setOverlay(state, { payload }) {
       return { ...state, modal: { ...state.modal, overlay: payload } };
@@ -110,9 +104,7 @@ export const {
   setQuizzes,
   removeQuiz,
   editQuiz,
-  setQuizFormQuestion,
-  setQuizFormAnswer,
-  setQuizFormTags,
+  setQuizForm,
   setOverlay,
   setAddingModal,
   resetQuizForm,

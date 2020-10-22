@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setQuizFormQuestion, setQuizFormAnswer, setQuizFormTags } from '../slice';
+import { setQuizForm } from '../slice';
 
 import Textarea from './Textarea';
 
@@ -31,15 +31,15 @@ export default function QuizFormInputContainer() {
   const { question, answer } = useSelector(({ selfQuizReducer }) => selfQuizReducer.quizForm);
 
   const handleQuizFormQuestionInput = (e) => {
-    dispatch(setQuizFormQuestion(e.target.value));
+    dispatch(setQuizForm({ question: e.target.value }));
   };
 
   const handleQuizFormAnswerInput = (e) => {
-    dispatch(setQuizFormAnswer(e.target.value));
+    dispatch(setQuizForm({ answer: e.target.value }));
   };
 
   const handleQuizFormTagsInput = (e) => {
-    dispatch(setQuizFormTags(e.target.value));
+    dispatch(setQuizForm({ tagString: e.target.value }));
   };
 
   return (

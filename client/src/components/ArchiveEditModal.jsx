@@ -5,8 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { popupMessages, convertTagStringToTags } from '../util';
 
 import {
-  setArchiveQuizModal, setOverlay, editQuiz, setEdittingModal,
-  setQuizFormQuestion, setQuizFormAnswer, setQuizFormTags,
+  setArchiveQuizModal, setOverlay, editQuiz, setEdittingModal, setQuizForm,
 } from '../slice';
 
 import api from '../apis/api';
@@ -83,21 +82,21 @@ export default function ArchiveEditModal() {
   } = archive;
 
   useEffect(() => {
-    dispatch(setQuizFormQuestion(question));
-    dispatch(setQuizFormAnswer(answer));
-    dispatch(setQuizFormTags(tagString));
+    dispatch(setQuizForm({ question }));
+    dispatch(setQuizForm({ answer }));
+    dispatch(setQuizForm({ tagString }));
   }, []);
 
   const handleQuestionChange = (e) => {
-    dispatch(setQuizFormQuestion(e.target.value));
+    dispatch(setQuizForm({ question: e.target.value }));
   };
 
   const handleAnswerChange = (e) => {
-    dispatch(setQuizFormAnswer(e.target.value));
+    dispatch(setQuizForm({ answer: e.target.value }));
   };
 
   const handleTagChange = (e) => {
-    dispatch(setQuizFormTags(e.target.value));
+    dispatch(setQuizForm({ tagString: e.target.value }));
   };
 
   const handleEditButton = async () => {
