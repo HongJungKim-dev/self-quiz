@@ -30,19 +30,16 @@ export default function QuizFormInputContainer() {
   const dispatch = useDispatch();
   const { question, answer } = useSelector(({ selfQuizReducer }) => selfQuizReducer.quizForm);
 
-  const handleQuizFormQuestionInput = (event) => {
-    dispatch(setQuizFormQuestion(event.target.value));
+  const handleQuizFormQuestionInput = (e) => {
+    dispatch(setQuizFormQuestion(e.target.value));
   };
 
-  const handleQuizFormAnswerInput = (event) => {
-    dispatch(setQuizFormAnswer(event.target.value));
+  const handleQuizFormAnswerInput = (e) => {
+    dispatch(setQuizFormAnswer(e.target.value));
   };
 
-  const handleQuizFormTagsInput = (event) => {
-    const string = event.target.value;
-    const tags = string.split('#').map((tag) => tag.trim()).filter((v) => v);
-
-    dispatch(setQuizFormTags(tags));
+  const handleQuizFormTagsInput = (e) => {
+    dispatch(setQuizFormTags(e.target.value));
   };
 
   return (

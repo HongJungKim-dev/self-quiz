@@ -14,8 +14,9 @@ export default function ArchiveQuizContainer({ quiz }) {
   } = quiz;
 
   const handleQuizClick = () => {
+    const tagString = tags.map((tag) => `#${tag}`).join(' ');
     dispatch(setArchiveQuizModal({
-      question, answer, lastSolved, layer, tags, _id,
+      question, answer, lastSolved, layer, tagString, _id,
     }));
     dispatch(setOverlay(true));
   };

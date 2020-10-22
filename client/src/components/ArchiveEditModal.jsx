@@ -79,13 +79,13 @@ export default function ArchiveEditModal() {
   const { archive } = modal;
 
   const {
-    question, answer, tags = [], _id,
+    question, answer, tagString, _id,
   } = archive;
 
   useEffect(() => {
     dispatch(setQuizFormQuestion(question));
     dispatch(setQuizFormAnswer(answer));
-    dispatch(setQuizFormTags(tags));
+    dispatch(setQuizFormTags(tagString));
   }, []);
 
   const handleQuestionChange = (e) => {
@@ -97,14 +97,13 @@ export default function ArchiveEditModal() {
   };
 
   const handleTagChange = (e) => {
-    const tagString = e.target.value;
-    const tagArray = tagString.replace(/#/g, '').split(' ');
-    dispatch(setQuizFormTags(tagArray));
+    dispatch(setQuizFormTags(e.target.value));
   };
 
   const handleEditButton = async () => {
+    const tags = quizForm.tagString.split('#').map((tag) => tag.trim()).filter((v) => v);
     const success = await api.editQuiz(_id, quizForm.question,
-      quizForm.answer, quizForm.tags);
+      quizForm.answer, tags);
 
     if (!success) {
       await popupMessages.fail('수정하지 못했습니다. 다시 시도해주세요.');
@@ -119,7 +118,7 @@ export default function ArchiveEditModal() {
       _id,
       question: quizForm.question,
       answer: quizForm.answer,
-      tags: quizForm.tags,
+      tagString: quizForm.tagString,
     }));
   };
 
@@ -140,7 +139,7 @@ export default function ArchiveEditModal() {
           emotion={{ ...styles.input, height: '16rem' }}
         />
         <Textarea
-          value={quizForm.tags.map((tag) => `#${tag}`)}
+          value={quizForm.tagString}
           onChange={handleTagChange}
           emotion={styles.tag}
         />

@@ -15,7 +15,7 @@ export const { reducer, actions } = createSlice({
     quizForm: {
       question: '',
       answer: '',
-      tags: [],
+      tagString: '',
     },
     modal: {
       overlay: false,
@@ -46,10 +46,13 @@ export const { reducer, actions } = createSlice({
     },
     editQuiz(state, { payload }) {
       const {
-        _id, question, answer, tags,
+        _id, question, answer, tagString,
       } = payload;
+      const tags = tagString.split('#').map((tag) => tag.trim()).filter((v) => v);
+
       const index = state.quizzes.findIndex((quiz) => quiz._id === _id);
       const copy = [...state.quizzes];
+
       copy[index] = {
         ...copy[index], question, answer, tags,
       };
@@ -63,7 +66,7 @@ export const { reducer, actions } = createSlice({
       return { ...state, quizForm: { ...state.quizForm, answer: payload } };
     },
     setQuizFormTags(state, { payload }) {
-      return { ...state, quizForm: { ...state.quizForm, tags: payload } };
+      return { ...state, quizForm: { ...state.quizForm, tagString: payload } };
     },
     setOverlay(state, { payload }) {
       return { ...state, modal: { ...state.modal, overlay: payload } };
@@ -78,7 +81,7 @@ export const { reducer, actions } = createSlice({
           ...state.modal,
           question: '',
           answer: '',
-          tags: [],
+          tagString: '',
         },
       };
     },

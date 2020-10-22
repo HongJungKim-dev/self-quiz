@@ -33,7 +33,7 @@ export default function ArchiveQuizModalInput() {
   const { archive } = modal;
 
   const {
-    question, answer, tags,
+    question, answer, tagString,
   } = archive;
 
   return (
@@ -50,7 +50,7 @@ export default function ArchiveQuizModalInput() {
         emotion={{ ...styles.input, height: '16rem' }}
         disabled="disabled"
       />
-      <div css={styles.tag}>{tags.map((tag) => `#${tag} `)}</div>
+      <div css={styles.tag}>{tagString}</div>
     </>
   );
 }

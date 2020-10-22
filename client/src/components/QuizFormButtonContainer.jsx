@@ -26,10 +26,12 @@ const styles = {
 
 export default function LoginForm() {
   const dispatch = useDispatch();
-  const formData = useSelector(({ selfQuizReducer }) => selfQuizReducer.quizForm);
-  const { question, answer, tags } = formData;
+  const quizForm = useSelector(({ selfQuizReducer }) => selfQuizReducer.quizForm);
+  const { question, answer, tagString } = quizForm;
 
   const handleLoginButtonClick = async () => {
+    const tags = tagString.split('#').map((tag) => tag.trim()).filter((v) => v);
+
     const newQuiz = await api.addQuiz(question, answer, tags);
 
     if (!newQuiz) {
