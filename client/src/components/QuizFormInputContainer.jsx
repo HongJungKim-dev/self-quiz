@@ -28,7 +28,8 @@ const styles = {
 
 export default function QuizFormInputContainer() {
   const dispatch = useDispatch();
-  const { question, answer } = useSelector(({ selfQuizReducer }) => selfQuizReducer.quizForm);
+  const quizForm = useSelector(({ selfQuizReducer }) => selfQuizReducer.quizForm);
+  const { question, answer, tagString } = quizForm;
 
   const handleInputChange = (propName) => (e) => {
     const formState = {};
@@ -55,6 +56,7 @@ export default function QuizFormInputContainer() {
       />
       <div css={styles.title}>#태그</div>
       <Textarea
+        value={tagString}
         onChange={handleInputChange('tagString')}
         emotion={{ ...styles.input, ...styles.tags }}
         placeholder="#오늘의 #문제"
