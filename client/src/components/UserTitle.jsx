@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setUserName } from '../slice';
-
-import api from '../apis/api';
+import { loadUserName } from '../slice';
 
 const styles = {
   title: {
@@ -25,11 +23,6 @@ const styles = {
   },
 };
 
-const getUserNameFromServer = async (dispatch) => {
-  const userName = await api.getUserName();
-  dispatch(setUserName(userName));
-};
-
 export default function UserTitle() {
   const dispatch = useDispatch();
   const states = useSelector(({ selfQuizReducer }) => selfQuizReducer);
@@ -38,7 +31,7 @@ export default function UserTitle() {
 
   useEffect(() => {
     if (!name) {
-      getUserNameFromServer(dispatch);
+      dispatch(loadUserName());
     }
   }, []);
 

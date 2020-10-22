@@ -2,6 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { convertTagStringToTags } from './util';
 
+import api from './apis/api';
+
 export const { reducer, actions } = createSlice({
   name: 'self-quiz',
   initialState: {
@@ -129,5 +131,15 @@ export const {
   setEdittingModal,
   closeEditModal,
 } = actions;
+
+export const loadQuizzes = () => async (dispatch) => {
+  const data = await api.getQuizzes();
+  dispatch(setQuizzes(data));
+};
+
+export const loadUserName = () => async (dispatch) => {
+  const userName = await api.getUserName();
+  dispatch(setUserName(userName));
+};
 
 export default reducer;

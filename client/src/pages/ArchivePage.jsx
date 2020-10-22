@@ -4,15 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Archive from '../components/Archive';
 
-import { setQuizzes } from '../slice';
-
-import api from '../apis/api';
-
-const getDataFromServer = async (dispatch) => {
-  const data = await api.getQuizzes();
-
-  dispatch(setQuizzes(data));
-};
+import { loadQuizzes } from '../slice';
 
 export default function ArchivePage() {
   const dispatch = useDispatch();
@@ -20,7 +12,7 @@ export default function ArchivePage() {
 
   useEffect(() => {
     if (quizzes.length === 0) {
-      getDataFromServer(dispatch);
+      dispatch(loadQuizzes());
     }
   }, []);
 
