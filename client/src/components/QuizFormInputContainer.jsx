@@ -30,16 +30,11 @@ export default function QuizFormInputContainer() {
   const dispatch = useDispatch();
   const { question, answer } = useSelector(({ selfQuizReducer }) => selfQuizReducer.quizForm);
 
-  const handleQuizFormQuestionInput = (e) => {
-    dispatch(setQuizForm({ question: e.target.value }));
-  };
+  const handleInputChange = (propName) => (e) => {
+    const formState = {};
+    formState[propName] = e.target.value;
 
-  const handleQuizFormAnswerInput = (e) => {
-    dispatch(setQuizForm({ answer: e.target.value }));
-  };
-
-  const handleQuizFormTagsInput = (e) => {
-    dispatch(setQuizForm({ tagString: e.target.value }));
+    dispatch(setQuizForm(formState));
   };
 
   return (
@@ -47,20 +42,20 @@ export default function QuizFormInputContainer() {
       <div css={styles.title}>문제</div>
       <Textarea
         value={question}
-        onChange={handleQuizFormQuestionInput}
+        onChange={handleInputChange('question')}
         emotion={styles.input}
         placeholder="문제를 입력해주세요."
       />
       <div css={styles.title}>정답</div>
       <Textarea
         value={answer}
-        onChange={handleQuizFormAnswerInput}
+        onChange={handleInputChange('answer')}
         emotion={styles.input}
         placeholder="정답을 입력해주세요."
       />
       <div css={styles.title}>#태그</div>
       <Textarea
-        onChange={handleQuizFormTagsInput}
+        onChange={handleInputChange('tagString')}
         emotion={{ ...styles.input, ...styles.tags }}
         placeholder="#오늘의 #문제"
       />
