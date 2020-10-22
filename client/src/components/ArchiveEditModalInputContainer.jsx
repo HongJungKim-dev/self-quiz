@@ -7,6 +7,11 @@ import { setQuizForm } from '../slice';
 import Textarea from './Textarea';
 
 const styles = {
+  text: {
+    fontWeight: 'bold',
+    fontSize: '1.3rem',
+    marginTop: '1rem',
+  },
   input: {
     display: 'block',
     width: '100%',
