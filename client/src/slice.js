@@ -26,6 +26,10 @@ export const { reducer, actions } = createSlice({
       adding: false,
       archive: {},
       editting: false,
+      todays: false,
+    },
+    todays: {
+      answerOn: false,
     },
   },
   reducers: {
@@ -112,6 +116,12 @@ export const { reducer, actions } = createSlice({
         },
       };
     },
+    setTodaysQuizModal(state, { payload }) {
+      return { ...state, modal: { ...state.modal, todays: payload } };
+    },
+    setTodaysAnswerOn(state, { payload }) {
+      return { ...state, todays: { ...state.todays, answerOn: payload } };
+    },
   },
 });
 
@@ -130,6 +140,8 @@ export const {
   setArchiveQuizModal,
   setEdittingModal,
   closeEditModal,
+  setTodaysQuizModal,
+  setTodaysAnswerOn,
 } = actions;
 
 export const loadQuizzes = () => async (dispatch) => {

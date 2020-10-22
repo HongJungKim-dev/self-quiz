@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import { useHistory } from 'react-router-dom';
 
-import { setAddingModal, setOverlay } from '../slice';
+import { setAddingModal, setTodaysQuizModal, setOverlay } from '../slice';
 
 import Button from './Button';
 
@@ -44,6 +44,11 @@ export default function Tab() {
     dispatch(setOverlay(true));
   };
 
+  const handleTodaysButton = () => {
+    dispatch(setTodaysQuizModal(true));
+    dispatch(setOverlay(true));
+  };
+
   return (
     <div css={styles.tab}>
       <Button
@@ -53,7 +58,7 @@ export default function Tab() {
       />
       <Button
         title="오늘의 문제"
-        onClick={() => history.push('/')}
+        onClick={handleTodaysButton}
         emotion={styles.selection}
       />
       <Button
