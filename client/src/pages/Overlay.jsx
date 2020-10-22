@@ -2,10 +2,7 @@ import React from 'react';
 
 import { useDispatch } from 'react-redux';
 
-import {
-  setOverlay, setAddingModal, setArchiveQuizModal,
-  setEdittingModal, setTodaysQuizModal, resetQuizForm,
-} from '../slice';
+import { closeAllModal } from '../slice';
 
 const styles = {
   overlay: {
@@ -19,14 +16,8 @@ const styles = {
 export default function Overlay() {
   const dispatch = useDispatch();
 
-  // TODO: 하나로 합치기
   const handleOverlay = () => {
-    dispatch(setOverlay(false));
-    dispatch(setAddingModal(false));
-    dispatch(setArchiveQuizModal({}));
-    dispatch(setEdittingModal(false));
-    dispatch(setTodaysQuizModal(false));
-    dispatch(resetQuizForm());
+    dispatch(closeAllModal());
   };
 
   return (

@@ -80,7 +80,7 @@ export const { reducer, actions } = createSlice({
       return {
         ...state,
         quizForm: {
-          ...state.modal,
+          ...state.quizForm,
           question: '',
           answer: '',
           tagString: '',
@@ -99,17 +99,19 @@ export const { reducer, actions } = createSlice({
     setEdittingModal(state, { payload }) {
       return { ...state, modal: { ...state.modal, editting: payload } };
     },
-    closeEditModal(state) {
+    closeAllModal(state) {
       return {
         ...state,
         modal: {
           ...state.modal,
           archive: {},
+          adding: false,
           overlay: false,
           editting: false,
+          todays: false,
         },
         quizForm: {
-          ...state.modal,
+          ...state.quizForm,
           question: '',
           answer: '',
           tagString: '',
@@ -139,7 +141,7 @@ export const {
   resetQuizForm,
   setArchiveQuizModal,
   setEdittingModal,
-  closeEditModal,
+  closeAllModal,
   setTodaysQuizModal,
   setTodaysAnswerOn,
 } = actions;
