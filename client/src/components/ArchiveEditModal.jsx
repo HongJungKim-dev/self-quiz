@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { popupMessages } from '../util';
+import { popupMessages, convertTagStringToTags } from '../util';
 
 import {
   setArchiveQuizModal, setOverlay, editQuiz, setEdittingModal,
@@ -101,7 +101,7 @@ export default function ArchiveEditModal() {
   };
 
   const handleEditButton = async () => {
-    const tags = quizForm.tagString.split('#').map((tag) => tag.trim()).filter((v) => v);
+    const tags = convertTagStringToTags(quizForm.tagString);
     const success = await api.editQuiz(_id, quizForm.question,
       quizForm.answer, tags);
 

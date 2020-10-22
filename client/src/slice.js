@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { convertTagStringToTags } from './util';
+
 export const { reducer, actions } = createSlice({
   name: 'self-quiz',
   initialState: {
@@ -48,7 +50,7 @@ export const { reducer, actions } = createSlice({
       const {
         _id, question, answer, tagString,
       } = payload;
-      const tags = tagString.split('#').map((tag) => tag.trim()).filter((v) => v);
+      const tags = convertTagStringToTags(tagString);
 
       const index = state.quizzes.findIndex((quiz) => quiz._id === _id);
       const copy = [...state.quizzes];

@@ -9,6 +9,5 @@ export const popupMessages = {
   },
 };
 
-// TODO: 제거
-const xxx = 'xxx';
-export default xxx;
+export const convertTagStringToTags = (tagString) => tagString.split('#').map((tag) => tag.trim()).filter((v) => v);
+export const convertTagsToTagString = (tags) => tags.map((tag) => `#${tag}`).join(' ');

@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 
 import { setArchiveQuizModal, setOverlay } from '../slice';
 
+import { convertTagsToTagString } from '../util';
+
 import ArchiveQuiz from './ArchiveQuiz';
 
 export default function ArchiveQuizContainer({ quiz }) {
@@ -14,7 +16,7 @@ export default function ArchiveQuizContainer({ quiz }) {
   } = quiz;
 
   const handleQuizClick = () => {
-    const tagString = tags.map((tag) => `#${tag}`).join(' ');
+    const tagString = convertTagsToTagString(tags);
     dispatch(setArchiveQuizModal({
       question, answer, lastSolved, layer, tagString, _id,
     }));

@@ -6,7 +6,7 @@ import { setQuizzes, resetQuizForm } from '../slice';
 
 import api from '../apis/api';
 
-import { popupMessages } from '../util';
+import { popupMessages, convertTagStringToTags } from '../util';
 
 import Button from './Button';
 
@@ -30,8 +30,7 @@ export default function LoginForm() {
   const { question, answer, tagString } = quizForm;
 
   const handleLoginButtonClick = async () => {
-    const tags = tagString.split('#').map((tag) => tag.trim()).filter((v) => v);
-
+    const tags = convertTagStringToTags(tagString);
     const newQuiz = await api.addQuiz(question, answer, tags);
 
     if (!newQuiz) {
