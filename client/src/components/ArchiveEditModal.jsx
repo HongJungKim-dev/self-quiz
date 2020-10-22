@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { popupMessages, convertTagStringToTags } from '../util';
 
 import {
-  setArchiveQuizModal, setOverlay, editQuiz, setEdittingModal, setQuizForm,
+  setArchiveQuizModal, setOverlay, editQuiz, setEdittingModal, setQuizForm, resetQuizForm,
 } from '../slice';
 
 import api from '../apis/api';
@@ -119,6 +119,7 @@ export default function ArchiveEditModal() {
       answer: quizForm.answer,
       tagString: quizForm.tagString,
     }));
+    dispatch(resetQuizForm());
   };
 
   return (
