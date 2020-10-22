@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -6,6 +6,7 @@ import { popupMessages } from '../util';
 
 import {
   setArchiveQuizModal, setOverlay, editQuiz, setEdittingModal,
+  setQuizFormQuestion, setQuizFormAnswer, setQuizFormTags,
 } from '../slice';
 
 import api from '../apis/api';
@@ -74,33 +75,36 @@ const styles = {
 
 export default function ArchiveEditModal() {
   const dispatch = useDispatch();
-  const { modal } = useSelector(({ selfQuizReducer }) => selfQuizReducer);
+  const { modal, quizForm } = useSelector(({ selfQuizReducer }) => selfQuizReducer);
   const { archive } = modal;
 
   const {
     question, answer, tags = [], _id,
   } = archive;
 
-  const [questionState, setQuestionState] = useState(question);
-  const [answerState, setAnswerState] = useState(answer);
-  const [tagState, setTagState] = useState(tags.map((tag) => `#${tag}`).join(''));
+  useEffect(() => {
+    dispatch(setQuizFormQuestion(question));
+    dispatch(setQuizFormAnswer(answer));
+    dispatch(setQuizFormTags(tags));
+  }, []);
 
   const handleQuestionChange = (e) => {
-    setQuestionState(e.target.value);
+    dispatch(setQuizFormQuestion(e.target.value));
   };
 
   const handleAnswerChange = (e) => {
-    setAnswerState(e.target.value);
+    dispatch(setQuizFormAnswer(e.target.value));
   };
 
   const handleTagChange = (e) => {
-    setTagState(e.target.value);
+    const tagString = e.target.value;
+    const tagArray = tagString.replace(/#/g, '').split(' ');
+    dispatch(setQuizFormTags(tagArray));
   };
 
   const handleEditButton = async () => {
-    const tagArray = tagState.replace(/#/g, '').split(' ');
-
-    const success = await api.editQuiz(_id, questionState, answerState, tagArray);
+    const success = await api.editQuiz(_id, quizForm.question,
+      quizForm.answer, quizForm.tags);
 
     if (!success) {
       await popupMessages.fail('수정하지 못했습니다. 다시 시도해주세요.');
@@ -113,9 +117,9 @@ export default function ArchiveEditModal() {
     dispatch(setEdittingModal(false));
     dispatch(editQuiz({
       _id,
-      question: questionState,
-      answer: answerState,
-      tags: tagArray,
+      question: quizForm.question,
+      answer: quizForm.answer,
+      tags: quizForm.tags,
     }));
   };
 
@@ -125,18 +129,18 @@ export default function ArchiveEditModal() {
       <div css={styles.container}>
         <div css={styles.text}>문제</div>
         <Textarea
-          value={questionState}
+          value={quizForm.question}
           onChange={handleQuestionChange}
           emotion={{ ...styles.input, height: '7rem' }}
         />
         <div css={styles.text}>정답</div>
         <Textarea
-          value={answerState}
+          value={quizForm.answer}
           onChange={handleAnswerChange}
           emotion={{ ...styles.input, height: '16rem' }}
         />
         <Textarea
-          value={tagState}
+          value={quizForm.tags.map((tag) => `#${tag}`)}
           onChange={handleTagChange}
           emotion={styles.tag}
         />
