@@ -2,6 +2,9 @@
 
 [https://self-quiz.herokuapp.com](https://self-quiz.herokuapp.com/)
 
+아이디: test  
+비밀번호: test
+
 ## 프로젝트 소개
 
 - 주기적인 복습을 통해 지식을 장기기억으로 넘기고자 "오늘의 문제"라는 프로젝트를 진행하게 되었습니다.  
