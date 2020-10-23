@@ -5,20 +5,48 @@ import LoginButtonContainer from './LoginButtonContainer';
 
 const styles = {
   layout: {
-    display: 'table',
-    margin: '20rem auto 0 auto',
-    padding: '3rem',
-    borderRadius: '1rem',
-    boxShadow: '0 0 11px 0px #3e7cbc',
+    position: 'absolute',
+    top: '20%',
+    left: '50%',
+    transform: 'translate(-50%, 0)',
+    width: '30rem',
+    height: '35rem',
+    borderRadius: '0.5rem',
     background: 'white',
+    boxShadow: '0 0 11px 0px #244a72',
+  },
+  title: {
+    background: '#092747',
+    height: '3rem',
+    borderRadius: '0.5rem 0.5rem 0 0',
+  },
+  container: {
+    padding: '2rem',
+  },
+  text: {
+    marginTop: '2rem',
+    textAlign: 'center',
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    color: '#244a72',
+  },
+  logo: {
+    width: '12rem',
+    margin: '0 auto 4rem auto',
+    display: 'table',
   },
 };
 
 export default function LoginForm() {
   return (
     <div css={styles.layout}>
-      <LoginInputContainer />
-      <LoginButtonContainer />
+      <div css={styles.title} />
+      <div css={styles.container}>
+        <div css={styles.text}>오늘의 문제</div>
+        <img src="src/styles/logo.png" alt="로고" css={styles.logo} />
+        <LoginInputContainer />
+        <LoginButtonContainer />
+      </div>
     </div>
   );
 }

@@ -1,7 +1,15 @@
 import React from 'react';
 
-export default function Input({ value, onChange, emotion }) {
+export default function Input({
+  value, onChange, emotion, placeholder = '', type = 'text',
+}) {
   return (
-    <input type="text" onChange={onChange} value={value} css={emotion} />
+    <input
+      type={type}
+      onChange={onChange}
+      value={value}
+      css={emotion}
+      placeholder={placeholder}
+    />
   );
 }

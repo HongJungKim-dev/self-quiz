@@ -16,10 +16,12 @@ const styles = {
     fontWeight: 'bold',
     color: 'white',
     backgroundColor: '#244a72',
-    width: '20rem',
-    height: '2rem',
+    width: '100%',
+    height: '3rem',
     border: 'none',
-    marginTop: '2rem',
+    borderRadius: '0.5rem',
+    marginTop: '0.5rem',
+    cursor: 'pointer',
   },
 };
 
@@ -45,10 +47,17 @@ export default function LoginForm() {
   };
 
   return (
-    <Button
-      title="로그인"
-      onClick={handleLoginButtonClick}
-      emotion={styles.button}
-    />
+    <>
+      <Button
+        title="로그인"
+        onClick={handleLoginButtonClick}
+        emotion={styles.button}
+      />
+      <Button
+        title="회원가입"
+        onClick={handleLoginButtonClick}
+        emotion={{ ...styles.button, backgroundColor: '#2779ce' }}
+      />
+    </>
   );
 }
