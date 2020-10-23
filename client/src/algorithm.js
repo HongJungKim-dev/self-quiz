@@ -17,12 +17,13 @@ export const utilFunctions = {
 };
 
 const layerLimitMap = {
-  1: 3,
-  2: 7,
-  3: 15,
-  4: 30,
-  5: 60,
-  6: 120,
+  1: 1,
+  2: 3,
+  3: 7,
+  4: 15,
+  5: 30,
+  6: 60,
+  7: 120,
 };
 
 const filterTodaysQuiz = (quizzes) => {
@@ -34,7 +35,7 @@ const filterTodaysQuiz = (quizzes) => {
     const lastSolvedTotalDay = utilFunctions.getTotalDay(lastSolved);
     const dateDifference = currentTotalDay - lastSolvedTotalDay;
 
-    const baseLayers = [1, 2, 3, 4, 5, 6];
+    const baseLayers = [1, 2, 3, 4, 5, 6, 7];
     return baseLayers.some((baseLayer) => {
       const validation = quizLayer <= baseLayer && dateDifference >= layerLimitMap[baseLayer];
       return validation;
