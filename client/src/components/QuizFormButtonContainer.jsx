@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setQuizzes, resetQuizForm } from '../slice';
+import { addQuiz, resetQuizForm } from '../slice';
 
 import api from '../apis/api';
 
@@ -39,7 +39,7 @@ export default function LoginForm() {
     }
 
     await popupMessages.success('추가되었습니다.');
-    dispatch(setQuizzes([newQuiz]));
+    dispatch(addQuiz(newQuiz));
     dispatch(resetQuizForm());
   };
 
