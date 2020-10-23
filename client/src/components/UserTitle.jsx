@@ -25,8 +25,7 @@ const styles = {
 
 export default function UserTitle() {
   const dispatch = useDispatch();
-  const states = useSelector(({ selfQuizReducer }) => selfQuizReducer);
-  const { user } = states;
+  const { user, todays } = useSelector(({ selfQuizReducer }) => selfQuizReducer);
   const { name } = user;
 
   useEffect(() => {
@@ -38,7 +37,7 @@ export default function UserTitle() {
   return (
     <div css={styles.title}>
       <div css={styles.name}>{name}님,</div>
-      <div css={styles.text}>오늘 복습해야 할 문제는 총 {12}문제 입니다.</div>
+      <div css={styles.text}>오늘 복습해야 할 문제는 총 {todays.quizzes.length}문제 입니다.</div>
     </div>
   );
 }
