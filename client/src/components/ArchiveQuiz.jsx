@@ -2,7 +2,7 @@ import React from 'react';
 
 const styles = {
   layout: {
-    width: '40rem',
+    width: '100%',
     padding: '1rem 3rem',
     boxShadow: '0 0 7px 1px #cfcfcf',
     borderRadius: '1rem',

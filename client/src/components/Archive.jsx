@@ -15,12 +15,14 @@ const styles = {
     display: 'table',
     margin: '0 auto',
     padding: '0 0 10rem 0',
+    width: '50rem',
   },
   title: {
     fontSize: '2rem',
     fontWeight: 'bold',
     color: 'white',
     margin: '3rem 0',
+    width: '100%',
   },
 };
 
