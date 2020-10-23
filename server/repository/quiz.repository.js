@@ -38,6 +38,20 @@ module.exports = {
     );
   },
 
+  async failQuiz(userId, quizId) {
+    await Quiz.updateOne(
+      { userId, _id: quizId },
+      {
+        $inc: {
+          layer: -1,
+        },
+        $set: {
+          lastSolved: getCurrentDate(),
+        },
+      },
+    );
+  },
+
   async removeQuiz(userId, quizId) {
     await Quiz.deleteOne({ userId, _id: quizId });
   },

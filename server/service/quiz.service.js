@@ -48,6 +48,14 @@ module.exports = {
     res.status(200).json({ message: 'Complete to make quiz pass' });
   },
 
+  async failQuiz(req, res) {
+    const { userId, quizId } = req.body;
+
+    await quizRepo.failQuiz(userId, quizId);
+
+    res.status(200).json({ message: 'Complete to make quiz fail' });
+  },
+
   async removeQuiz(req, res) {
     const { userId } = req.body;
     const { quizId } = req.params;
