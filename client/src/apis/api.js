@@ -67,9 +67,29 @@ export default {
     }
   },
 
-  async deleteQuiz(_id) {
+  async deleteQuiz(quizId) {
     try {
-      await axios.delete(`${URL}/quiz/${_id}`, getHeaders());
+      await axios.delete(`${URL}/quiz/${quizId}`, getHeaders());
+
+      return true;
+    } catch (error) {
+      return false;
+    }
+  },
+
+  async passQuiz(quizId) {
+    try {
+      await axios.patch(`${URL}/quiz/pass`, { quizId }, getHeaders());
+
+      return true;
+    } catch (error) {
+      return false;
+    }
+  },
+
+  async failQuiz(quizId) {
+    try {
+      await axios.patch(`${URL}/quiz/fail`, { quizId }, getHeaders());
 
       return true;
     } catch (error) {

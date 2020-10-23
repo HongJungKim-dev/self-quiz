@@ -2,6 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { convertTagStringToTags } from './util';
 
+import filterTodaysQuiz from './algorithm';
+
 import api from './apis/api';
 
 export const { reducer, actions } = createSlice({
@@ -168,8 +170,9 @@ export const {
 } = actions;
 
 export const loadQuizzes = () => async (dispatch) => {
-  const data = await api.getQuizzes();
-  dispatch(setQuizzes(data));
+  const quizzes = await api.getQuizzes();
+  dispatch(setQuizzes(quizzes));
+  dispatch(setTodaysQuizzes(filterTodaysQuiz(quizzes)));
 };
 
 export const loadUserName = () => async (dispatch) => {
