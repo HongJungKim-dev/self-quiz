@@ -34,6 +34,24 @@ $ npm install
 $ npm start
 ```
 
+## 프로젝트 구현 사항
+
+|                 로그인                |               메인 페이지                |
+| :-----------------------------------: | :-----------------------------------: |
+| <img src="https://user-images.githubusercontent.com/59194356/97017373-c9c81280-1588-11eb-84fd-08e6c2b48fe4.png" >    | <img src="https://user-images.githubusercontent.com/59194356/97017378-caf93f80-1588-11eb-87e5-24be2620637e.png" >   |
+
+|               문제 추가                |              아카이브               |
+| :-----------------------------------: | :-----------------------------------: |
+| <img src="https://user-images.githubusercontent.com/59194356/97017382-cb91d600-1588-11eb-8796-5da73c1b3de6.png" > | <img src="https://user-images.githubusercontent.com/59194356/97017386-ccc30300-1588-11eb-9c44-a3e76df96da4.png" >  |
+
+|                오늘의 문제(1)            |             오늘의 문제(2)             |
+| :-----------------------------------: | :-----------------------------------: |
+| <img src="https://user-images.githubusercontent.com/59194356/97017388-cd5b9980-1588-11eb-9e70-cd5e2525b82d.png" > | <img src="https://user-images.githubusercontent.com/59194356/97017393-ce8cc680-1588-11eb-8ead-2186c9313d95.png" > |
+
+|               친구 추천               |                 팔로잉                |
+| :-----------------------------------: | :-----------------------------------: |
+| <img src="./screenshot/knowingman.png" > | <img src="./screenshot/follow.png" > |
+
 ## 고려 사항
 
 - **어떻게 네트워크 비용을 줄일것인가**  
