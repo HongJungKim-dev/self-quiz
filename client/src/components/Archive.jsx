@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
+import ArchiveReturnButtonContainer from './ArchiveReturnButtonContainer';
 import ArchiveQuizContainer from './ArchiveQuizContainer';
 import ArchiveQuizModal from './ArchiveQuizModal';
 import ArchiveEditModal from './ArchiveEditModal';
@@ -33,6 +34,7 @@ export default function Archive() {
 
   return (
     <div css={styles.body}>
+      <ArchiveReturnButtonContainer />
       {isArchiveFilled && <ArchiveQuizModal />}
       {editting && <ArchiveEditModal />}
       <div css={styles.layout}>
