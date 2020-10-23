@@ -4,6 +4,8 @@ const cors = require('cors');
 
 const app = express();
 
+const path = require('path');
+
 require('./models');
 
 require('dotenv').config();
@@ -15,6 +17,10 @@ app.use(cors({ origin: "*", credentials: true }));
 app.use(express.static('public'));
 
 app.use('/', require('./routes'));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
 
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
