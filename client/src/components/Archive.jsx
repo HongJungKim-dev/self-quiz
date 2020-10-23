@@ -7,6 +7,10 @@ import ArchiveQuizModal from './ArchiveQuizModal';
 import ArchiveEditModal from './ArchiveEditModal';
 
 const styles = {
+  body: {
+    background: 'linear-gradient(90deg, #111d2a, #295582 )',
+    width: '100%',
+  },
   layout: {
     display: 'table',
     margin: '0 auto',
@@ -25,7 +29,7 @@ export default function Archive() {
   const isArchiveFilled = Object.keys(archive).length > 0;
 
   return (
-    <>
+    <div css={styles.body}>
       {isArchiveFilled && <ArchiveQuizModal />}
       {editting && <ArchiveEditModal />}
       <div css={styles.layout}>
@@ -36,6 +40,6 @@ export default function Archive() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
