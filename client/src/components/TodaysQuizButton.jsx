@@ -2,7 +2,9 @@ import React from 'react';
 
 import { useDispatch } from 'react-redux';
 
-import { setTodaysAnswerOn } from '../slice';
+import { setTodaysAnswerOn, removeTodaysQuiz } from '../slice';
+
+import api from '../apis/api';
 
 import Button from './Button';
 
@@ -31,21 +33,23 @@ const styles = {
   },
 };
 
-export default function TodaysQuiz() {
+export default function TodaysQuiz({ quiz }) {
   const dispatch = useDispatch();
 
   const handleShowAnswerButton = () => {
     dispatch(setTodaysAnswerOn(true));
   };
 
-  const handlePassButton = () => {
-    // TODO: Implement
-    alert('패스');
+  const handlePassButton = async () => {
+    await api.passQuiz(quiz._id);
+    dispatch(removeTodaysQuiz(quiz._id));
+    dispatch(setTodaysAnswerOn(false));
   };
 
-  const handleFailButton = () => {
-    // TODO: Implement
-    alert('실패');
+  const handleFailButton = async () => {
+    await api.failQuiz(quiz._id);
+    dispatch(removeTodaysQuiz(quiz._id));
+    dispatch(setTodaysAnswerOn(false));
   };
 
   return (
