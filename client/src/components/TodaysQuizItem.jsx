@@ -5,10 +5,6 @@ import { useSelector } from 'react-redux';
 import Textarea from './Textarea';
 
 const styles = {
-  count: {
-    textAlign: 'end',
-    marginBottom: '1rem',
-  },
   question: {
     fontSize: '1.8rem',
     fontWeight: 'bold',
@@ -49,7 +45,6 @@ export default function TodaysQuizItem({ quiz }) {
 
   return (
     <>
-      <div css={styles.count}>남은 문제: 21</div>
       <div css={styles.question}>
         Q. {question}
       </div>

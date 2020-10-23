@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { setTodaysQuizzes } from '../slice';
 
 import TodaysQuizItem from './TodaysQuizItem';
 import TodaysQuizButton from './TodaysQuizButton';
@@ -29,16 +31,26 @@ const styles = {
   container: {
     padding: '2rem',
   },
+  count: {
+    textAlign: 'end',
+    marginBottom: '1rem',
+  },
 };
 
 export default function TodaysQuiz() {
-  const quizzes = useSelector(({ selfQuizReducer }) => selfQuizReducer.quizzes);
-  const targetQuiz = quizzes[0] || { question: '', answer: '', tags: [] };
+  const dispatch = useDispatch();
+  const { quizzes, todays } = useSelector(({ selfQuizReducer }) => selfQuizReducer);
+  const targetQuiz = todays.quizzes[0] || { question: '', answer: '', tags: [] };
+
+  useEffect(() => {
+    dispatch(setTodaysQuizzes(quizzes));
+  }, []);
 
   return (
     <div css={styles.layout}>
       <div css={styles.title}>오늘의 문제</div>
       <div css={styles.container}>
+        <div css={styles.count}>남은 문제: {todays.quizzes.length}</div>
         <TodaysQuizItem quiz={targetQuiz} />
         <TodaysQuizButton />
       </div>
