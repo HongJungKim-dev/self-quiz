@@ -5,7 +5,7 @@ import ArchiveQuizModalButtonContainer from './ArchiveQuizModalButtonContainer';
 
 const styles = {
   layout: {
-    position: 'absolute',
+    position: 'fixed',
     top: '15%',
     left: '50%',
     transform: 'translate(-50%, 0)',

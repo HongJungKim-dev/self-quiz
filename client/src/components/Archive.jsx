@@ -14,6 +14,7 @@ const styles = {
   layout: {
     display: 'table',
     margin: '0 auto',
+    padding: '0 0 10rem 0',
   },
   title: {
     fontSize: '2rem',

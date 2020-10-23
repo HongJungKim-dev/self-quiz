@@ -7,7 +7,7 @@ import { closeAllModal } from '../slice';
 const styles = {
   overlay: {
     width: '100%',
-    position: 'absolute',
+    position: 'fixed',
     height: '100%',
     background: '#00000070',
   },
