@@ -49,7 +49,7 @@ export const { reducer, actions } = createSlice({
       return { ...state, token: payload };
     },
     setQuizzes(state, { payload }) {
-      return { ...state, quizzes: [...state.quizzes, ...payload] };
+      return { ...state, quizzes: payload };
     },
     removeQuiz(state, { payload: _id }) {
       const filteredQuizzes = state.quizzes.filter((quiz) => quiz._id !== _id);
@@ -171,6 +171,7 @@ export const {
 
 export const loadQuizzes = () => async (dispatch) => {
   const quizzes = await api.getQuizzes();
+
   dispatch(setQuizzes(quizzes));
   dispatch(setTodaysQuizzes(filterTodaysQuiz(quizzes)));
 };
