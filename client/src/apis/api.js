@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-import { URL } from '../config';
-
 const getHeaders = () => ({
   headers: {
     Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -11,7 +9,7 @@ const getHeaders = () => ({
 export default {
   async login(userId, userPw) {
     try {
-      const { data } = await axios.post(`${URL}/auth/login`, { userId, userPw });
+      const { data } = await axios.post(`${process.env.URL}/auth/login`, { userId, userPw });
       const { token } = data;
 
       return token;
@@ -22,7 +20,7 @@ export default {
 
   async getUserName() {
     try {
-      const { data } = await axios.get(`${URL}/auth`, getHeaders());
+      const { data } = await axios.get(`${process.env.URL}/auth`, getHeaders());
       const { user: userName } = data;
 
       return userName;
@@ -34,7 +32,7 @@ export default {
   async addQuiz(question, answer, tags) {
     try {
       const body = { question, answer, tags };
-      const { data } = await axios.post(`${URL}/quiz`, body, getHeaders());
+      const { data } = await axios.post(`${process.env.URL}/quiz`, body, getHeaders());
       const { newQuiz } = data;
 
       return newQuiz;
@@ -45,7 +43,7 @@ export default {
 
   async getQuizzes() {
     try {
-      const { data } = await axios.get(`${URL}/quiz`, getHeaders());
+      const { data } = await axios.get(`${process.env.URL}/quiz`, getHeaders());
       const { quizzes } = data;
 
       return quizzes;
@@ -59,7 +57,7 @@ export default {
       const body = {
         quizId, question, answer, tags,
       };
-      await axios.patch(`${URL}/quiz/edit`, body, getHeaders());
+      await axios.patch(`${process.env.URL}/quiz/edit`, body, getHeaders());
 
       return true;
     } catch (error) {
@@ -69,7 +67,7 @@ export default {
 
   async deleteQuiz(quizId) {
     try {
-      await axios.delete(`${URL}/quiz/${quizId}`, getHeaders());
+      await axios.delete(`${process.env.URL}/quiz/${quizId}`, getHeaders());
 
       return true;
     } catch (error) {
@@ -79,7 +77,7 @@ export default {
 
   async passQuiz(quizId) {
     try {
-      await axios.patch(`${URL}/quiz/pass`, { quizId }, getHeaders());
+      await axios.patch(`${process.env.URL}/quiz/pass`, { quizId }, getHeaders());
 
       return true;
     } catch (error) {
@@ -89,7 +87,7 @@ export default {
 
   async failQuiz(quizId) {
     try {
-      await axios.patch(`${URL}/quiz/fail`, { quizId }, getHeaders());
+      await axios.patch(`${process.env.URL}/quiz/fail`, { quizId }, getHeaders());
 
       return true;
     } catch (error) {

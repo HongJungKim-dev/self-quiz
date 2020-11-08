@@ -2,7 +2,9 @@ const path = require('path');
 
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+const Dotenv = require('dotenv-webpack');
+
+module.exports = (env, options) => ({
   entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, '../server/public/'),
@@ -34,10 +36,13 @@ module.exports = {
       template: './index.html',
       filename: 'index.html',
     }),
+    new Dotenv({
+      path: `env/${options.stage || 'development'}.env`,
+    }),
   ],
   devServer: {
     historyApiFallback: {
       index: 'index.html',
     },
   },
-};
+});

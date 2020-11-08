@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack",
-    "start": "webpack-dev-server",
+    "build": "webpack --stage production",
+    "start": "webpack-dev-server --stage development",
     "lint": "eslint ."
   },
   "keywords": [],
@@ -15,6 +15,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
     "axios": "^0.20.0",
+    "dotenv-webpack": "^5.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
