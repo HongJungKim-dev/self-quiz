@@ -33,6 +33,7 @@ export const { reducer, actions } = createSlice({
     todays: {
       answerOn: false,
       quizzes: [],
+      answerForm: '',
     },
   },
   reducers: {
@@ -148,6 +149,15 @@ export const { reducer, actions } = createSlice({
         },
       };
     },
+    setAnswerForm(state, { payload }) {
+      return {
+        ...state,
+        todays: {
+          ...state.todays,
+          answerForm: payload,
+        },
+      };
+    },
   },
 });
 
@@ -171,6 +181,7 @@ export const {
   setTodaysAnswerOn,
   setTodaysQuizzes,
   removeTodaysQuiz,
+  setAnswerForm,
 } = actions;
 
 export const loadQuizzes = () => async (dispatch) => {
