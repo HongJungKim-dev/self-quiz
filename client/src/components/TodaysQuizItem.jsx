@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { setAnswerForm } from '../slice';
 
 import Textarea from './Textarea';
 
@@ -39,9 +41,14 @@ const styles = {
 };
 
 export default function TodaysQuizItem({ quiz }) {
-  const { answerOn } = useSelector(({ selfQuizReducer }) => selfQuizReducer.todays);
+  const dispatch = useDispatch();
+  const { answerOn, answerForm } = useSelector(({ selfQuizReducer }) => selfQuizReducer.todays);
 
   const { question, answer, tags } = quiz;
+
+  const handleAnswerForm = (e) => {
+    dispatch(setAnswerForm(e.target.value));
+  };
 
   return (
     <>
@@ -54,6 +61,8 @@ export default function TodaysQuizItem({ quiz }) {
         disabled="disabled"
       />
       <Textarea
+        value={answerForm}
+        onChange={handleAnswerForm}
         emotion={styles.box}
         placeholder="정답을 입력하세요."
       />

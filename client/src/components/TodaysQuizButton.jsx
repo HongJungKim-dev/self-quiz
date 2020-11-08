@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useDispatch } from 'react-redux';
 
-import { setTodaysAnswerOn, removeTodaysQuiz } from '../slice';
+import { setTodaysAnswerOn, removeTodaysQuiz, setAnswerForm } from '../slice';
 
 import api from '../apis/api';
 
@@ -44,12 +44,14 @@ export default function TodaysQuiz({ quiz }) {
     await api.passQuiz(quiz._id);
     dispatch(removeTodaysQuiz(quiz._id));
     dispatch(setTodaysAnswerOn(false));
+    dispatch(setAnswerForm(''));
   };
 
   const handleFailButton = async () => {
     await api.failQuiz(quiz._id);
     dispatch(removeTodaysQuiz(quiz._id));
     dispatch(setTodaysAnswerOn(false));
+    dispatch(setAnswerForm(''));
   };
 
   return (
