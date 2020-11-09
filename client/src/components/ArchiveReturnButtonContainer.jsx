@@ -6,6 +6,7 @@ import Button from './Button';
 
 const styles = {
   button: {
+    position: 'fixed',
     width: '7rem',
     height: '3rem',
     fontSize: '1rem',
