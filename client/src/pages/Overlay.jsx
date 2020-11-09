@@ -10,6 +10,7 @@ const styles = {
     position: 'fixed',
     height: '100%',
     background: '#00000070',
+    zIndex: 1,
   },
 };
 

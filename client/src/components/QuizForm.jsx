@@ -14,6 +14,7 @@ const styles = {
     borderRadius: '0.5rem',
     background: 'white',
     boxShadow: '0 0 11px 0px #244a72',
+    zIndex: 2,
   },
   title: {
     fontSize: '1.5rem',

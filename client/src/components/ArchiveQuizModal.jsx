@@ -14,6 +14,7 @@ const styles = {
     color: 'black',
     background: 'white',
     borderRadius: '0.5rem',
+    zIndex: 2,
   },
   title: {
     fontSize: '1.5rem',
