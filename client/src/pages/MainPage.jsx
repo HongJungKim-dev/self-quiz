@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loadQuizzes } from '../slice';
 
 import LogoutButtonContainer from '../components/LogoutButtonContainer';
-import QuizForm from '../components/QuizForm';
+import QuizFormContainer from '../components/containers/QuizFormContainer';
 import TodaysQuiz from '../components/TodaysQuiz';
 import Tab from '../components/Tab';
 import UserTitle from '../components/UserTitle';
@@ -25,7 +25,7 @@ export default function MainPage() {
   return (
     <div>
       <LogoutButtonContainer />
-      {adding && <QuizForm />}
+      {adding && <QuizFormContainer />}
       {todays && <TodaysQuiz />}
       <UserTitle />
       <Tab />
