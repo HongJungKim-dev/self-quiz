@@ -34,6 +34,12 @@ $ npm install
 $ npm start
 ```
 
+## 사용 기술
+
+|                 <img width="100px" src="https://media.vlpt.us/post-images/chez_bono/ac8abaa0-3f83-11ea-86d2-c9f70b1fedfc/React.jslogo-512.png">                |              <img width="100px" src="https://raw.githubusercontent.com/1ambda/1ambda.github.io/master/assets/images/redux/redux_logo.png?width=30%&height=30%">             | <img width="130px" src="https://on-ad.github.io/static/assets/img/post_img/chanuuuuu/express_cover.png"> | <img width="130px" src="https://t1.daumcdn.net/cfile/tistory/9923593359840EC50A"> |
+| :-----------------------------------: | :-----------------------------------: |  :-----------------------------------: |  :-----------------------------------: |
+| React | Redux | Express | MongoDB |
+
 ## 프로젝트 구현 사항
 
 |                 로그인                |               메인 페이지                |
@@ -47,10 +53,6 @@ $ npm start
 |                오늘의 문제(1)            |             오늘의 문제(2)             |
 | :-----------------------------------: | :-----------------------------------: |
 | <img src="https://user-images.githubusercontent.com/59194356/97017388-cd5b9980-1588-11eb-9e70-cd5e2525b82d.png" > | <img src="https://user-images.githubusercontent.com/59194356/97017393-ce8cc680-1588-11eb-8ead-2186c9313d95.png" > |
-
-|               친구 추천               |                 팔로잉                |
-| :-----------------------------------: | :-----------------------------------: |
-| <img src="./screenshot/knowingman.png" > | <img src="./screenshot/follow.png" > |
 
 ## 고려 사항
 
