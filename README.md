@@ -102,6 +102,11 @@ $ npm start
   request-body: { quizId }  
   response: { message }  
 
+- **퀴즈 실패: PATCH /quiz/fail**  
+  request-header: Authorization - token  
+  request-body: { quizId }  
+  response: { message }  
+
 - **퀴즈 삭제: DELETE /quiz/:quizId**  
   request-header: Authorization - token  
   request-params: quizId  
