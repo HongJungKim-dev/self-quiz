@@ -6,14 +6,20 @@ import LoginButtonContainer from './LoginButtonContainer';
 const styles = {
   layout: {
     position: 'absolute',
-    top: '20%',
+    top: '20vh',
     left: '50%',
     transform: 'translate(-50%, 0)',
     width: '30rem',
-    height: '35rem',
     borderRadius: '0.5rem',
     background: 'white',
     boxShadow: '0 0 11px 0px #244a72',
+    '@media (max-width: 480px)': {
+      width: '100vw',
+    },
+    '@media (max-height: 680px)': {
+      top: '0vw',
+      height: '100vh',
+    },
   },
   title: {
     background: '#092747',

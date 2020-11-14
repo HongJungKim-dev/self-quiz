@@ -13,7 +13,7 @@ const styles = {
   input: {
     display: 'block',
     fontSize: '1rem',
-    width: '25rem',
+    width: '96%',
     height: '3rem',
     border: 'none',
     borderBottom: '1px solid #3e7cbc',
