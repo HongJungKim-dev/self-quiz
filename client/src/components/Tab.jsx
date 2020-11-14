@@ -12,6 +12,8 @@ const styles = {
   tab: {
     display: 'flex',
     justifyContent: 'center',
+    padding: '2rem',
+    boxSizing: 'border-box',
   },
   selection: {
     border: 'none',
@@ -31,6 +33,12 @@ const styles = {
     '&:focus': {
       background: '#3e7cbc54',
       cursor: 'pointer',
+    },
+    '@media (max-width: 960px)': {
+      height: '30vw',
+    },
+    '@media (max-width: 680px)': {
+      fontSize: '3vw',
     },
   },
 };
