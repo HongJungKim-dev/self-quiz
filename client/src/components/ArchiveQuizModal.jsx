@@ -10,11 +10,13 @@ const styles = {
     left: '50%',
     transform: 'translate(-50%, 0)',
     width: '40rem',
-    height: '40rem',
     color: 'black',
     background: 'white',
     borderRadius: '0.5rem',
     zIndex: 2,
+    '@media (max-width: 720px)': {
+      width: '90vw',
+    },
   },
   title: {
     fontSize: '1.5rem',

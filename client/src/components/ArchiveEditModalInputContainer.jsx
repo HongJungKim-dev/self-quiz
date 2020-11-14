@@ -20,6 +20,23 @@ const styles = {
     boxSizing: 'border-box',
     borderRadius: '0.4rem',
     background: 'white',
+    '@media (max-width: 720px)': {
+      fontSize: '2vw',
+    },
+  },
+  question: {
+    height: '7rem',
+    '@media (max-width: 720px)': {
+      height: '14vw',
+      fontSize: '2vw',
+    },
+  },
+  answer: {
+    height: '16rem',
+    '@media (max-width: 720px)': {
+      height: '32vw',
+      fontSize: '2vw',
+    },
   },
   tag: {
     margin: '0.8rem 0',
@@ -29,6 +46,9 @@ const styles = {
     height: '1.5rem',
     padding: '0.1rem 0.4rem 0 0.4rem',
     boxSizing: 'border-box',
+    '@media (max-width: 720px)': {
+      fontSize: '2vw',
+    },
   },
 };
 
@@ -50,13 +70,13 @@ export default function ArchiveEditModalInputContainer() {
       <Textarea
         value={question}
         onChange={handleInputChange('question')}
-        emotion={{ ...styles.input, height: '7rem' }}
+        emotion={{ ...styles.input, ...styles.question }}
       />
       <div css={styles.text}>정답</div>
       <Textarea
         value={answer}
         onChange={handleInputChange('answer')}
-        emotion={{ ...styles.input, height: '16rem' }}
+        emotion={{ ...styles.input, ...styles.answer }}
       />
       <Textarea
         value={tagString}
