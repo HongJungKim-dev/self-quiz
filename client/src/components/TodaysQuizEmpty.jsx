@@ -4,14 +4,15 @@ import TodaysQuizButton from './TodaysQuizButton';
 import Textarea from './Textarea';
 
 const styles = {
-  layout: {
+  overlay: {
     position: 'absolute',
     right: '0',
     bottom: '0',
     width: '100%',
-    height: '47rem',
+    height: '50.4rem',
     opacity: '0.8',
     background: '#000000',
+    borderRadius: '7px',
   },
   message: {
     fontSize: '2rem',
@@ -21,12 +22,19 @@ const styles = {
     margin: '20rem auto',
     borderBottom: '3px solid white',
     color: 'white',
+    '@media (max-width: 720px)': {
+      fontSize: '5vw',
+    },
   },
   question: {
     fontSize: '1.8rem',
     fontWeight: 'bold',
     marginBottom: '2rem',
     height: '10rem',
+    '@media (max-width: 720px)': {
+      fontSize: '4vw',
+      height: '4vh',
+    },
   },
   answer: {
     width: '100%',
@@ -38,6 +46,11 @@ const styles = {
     color: 'black',
     border: '3px solid white',
     boxSizing: 'border-box',
+    '@media (max-width: 720px)': {
+      fontSize: '3vw',
+      height: '30vw',
+      marginBottom: '0rem',
+    },
   },
   box: {
     width: '100%',
@@ -45,10 +58,20 @@ const styles = {
     fontSize: '1.2rem',
     padding: '1rem',
     boxSizing: 'border-box',
+    '@media (max-width: 720px)': {
+      fontSize: '3vw',
+      height: '18vw',
+    },
   },
   count: {
     textAlign: 'end',
     marginBottom: '1rem',
+  },
+  notice: {
+    fontSize: '0.8rem',
+    '@media (max-width: 720px)': {
+      fontSize: '1vw',
+    },
   },
 };
 
@@ -62,7 +85,7 @@ export default function TodaysQuizEmpty() {
 
   return (
     <>
-      <div css={styles.layout}>
+      <div css={styles.overlay}>
         <div css={styles.message}>오늘의 모든 문제를 다 풀었습니다</div>
       </div>
       <div css={styles.count}>남은 문제: 0</div>
@@ -76,7 +99,9 @@ export default function TodaysQuizEmpty() {
         emotion={styles.box}
         placeholder="정답을 입력하세요."
       />
-      <div>정답을 생각만하는 것과 직접 글로 작성하여 끄집어내는 것은 다릅니다. 직접 입력하신 뒤 정답을 확인하시길 추천드립니다.</div>
+      <div css={styles.notice}>
+        정답을 생각만하는 것과 직접 글로 작성하여 끄집어내는 것은 다릅니다. 직접 입력하신 뒤 정답을 확인하시길 추천드립니다.
+      </div>
       <TodaysQuizButton />
     </>
   );
