@@ -17,12 +17,16 @@ const styles = {
     margin: '0 auto',
     padding: '0 0 10rem 0',
     width: '50rem',
+    '@media (max-width: 960px)': {
+      width: '85vw',
+      fontSize: '2vw',
+    },
   },
   title: {
     fontSize: '2rem',
     fontWeight: 'bold',
     color: 'white',
-    margin: '3rem 0',
+    margin: '10rem 0 3rem 0',
     width: '100%',
   },
 };

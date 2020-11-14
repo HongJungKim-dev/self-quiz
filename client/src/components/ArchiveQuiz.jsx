@@ -2,7 +2,6 @@ import React from 'react';
 
 const styles = {
   layout: {
-    width: '100%',
     padding: '1rem 3rem',
     boxShadow: '0 0 7px 1px #cfcfcf',
     borderRadius: '1rem',
@@ -11,6 +10,9 @@ const styles = {
     cursor: 'pointer',
     '&:hover': {
       background: 'black',
+    },
+    '@media (max-width: 960px)': {
+      padding: '1rem 5vw',
     },
   },
 };

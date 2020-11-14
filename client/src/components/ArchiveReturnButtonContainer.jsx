@@ -18,6 +18,10 @@ const styles = {
     cursor: 'pointer',
     margin: '2rem 1rem',
     boxShadow: '0 0 8px 0px #ffffff',
+    '@media (max-width: 960px)': {
+      width: '12vw',
+      fontSize: '2vw',
+    },
   },
 };
 
@@ -30,7 +34,7 @@ export default function ArchiveReturnButtonContainer() {
 
   return (
     <Button
-      title="돌아가기"
+      title="Back"
       emotion={styles.button}
       onClick={handleReturnButtonClick}
     />
