@@ -13,11 +13,13 @@ const styles = {
     transform: 'translate(-50%,0)',
     position: 'absolute',
     width: '63rem',
-    height: '50rem',
     borderRadius: '0.5rem',
     background: 'white',
     boxShadow: '0 0 11px 0px #244a72',
     zIndex: 2,
+    '@media (max-width: 1100px)': {
+      width: '90vw',
+    },
   },
   title: {
     fontSize: '1.5rem',
@@ -34,6 +36,9 @@ const styles = {
   count: {
     textAlign: 'end',
     marginBottom: '1rem',
+    '@media (max-width: 720px)': {
+      fontSize: '2vw',
+    },
   },
 };
 

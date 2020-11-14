@@ -11,7 +11,10 @@ const styles = {
     fontSize: '1.8rem',
     fontWeight: 'bold',
     marginBottom: '2rem',
-    height: '10rem',
+    '@media (max-width: 720px)': {
+      fontSize: '4vw',
+      marginBottom: '4vh',
+    },
   },
   answer: {
     width: '100%',
@@ -20,6 +23,10 @@ const styles = {
     fontSize: '1.2rem',
     marginBottom: '2rem',
     resize: 'none',
+    '@media (max-width: 720px)': {
+      fontSize: '3vw',
+      height: '30vw',
+    },
   },
   on: {
     color: 'black',
@@ -37,6 +44,16 @@ const styles = {
     fontSize: '1.2rem',
     padding: '1rem',
     boxSizing: 'border-box',
+    '@media (max-width: 720px)': {
+      fontSize: '3vw',
+      height: '18vw',
+    },
+  },
+  notice: {
+    fontSize: '0.8rem',
+    '@media (max-width: 720px)': {
+      fontSize: '1vw',
+    },
   },
 };
 
@@ -66,7 +83,9 @@ export default function TodaysQuizItem({ quiz }) {
         emotion={styles.box}
         placeholder="정답을 입력하세요."
       />
-      <div>정답을 생각만하는 것과 직접 글로 작성하여 끄집어내는 것은 다릅니다. 직접 입력하신 뒤 정답을 확인하시길 추천드립니다.</div>
+      <div css={styles.notice}>
+        정답을 생각만하는 것과 직접 글로 작성하여 끄집어내는 것은 다릅니다. 직접 입력하신 뒤 정답을 확인하시길 추천드립니다.
+      </div>
     </>
   );
 }

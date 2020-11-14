@@ -30,6 +30,10 @@ const styles = {
     borderRadius: '0.3rem',
     boxShadow: '0 0 4px 3px #a9dfc3',
     cursor: 'pointer',
+    '@media (max-width: 720px)': {
+      width: '18vw',
+      fontSize: '2vw',
+    },
   },
 };
 
