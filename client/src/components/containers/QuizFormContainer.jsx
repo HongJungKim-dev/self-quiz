@@ -8,11 +8,11 @@ import { convertTagStringToTags, popupMessages } from '../../util';
 
 import api from '../../apis/api';
 
-import AddingModalLayout from '../presetationals/AddingModalLayout';
-import AddingFormSubtitle from '../presetationals/AddingFormSubtitle';
-import AddingFormTextarea from '../presetationals/AddingFormTextarea';
-import AddingFormInput from '../presetationals/AddingFormInput';
-import AddingFormButton from '../presetationals/AddingFormButton';
+import ModalLayout from '../presentationals/ModalLayout';
+import AddingFormSubtitle from '../presentationals/AddingFormSubtitle';
+import AddingFormTextarea from '../presentationals/AddingFormTextarea';
+import AddingFormInput from '../presentationals/AddingFormInput';
+import AddingFormButton from '../presentationals/AddingFormButton';
 
 export default function QuizFormContainer() {
   const dispatch = useDispatch();
@@ -41,7 +41,7 @@ export default function QuizFormContainer() {
   };
 
   return (
-    <AddingModalLayout title="문제 만들기">
+    <ModalLayout title="문제 만들기">
       <AddingFormSubtitle title="문제" />
       <AddingFormTextarea
         value={question}
@@ -64,6 +64,6 @@ export default function QuizFormContainer() {
         title="확인"
         onClick={handleAddingButtonClick}
       />
-    </AddingModalLayout>
+    </ModalLayout>
   );
 }
