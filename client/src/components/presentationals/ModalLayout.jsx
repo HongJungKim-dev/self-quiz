@@ -2,10 +2,10 @@ import React from 'react';
 
 const styles = {
   layout: {
+    position: 'fixed',
     top: '15%',
     left: '50%',
     transform: 'translate(-50%, 0)',
-    position: 'absolute',
     width: '40rem',
     borderRadius: '0.5rem',
     background: 'white',
