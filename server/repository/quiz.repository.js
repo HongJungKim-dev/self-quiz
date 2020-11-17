@@ -1,7 +1,5 @@
 const Quiz = require('../models/quiz.js');
 
-const { getCurrentDate } = require('../util.js');
-
 module.exports = {
   async createNewQuiz(userId, question, answer, lastSolved, layer, tags) {
     const quiz = await Quiz.create({
@@ -24,30 +22,26 @@ module.exports = {
     );
   },
 
-  async passQuiz(userId, quizId) {
+  async passQuiz(userId, quizId, lastSolved) {
     await Quiz.updateOne(
       { userId, _id: quizId },
       {
         $inc: {
           layer: +1,
         },
-        $set: {
-          lastSolved: getCurrentDate(),
-        },
+        $set: { lastSolved },
       },
     );
   },
 
-  async failQuiz(userId, quizId) {
+  async failQuiz(userId, quizId, lastSolved) {
     await Quiz.updateOne(
       { userId, _id: quizId },
       {
         $inc: {
           layer: -1,
         },
-        $set: {
-          lastSolved: getCurrentDate(),
-        },
+        $set: { lastSolved },
       },
     );
   },

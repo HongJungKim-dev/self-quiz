@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { getCurrentDate } from '../util';
+
 const getHeaders = () => ({
   headers: {
     Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -31,7 +33,9 @@ export default {
 
   async addQuiz(question, answer, tags) {
     try {
-      const body = { question, answer, tags };
+      const body = {
+        question, answer, tags, lastSolved: getCurrentDate(),
+      };
       const { data } = await axios.post(`${process.env.URL}/quiz`, body, getHeaders());
       const { newQuiz } = data;
 
@@ -77,7 +81,8 @@ export default {
 
   async passQuiz(quizId) {
     try {
-      await axios.patch(`${process.env.URL}/quiz/pass`, { quizId }, getHeaders());
+      const lastSolved = getCurrentDate();
+      await axios.patch(`${process.env.URL}/quiz/pass`, { quizId, lastSolved }, getHeaders());
 
       return true;
     } catch (error) {
@@ -87,7 +92,8 @@ export default {
 
   async failQuiz(quizId) {
     try {
-      await axios.patch(`${process.env.URL}/quiz/fail`, { quizId }, getHeaders());
+      const lastSolved = getCurrentDate();
+      await axios.patch(`${process.env.URL}/quiz/fail`, { quizId, lastSolved }, getHeaders());
 
       return true;
     } catch (error) {

@@ -1,19 +1,17 @@
 const quizRepo = require('../repository/quiz.repository.js');
 
-const { getCurrentDate, isParamsFull } = require('../util.js');
+const { isParamsFull } = require('../util.js');
 
 module.exports = {
   async createNewQuiz(req, res) {
-    const { userId, question, answer, tags = [] } = req.body;
+    const { userId, question, answer, tags = [], lastSolved } = req.body;
 
     if (isParamsFull(question, answer) === false) {
       res.status(400).json({ message: 'Params not full' });
       return;
     }
 
-    const lastSolved = getCurrentDate();
     const layer = 1;
-
     const newQuiz = await quizRepo.createNewQuiz(userId, question, answer, lastSolved, layer, tags);
 
     res.status(200).json({ message: 'Complete to add a new quiz', newQuiz });
@@ -41,17 +39,17 @@ module.exports = {
   },
 
   async passQuiz(req, res) {
-    const { userId, quizId } = req.body;
+    const { userId, quizId, lastSolved } = req.body;
 
-    await quizRepo.passQuiz(userId, quizId);
+    await quizRepo.passQuiz(userId, quizId, lastSolved);
 
     res.status(200).json({ message: 'Complete to make quiz pass' });
   },
 
   async failQuiz(req, res) {
-    const { userId, quizId } = req.body;
+    const { userId, quizId, lastSolved } = req.body;
 
-    await quizRepo.failQuiz(userId, quizId);
+    await quizRepo.failQuiz(userId, quizId, lastSolved);
 
     res.status(200).json({ message: 'Complete to make quiz fail' });
   },
