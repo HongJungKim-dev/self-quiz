@@ -7,7 +7,7 @@ import { loadQuizzes } from '../slice';
 import LogoutButtonContainer from '../components/LogoutButtonContainer';
 import QuizFormContainer from '../components/containers/QuizFormContainer';
 import TodaysQuiz from '../components/TodaysQuiz';
-import Tab from '../components/Tab';
+import Tab from '../components/containers/TabContainer';
 import UserTitle from '../components/UserTitle';
 
 export default function MainPage() {
