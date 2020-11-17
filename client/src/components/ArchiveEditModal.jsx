@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { setQuizForm } from '../slice';
 
-import ModalLayout from './presentationals/ModalLayout';
+import ModalLayout from './layouts/ModalLayout';
 import ArchiveEditModalInputContainer from './ArchiveEditModalInputContainer';
 import ArchiveEditModalButtonContainer from './ArchiveEditModalButtonContainer';
 

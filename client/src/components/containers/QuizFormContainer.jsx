@@ -8,7 +8,7 @@ import { convertTagStringToTags, popupMessages } from '../../util';
 
 import api from '../../apis/api';
 
-import ModalLayout from '../presentationals/ModalLayout';
+import ModalLayout from '../layouts/ModalLayout';
 import AddingFormSubtitle from '../presentationals/AddingFormSubtitle';
 import AddingFormTextarea from '../presentationals/AddingFormTextarea';
 import AddingFormInput from '../presentationals/AddingFormInput';

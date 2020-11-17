@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ModalLayout from './presentationals/ModalLayout';
+import ModalLayout from './layouts/ModalLayout';
 import ArchiveQuizModalInputContainer from './ArchiveQuizModalInputContainer';
 import ArchiveQuizModalButtonContainer from './ArchiveQuizModalButtonContainer';
 
