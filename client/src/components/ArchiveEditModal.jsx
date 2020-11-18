@@ -10,7 +10,7 @@ import ArchiveEditModalButtonContainer from './ArchiveEditModalButtonContainer';
 
 export default function ArchiveEditModal() {
   const dispatch = useDispatch();
-  const { archive } = useSelector(({ selfQuizReducer }) => selfQuizReducer.modal);
+  const { archive } = useSelector((state) => state.modal);
   const { question, answer, tagString } = archive;
 
   useEffect(() => {

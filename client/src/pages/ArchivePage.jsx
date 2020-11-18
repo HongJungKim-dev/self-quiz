@@ -8,7 +8,7 @@ import { loadQuizzes } from '../slice';
 
 export default function ArchivePage() {
   const dispatch = useDispatch();
-  const quizzes = useSelector(({ selfQuizReducer }) => selfQuizReducer.quizzes);
+  const quizzes = useSelector((state) => state.quizzes);
 
   useEffect(() => {
     if (quizzes.length === 0) {

@@ -49,7 +49,7 @@ const styles = {
 };
 
 export default function ArchiveQuizModalInput() {
-  const { archive } = useSelector(({ selfQuizReducer }) => selfQuizReducer.modal);
+  const { archive } = useSelector((state) => state.modal);
   const { question, answer, tagString } = archive;
 
   return (

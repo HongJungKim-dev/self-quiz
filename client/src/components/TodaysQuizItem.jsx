@@ -59,7 +59,7 @@ const styles = {
 
 export default function TodaysQuizItem({ quiz }) {
   const dispatch = useDispatch();
-  const { answerOn, answerForm } = useSelector(({ selfQuizReducer }) => selfQuizReducer.todays);
+  const { answerOn, answerForm } = useSelector((state) => state.todays);
 
   const { question, answer, tags } = quiz;
 

@@ -32,7 +32,7 @@ const styles = {
 };
 
 export default function Archive() {
-  const { quizzes, modal } = useSelector(({ selfQuizReducer }) => selfQuizReducer);
+  const { quizzes, modal } = useSelector((state) => state);
   const { archive, editting } = modal;
   const isArchiveFilled = Object.keys(archive).length > 0;
 

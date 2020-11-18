@@ -16,7 +16,7 @@ import AddingFormButton from '../presentationals/AddingFormButton';
 
 export default function QuizFormContainer() {
   const dispatch = useDispatch();
-  const quizForm = useSelector(({ selfQuizReducer }) => selfQuizReducer.quizForm);
+  const quizForm = useSelector((state) => state.quizForm);
   const { question, answer, tagString } = quizForm;
 
   const handleInputChange = (propName) => (e) => {

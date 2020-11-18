@@ -54,7 +54,7 @@ const styles = {
 
 export default function ArchiveEditModalInputContainer() {
   const dispatch = useDispatch();
-  const quizForm = useSelector(({ selfQuizReducer }) => selfQuizReducer.quizForm);
+  const quizForm = useSelector((state) => state.quizForm);
   const { question, answer, tagString } = quizForm;
 
   const handleInputChange = (propName) => (e) => {

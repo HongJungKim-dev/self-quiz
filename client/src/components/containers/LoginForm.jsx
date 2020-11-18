@@ -17,7 +17,7 @@ import LoginFormLogo from '../presentationals/LoginFormLogo';
 
 export default function LoginForm() {
   const dispatch = useDispatch();
-  const { id, pw } = useSelector(({ selfQuizReducer }) => selfQuizReducer.login);
+  const { id, pw } = useSelector((state) => state.login);
 
   const handleLoginIdInput = (event) => {
     dispatch(setLoginId(event.target.value));

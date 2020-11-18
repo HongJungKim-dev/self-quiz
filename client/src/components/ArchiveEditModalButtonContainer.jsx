@@ -25,7 +25,7 @@ const styles = {
 
 export default function ArchiveEditModalButtonContainer() {
   const dispatch = useDispatch();
-  const { modal, quizForm } = useSelector(({ selfQuizReducer }) => selfQuizReducer);
+  const { modal, quizForm } = useSelector((state) => state);
   const { archive } = modal;
   const { question, answer, tagString } = quizForm;
 

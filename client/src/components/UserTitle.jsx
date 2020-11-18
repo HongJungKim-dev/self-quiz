@@ -39,7 +39,7 @@ const styles = {
 
 export default function UserTitle() {
   const dispatch = useDispatch();
-  const { user, todays } = useSelector(({ selfQuizReducer }) => selfQuizReducer);
+  const { user, todays } = useSelector((state) => state);
   const { name } = user;
 
   useEffect(() => {

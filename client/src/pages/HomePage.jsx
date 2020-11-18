@@ -6,7 +6,7 @@ import MainPage from './MainPage';
 import LoginForm from '../components/containers/LoginForm';
 
 export default function HomePage() {
-  const token = useSelector(({ selfQuizReducer }) => selfQuizReducer.token);
+  const token = useSelector((state) => state.token);
 
   if (token) {
     return <MainPage />;

@@ -13,7 +13,7 @@ import HomePage from './pages/HomePage';
 import ArchivePage from './pages/ArchivePage';
 
 export default function App() {
-  const { overlay } = useSelector(({ selfQuizReducer }) => selfQuizReducer.modal);
+  const { overlay } = useSelector((state) => state.modal);
 
   return (
     <>

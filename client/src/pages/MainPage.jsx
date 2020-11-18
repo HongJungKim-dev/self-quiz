@@ -12,8 +12,7 @@ import UserTitle from '../components/UserTitle';
 
 export default function MainPage() {
   const dispatch = useDispatch();
-  const states = useSelector(({ selfQuizReducer }) => selfQuizReducer);
-  const { quizzes, modal } = states;
+  const { quizzes, modal } = useSelector((state) => state);
   const { adding, todays } = modal;
 
   useEffect(() => {

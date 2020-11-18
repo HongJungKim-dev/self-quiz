@@ -43,7 +43,7 @@ const styles = {
 };
 
 export default function TodaysQuiz() {
-  const { todays } = useSelector(({ selfQuizReducer }) => selfQuizReducer);
+  const todays = useSelector((state) => state.todays);
   const targetQuiz = todays.quizzes[0] || { question: '', answer: '', tags: [] };
 
   return (

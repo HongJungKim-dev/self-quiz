@@ -27,7 +27,7 @@ const styles = {
 
 export default function ArchiveQuizModalButtonContainer() {
   const dispatch = useDispatch();
-  const { _id } = useSelector(({ selfQuizReducer }) => selfQuizReducer.modal.archive);
+  const { _id } = useSelector((state) => state.modal.archive);
 
   const handleEditButton = async () => {
     dispatch(setEdittingModal(true));
