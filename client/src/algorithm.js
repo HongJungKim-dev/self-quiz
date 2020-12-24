@@ -26,7 +26,7 @@ const layerLimitMap = {
   7: 120,
 };
 
-const filterTodaysQuiz = (quizzes) => {
+export const filterTodaysQuiz = (quizzes) => {
   const currentDate = utilFunctions.getCurrentDate();
   const currentTotalDay = utilFunctions.getTotalDay(currentDate);
 
@@ -43,4 +43,6 @@ const filterTodaysQuiz = (quizzes) => {
   });
 };
 
-export default filterTodaysQuiz;
+export const sortByCurrent = (quizzes) => {
+  return quizzes.sort((a, b) => a.lastSolved.localeCompare(b.lastSolved));
+};

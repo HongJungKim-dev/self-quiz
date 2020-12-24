@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { convertTagStringToTags } from './util';
 
-import filterTodaysQuiz from './algorithm';
+import { filterTodaysQuiz, sortByCurrent } from './algorithm';
 
 import api from './apis/api';
 
@@ -188,7 +188,11 @@ export const loadQuizzes = () => async (dispatch) => {
   const quizzes = await api.getQuizzes();
 
   dispatch(setQuizzes(quizzes));
-  dispatch(setTodaysQuizzes(filterTodaysQuiz(quizzes)));
+
+  const filteredQuizzes = filterTodaysQuiz(quizzes);
+  const result = sortByCurrent(filteredQuizzes);
+
+  dispatch(setTodaysQuizzes(result));
 };
 
 export const loadUserName = () => async (dispatch) => {
