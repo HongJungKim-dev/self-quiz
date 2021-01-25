@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { useHistory } from 'react-router-dom';
-
-import Button from './Button';
+import Button from '../Button';
 
 const styles = {
   button: {
@@ -25,18 +23,12 @@ const styles = {
   },
 };
 
-export default function ArchiveReturnButtonContainer() {
-  const history = useHistory();
-
-  const handleReturnButtonClick = () => {
-    history.push('/');
-  };
-
+export default function ArchiveBackButton({ onClick }) {
   return (
     <Button
       title="Back"
       emotion={styles.button}
-      onClick={handleReturnButtonClick}
+      onClick={onClick}
     />
   );
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import Archive from '../components/Archive';
+import ArchiveContainer from '../components/containers/ArchiveContainer';
 
 import { loadQuizzes } from '../slice';
 
@@ -16,5 +16,5 @@ export default function ArchivePage() {
     }
   }, []);
 
-  return <Archive />;
+  return <ArchiveContainer />;
 }

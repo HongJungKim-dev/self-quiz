@@ -17,7 +17,7 @@ const styles = {
   },
 };
 
-export default function ArchiveQuiz({ question, onClick }) {
+export default function ArchiveItem({ question, onClick }) {
   return (
     <div onClick={onClick} css={styles.layout}>
       <div>Q. {question}</div>
