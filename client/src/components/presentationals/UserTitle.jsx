@@ -1,8 +1,4 @@
-import React, { useEffect } from 'react';
-
-import { useDispatch, useSelector } from 'react-redux';
-
-import { loadUserName } from '../slice';
+import React from 'react';
 
 const styles = {
   title: {
@@ -37,20 +33,10 @@ const styles = {
   },
 };
 
-export default function UserTitle() {
-  const dispatch = useDispatch();
-  const { user, todays } = useSelector((state) => state);
-  const { name } = user;
-
-  useEffect(() => {
-    if (!name) {
-      dispatch(loadUserName());
-    }
-  }, []);
-
+export default function UserTitle({ user, todays }) {
   return (
     <div css={styles.title}>
-      <div css={styles.name}>{name}님,</div>
+      <div css={styles.name}>{user.name}님,</div>
       <div css={styles.text}>오늘 복습해야 할 문제는 총 {todays.quizzes.length}문제 입니다.</div>
     </div>
   );
