@@ -15,7 +15,7 @@ import LoginFormButton from '../presentationals/LoginFormButton';
 import LoginFormLayout from '../layouts/LoginFormLayout';
 import LoginFormLogo from '../presentationals/LoginFormLogo';
 
-export default function LoginForm() {
+export default function LoginFormContainer() {
   const dispatch = useDispatch();
   const { id, pw } = useSelector((state) => state.login);
 

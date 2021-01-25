@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import MainPage from './MainPage';
-import LoginForm from '../components/containers/LoginForm';
+import LoginFormContainer from '../components/containers/LoginFormContainer';
 
 export default function HomePage() {
   const token = useSelector((state) => state.token);
@@ -12,5 +12,5 @@ export default function HomePage() {
     return <MainPage />;
   }
 
-  return <LoginForm />;
+  return <LoginFormContainer />;
 }
