@@ -6,8 +6,6 @@ import { setTodaysAnswerOn, removeTodaysQuiz, setAnswerForm } from '../slice';
 
 import api from '../apis/api';
 
-import Button from './Button';
-
 const styles = {
   layout: {
     display: 'flex',
@@ -62,23 +60,29 @@ export default function TodaysQuiz({ quiz }) {
     <>
       <div css={styles.layout}>
         <div>
-          <Button
-            title="정답 확인하기"
+          <button
+            type="button"
             onClick={handleShowAnswerButton}
-            emotion={styles.button}
-          />
+            css={styles.button}
+          >
+            정답 확인하기
+          </button>
         </div>
         <div css={styles.bundle}>
-          <Button
-            title="실패"
+          <button
+            type="button"
             onClick={handleFailButton}
-            emotion={{ ...styles.button, background: 'black' }}
-          />
-          <Button
-            title="통과"
+            css={{ ...styles.button, background: 'black' }}
+          >
+            실패
+          </button>
+          <button
+            type="button"
             onClick={handlePassButton}
-            emotion={{ ...styles.button, background: 'green' }}
-          />
+            css={{ ...styles.button, background: 'green' }}
+          >
+            통과
+          </button>
         </div>
       </div>
     </>

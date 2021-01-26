@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Button from '../Button';
-
 const styles = {
   button: {
     position: 'absolute',
@@ -27,10 +25,12 @@ const styles = {
 
 export default function LogoutButton({ onClick }) {
   return (
-    <Button
-      title="로그아웃"
+    <button
+      type="button"
       onClick={onClick}
-      emotion={styles.button}
-    />
+      css={styles.button}
+    >
+      로그아웃
+    </button>
   );
 }

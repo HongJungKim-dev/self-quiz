@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Button from '../Button';
-
 const styles = {
   button: {
     width: '50%',
@@ -22,26 +20,32 @@ export default function ArchiveModalButton({
 }) {
   if (isEditMode) {
     return (
-      <Button
-        title="수정"
+      <button
+        type="button"
         onClick={handleEditCompleteButton}
-        emotion={{ ...styles.button, width: '100%' }}
-      />
+        css={{ ...styles.button, width: '100%' }}
+      >
+        수정
+      </button>
     );
   }
 
   return (
     <>
-      <Button
-        title="수정"
+      <button
+        type="button"
         onClick={handleEditButton}
-        emotion={{ ...styles.button }}
-      />
-      <Button
-        title="삭제"
+        css={{ ...styles.button }}
+      >
+        수정
+      </button>
+      <button
+        type="button"
         onClick={handleDeleteButton}
-        emotion={{ ...styles.button, background: 'black' }}
-      />
+        css={{ ...styles.button, background: 'black' }}
+      >
+        삭제
+      </button>
     </>
   );
 }

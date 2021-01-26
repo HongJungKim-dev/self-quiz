@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Button from '../Button';
-
 const styles = {
   button: {
     position: 'fixed',
@@ -25,10 +23,12 @@ const styles = {
 
 export default function ArchiveBackButton({ onClick }) {
   return (
-    <Button
-      title="Back"
-      emotion={styles.button}
+    <button
+      type="button"
       onClick={onClick}
-    />
+      css={styles.button}
+    >
+      Back
+    </button>
   );
 }
