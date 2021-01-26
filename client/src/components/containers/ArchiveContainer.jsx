@@ -4,12 +4,9 @@ import { useHistory } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setArchiveQuizModal, setOverlay } from '../../slice';
+import { setArchiveQuizModal, setOverlay, setQuizForm } from '../../slice';
 
 import { convertTagsToTagString } from '../../util';
-
-import ArchiveQuizModal from '../ArchiveQuizModal';
-import ArchiveEditModal from '../ArchiveEditModal';
 
 import ArchiveItems from '../presentationals/ArchiveItems';
 import ArchiveBackButton from '../presentationals/ArchiveBackButton';
@@ -23,9 +20,7 @@ export default function ArchiveContainer() {
   };
 
   const dispatch = useDispatch();
-  const { quizzes, modal } = useSelector((state) => state);
-  const { archive, editting } = modal;
-  const isArchiveFilled = Object.keys(archive).length > 0;
+  const quizzes = useSelector((state) => state.quizzes);
 
   const handleItemClick = (quiz) => () => {
     const {
@@ -37,14 +32,13 @@ export default function ArchiveContainer() {
     dispatch(setArchiveQuizModal({
       question, answer, lastSolved, layer, tagString, _id,
     }));
+    dispatch(setQuizForm({ question, answer, tagString }));
     dispatch(setOverlay(true));
   };
 
   return (
     <ArchiveLayout>
       <ArchiveBackButton onClick={handleBackButtonClick} />
-      {isArchiveFilled && <ArchiveQuizModal />}
-      {editting && <ArchiveEditModal />}
       <ArchiveItems
         quizzes={quizzes}
         handleItemClick={handleItemClick}
