@@ -1,7 +1,6 @@
 import React from 'react';
 
 import TodaysQuizButton from './TodaysQuizButton';
-import Textarea from './Textarea';
 
 const styles = {
   overlay: {
@@ -90,13 +89,13 @@ export default function TodaysQuizEmpty() {
       </div>
       <div css={styles.count}>남은 문제: 0</div>
       <div css={styles.question}>Q. {dummyQuiz.question}</div>
-      <Textarea
+      <textarea
         value={`A. ${dummyQuiz.answer}`}
-        emotion={styles.answer}
+        css={styles.answer}
         disabled="disabled"
       />
-      <Textarea
-        emotion={styles.box}
+      <textarea
+        css={styles.box}
         placeholder="정답을 입력하세요."
       />
       <div css={styles.notice}>

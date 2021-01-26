@@ -4,8 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { setAnswerForm } from '../slice';
 
-import Textarea from './Textarea';
-
 const styles = {
   question: {
     fontSize: '1.8rem',
@@ -72,15 +70,15 @@ export default function TodaysQuizItem({ quiz }) {
       <div css={styles.question}>
         Q. {question}
       </div>
-      <Textarea
+      <textarea
         value={`A. ${answer}`}
-        emotion={{ ...styles.answer, ...(answerOn ? styles.on : styles.off) }}
+        css={{ ...styles.answer, ...(answerOn ? styles.on : styles.off) }}
         disabled="disabled"
       />
-      <Textarea
+      <textarea
         value={answerForm}
         onChange={handleAnswerForm}
-        emotion={styles.box}
+        css={styles.box}
         placeholder="정답을 입력하세요."
       />
       <div css={styles.notice}>
