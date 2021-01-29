@@ -10,6 +10,7 @@ import {
 
 import Overlay from './pages/Overlay';
 import HomePage from './pages/HomePage';
+import TodaysQuizPage from './pages/TodaysQuizPage';
 import ArchivePage from './pages/ArchivePage';
 
 export default function App() {
@@ -22,6 +23,9 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <HomePage />
+          </Route>
+          <Route path="/quiz">
+            <TodaysQuizPage />
           </Route>
           <Route path="/archive">
             <ArchivePage />

@@ -19,8 +19,9 @@ export default function Tab() {
   };
 
   const handleTodaysButton = () => {
-    dispatch(setTodaysQuizModal(true));
-    dispatch(setOverlay(true));
+    history.push('/quiz');
+    // dispatch(setTodaysQuizModal(true));
+    // dispatch(setOverlay(true));
   };
 
   return (

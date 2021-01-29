@@ -8,7 +8,7 @@ import { popupMessages } from '../util';
 
 import QuizFormContainer from '../components/containers/QuizFormContainer';
 import TodaysQuiz from '../components/TodaysQuiz';
-import Tab from '../components/containers/TabContainer';
+import TabContainer from '../components/containers/TabContainer';
 import UserTitle from '../components/presentationals/UserTitle';
 import LogoutButton from '../components/presentationals/LogoutButton';
 
@@ -42,7 +42,7 @@ export default function MainPage() {
       {adding && <QuizFormContainer />}
       {isOpenedTodayQuiz && <TodaysQuiz />}
       <UserTitle user={user} todays={todays} />
-      <Tab />
+      <TabContainer />
     </div>
   );
 }

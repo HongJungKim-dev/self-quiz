@@ -72,14 +72,14 @@ export default function TodaysQuiz({ quiz }) {
           <button
             type="button"
             onClick={handleFailButton}
-            css={{ ...styles.button, background: 'black' }}
+            css={{ ...styles.button, background: '#bf0a0a' }}
           >
             실패
           </button>
           <button
             type="button"
             onClick={handlePassButton}
-            css={{ ...styles.button, background: 'green' }}
+            css={{ ...styles.button, background: '#2a5582' }}
           >
             통과
           </button>
