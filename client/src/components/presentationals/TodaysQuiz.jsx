@@ -43,7 +43,11 @@ export default function TodaysQuiz({
           />
         )
         : (
-          <button type="button" css={styles.button} onClick={onAnswerClick}>
+          <button
+            type="button"
+            css={styles.button}
+            onClick={onAnswerClick}
+          >
             정답 확인하기
           </button>
         )}
