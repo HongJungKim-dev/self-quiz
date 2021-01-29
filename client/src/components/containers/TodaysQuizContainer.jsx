@@ -26,15 +26,14 @@ export default function TodaysQuizContainer() {
     dispatch(setTodaysAnswerOn(true));
   };
 
-  const handlePassButton = async () => {
-    await api.passQuiz(targetQuiz._id);
+  const handlePassButton = () => {
+    api.passQuiz(targetQuiz._id);
     dispatch(removeTodaysQuiz(targetQuiz._id));
     dispatch(setTodaysAnswerOn(false));
-    dispatch(setAnswerForm(''));
   };
 
-  const handleFailButton = async () => {
-    await api.failQuiz(targetQuiz._id);
+  const handleFailButton = () => {
+    api.failQuiz(targetQuiz._id);
     dispatch(removeTodaysQuiz(targetQuiz._id));
     dispatch(setTodaysAnswerOn(false));
     dispatch(setAnswerForm(''));
