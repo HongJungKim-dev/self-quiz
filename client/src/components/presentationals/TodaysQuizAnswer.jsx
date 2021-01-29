@@ -35,7 +35,7 @@ const styles = {
     display: 'block',
     width: '100%',
     height: '100%',
-    background: 'white',
+    backgroundColor: 'white',
     fontSize: '1.2rem',
     resize: 'none',
     padding: '20px 35px',
