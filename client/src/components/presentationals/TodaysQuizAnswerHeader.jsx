@@ -30,13 +30,17 @@ const styles = {
 };
 
 export default function TodaysQuizAnswerHeader({ quiz }) {
+  const tagElement = quiz.tags.length === 0
+    ? <span>#No Tags</span>
+    : quiz.tags.map((tag) => <span>#{tag} </span>);
+
   return (
     <div css={styles.header}>
       <div>
         <div css={styles.text}>정답</div>
       </div>
       <div css={styles.dataLayout}>
-        <div css={styles.data}>{quiz.tags.map((tag) => <span>#{tag} </span>)}</div>
+        <div css={styles.data}>{tagElement}</div>
         <div css={styles.data}>{quiz.layer}레벨</div>
       </div>
     </div>
