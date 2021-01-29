@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import { useHistory } from 'react-router-dom';
 
-import { setAddingModal, setTodaysQuizModal, setOverlay } from '../../slice';
+import { setAddingModal, setOverlay } from '../../slice';
 
 import TabLayout from '../layouts/TabLayout';
 import TabButton from '../presentationals/TabButton';
@@ -20,8 +20,6 @@ export default function Tab() {
 
   const handleTodaysButton = () => {
     history.push('/quiz');
-    // dispatch(setTodaysQuizModal(true));
-    // dispatch(setOverlay(true));
   };
 
   return (

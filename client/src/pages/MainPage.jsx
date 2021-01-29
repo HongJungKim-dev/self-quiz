@@ -7,7 +7,6 @@ import { loadQuizzes, loadUserName, setToken } from '../slice';
 import { popupMessages } from '../util';
 
 import QuizFormContainer from '../components/containers/QuizFormContainer';
-import TodaysQuiz from '../components/TodaysQuiz';
 import TabContainer from '../components/containers/TabContainer';
 import UserTitle from '../components/presentationals/UserTitle';
 import LogoutButton from '../components/presentationals/LogoutButton';
@@ -17,7 +16,7 @@ export default function MainPage() {
   const {
     quizzes, modal, user, todays,
   } = useSelector((state) => state);
-  const { adding, todays: isOpenedTodayQuiz } = modal;
+  const { adding } = modal;
 
   const handleLogoutButtonClick = async () => {
     localStorage.removeItem('token');
@@ -40,7 +39,6 @@ export default function MainPage() {
     <div>
       <LogoutButton onClick={handleLogoutButtonClick} />
       {adding && <QuizFormContainer />}
-      {isOpenedTodayQuiz && <TodaysQuiz />}
       <UserTitle user={user} todays={todays} />
       <TabContainer />
     </div>

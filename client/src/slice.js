@@ -33,7 +33,6 @@ export const { reducer, actions } = createSlice({
     todays: {
       answerOn: false,
       quizzes: [],
-      answerForm: '',
     },
   },
   reducers: {
@@ -125,9 +124,6 @@ export const { reducer, actions } = createSlice({
         },
       };
     },
-    setTodaysQuizModal(state, { payload }) {
-      return { ...state, modal: { ...state.modal, todays: payload } };
-    },
     setTodaysAnswerOn(state, { payload }) {
       return { ...state, todays: { ...state.todays, answerOn: payload } };
     },
@@ -146,15 +142,6 @@ export const { reducer, actions } = createSlice({
         todays: {
           ...state.todays,
           quizzes: state.todays.quizzes.filter((quiz) => quiz._id !== quizId),
-        },
-      };
-    },
-    setAnswerForm(state, { payload }) {
-      return {
-        ...state,
-        todays: {
-          ...state.todays,
-          answerForm: payload,
         },
       };
     },
@@ -177,11 +164,9 @@ export const {
   setArchiveQuizModal,
   setEdittingModal,
   closeAllModal,
-  setTodaysQuizModal,
   setTodaysAnswerOn,
   setTodaysQuizzes,
   removeTodaysQuiz,
-  setAnswerForm,
 } = actions;
 
 export const loadQuizzes = () => async (dispatch) => {
