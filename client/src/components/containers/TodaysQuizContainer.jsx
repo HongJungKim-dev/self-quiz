@@ -11,15 +11,7 @@ import { popupMessages } from '../../util';
 import api from '../../apis/api';
 
 import TodaysQuiz from '../presentationals/TodaysQuiz';
-
-const styles = {
-  layout: {
-    width: '80vw',
-    maxWidth: '80rem',
-    height: '100vh',
-    margin: '0 auto',
-  },
-};
+import TodaysQuizLayout from '../layouts/TodaysQuizLayout';
 
 export default function TodaysQuizContainer() {
   const dispatch = useDispatch();
@@ -48,7 +40,7 @@ export default function TodaysQuizContainer() {
   }
 
   return (
-    <div css={styles.layout}>
+    <TodaysQuizLayout>
       <TodaysQuiz
         quiz={targetQuiz}
         answerOn={todays.answerOn}
@@ -57,6 +49,6 @@ export default function TodaysQuizContainer() {
         onKeepClick={() => {}}
         onFailClick={handleFailButton}
       />
-    </div>
+    </TodaysQuizLayout>
   );
 }
