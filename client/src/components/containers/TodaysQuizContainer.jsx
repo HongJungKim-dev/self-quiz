@@ -1,8 +1,12 @@
 import React from 'react';
 
+import { Redirect } from 'react-router-dom';
+
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setTodaysAnswerOn, removeTodaysQuiz, setAnswerForm } from '../../slice';
+import { setTodaysAnswerOn, removeTodaysQuiz } from '../../slice';
+
+import { popupMessages } from '../../util';
 
 import api from '../../apis/api';
 
@@ -20,7 +24,7 @@ const styles = {
 export default function TodaysQuizContainer() {
   const dispatch = useDispatch();
   const todays = useSelector((state) => state.todays);
-  const targetQuiz = todays.quizzes[0] || { question: '', answer: '', tags: [] };
+  const targetQuiz = todays.quizzes[0];
 
   const handleShowAnswerButton = () => {
     dispatch(setTodaysAnswerOn(true));
@@ -36,8 +40,12 @@ export default function TodaysQuizContainer() {
     api.failQuiz(targetQuiz._id);
     dispatch(removeTodaysQuiz(targetQuiz._id));
     dispatch(setTodaysAnswerOn(false));
-    dispatch(setAnswerForm(''));
   };
+
+  if (!targetQuiz) {
+    popupMessages.success('오늘의 모든 문제를 다 풀었습니다!', 2000);
+    return <Redirect to="/" />;
+  }
 
   return (
     <div css={styles.layout}>
