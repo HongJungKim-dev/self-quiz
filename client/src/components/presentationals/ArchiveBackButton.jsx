@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { colors } from '../../static';
+import { colors, size } from '../../static';
 
 const styles = {
   button: {
     position: 'fixed',
     width: '7rem',
     height: '3rem',
-    fontSize: '1rem',
+    fontSize: size.smallText,
     fontWeight: 'bold',
     color: 'white',
     background: `linear-gradient(90deg, #000000, ${colors.dark})`,

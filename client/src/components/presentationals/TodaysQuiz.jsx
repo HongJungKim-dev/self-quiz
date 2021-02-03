@@ -2,7 +2,7 @@ import React from 'react';
 
 import TodaysQuizAnswer from './TodaysQuizAnswer';
 
-import { colors } from '../../static';
+import { colors, size } from '../../static';
 
 const styles = {
   layout: {
@@ -12,7 +12,7 @@ const styles = {
   question: {
     textAlign: 'center',
     color: 'white',
-    fontSize: '3rem',
+    fontSize: size.title,
     marginBottom: '3rem',
   },
   button: {
@@ -25,9 +25,9 @@ const styles = {
     borderRadius: '6px',
     fontWeight: 'bold',
     cursor: 'pointer',
-    '&:hover' : {
+    '&:hover': {
       backgroundColor: `${colors.light}`,
-    }
+    },
   },
 };
 

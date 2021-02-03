@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { colors } from '../../static';
+import { colors, size } from '../../static';
 
 const style = {
   width: '100%',
   marginTop: '2rem',
   height: '3rem',
-  fontSize: '1.4rem',
+  fontSize: size.smallTitle,
   fontWeight: 'bold',
   color: 'white',
   background: `${colors.main}`,

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { colors } from '../../static';
+import { colors, size } from '../../static';
 
 const style = {
   display: 'block',
-  fontSize: '1rem',
+  fontSize: size.smallText,
   width: '96%',
   height: '3rem',
   border: 'none',

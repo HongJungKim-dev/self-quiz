@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { size } from '../../static';
+
 const style = {
   fontWeight: 'bold',
-  fontSize: '1.3rem',
+  fontSize: size.text,
   marginTop: '1rem',
 };
 

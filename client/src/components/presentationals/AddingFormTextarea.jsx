@@ -1,10 +1,12 @@
 import React from 'react';
 
+import { size } from '../../static';
+
 const style = {
   display: 'block',
   width: '100%',
   height: '8rem',
-  fontSize: '1rem',
+  fontSize: size.smallText,
   padding: '0.7rem',
   boxSizing: 'border-box',
   borderRadius: '0.4rem',

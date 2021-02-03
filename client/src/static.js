@@ -6,3 +6,10 @@ export const colors = {
   dark: '#111d2a',
   faintWhite: '#cfcfcf',
 };
+
+export const size = {
+  title: '3rem',
+  smallTitle: '1.5rem',
+  text: '1.2rem',
+  smallText: '1rem',
+};

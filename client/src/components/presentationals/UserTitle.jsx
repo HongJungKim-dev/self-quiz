@@ -1,4 +1,5 @@
 import React from 'react';
+import { size } from '../../static';
 
 const styles = {
   title: {
@@ -12,7 +13,7 @@ const styles = {
     },
   },
   name: {
-    fontSize: '3rem',
+    fontSize: size.title,
     fontWeight: 'bold',
     color: 'white',
     marginTop: '10rem',
@@ -21,7 +22,7 @@ const styles = {
     },
   },
   text: {
-    fontSize: '1.5rem',
+    fontSize: size.smallTitle,
     color: 'white',
     marginBottom: '10rem',
     '@media (max-width: 960px)': {

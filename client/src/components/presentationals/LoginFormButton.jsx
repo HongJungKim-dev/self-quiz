@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { colors } from '../../static';
+import { colors, size } from '../../static';
 
 const style = {
-  fontSize: '1rem',
+  fontSize: size.smallText,
   fontWeight: 'bold',
   color: 'white',
   width: '100%',

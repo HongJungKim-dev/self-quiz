@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { colors } from '../../static';
+import { colors, size } from '../../static';
 
 const style = {
   border: 'none',
@@ -11,7 +11,7 @@ const style = {
   boxShadow: `0 0 6px 0px ${colors.faintWhite}`,
   background: 'linear-gradient(45deg, black, transparent)',
   color: 'white',
-  fontSize: '1.3rem',
+  fontSize: size.smallTitle,
   fontWeight: 'bold',
   '&:hover': {
     background: `${colors.main}`,

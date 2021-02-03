@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { size } from '../../static';
+
 const styles = {
   title: {
-    fontSize: '2rem',
+    fontSize: size.smallTitle,
     fontWeight: 'bold',
     color: 'white',
     margin: '10rem 0 3rem 0',

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { colors } from '../../static';
+import { colors, size } from '../../static';
 
 const styles = {
   header: {
@@ -16,7 +16,7 @@ const styles = {
     borderRadius: '3px 0 5px 0',
     color: 'white',
     fontWeight: 'bold',
-    fontSize: '1rem',
+    fontSize: size.smallText,
   },
   dataLayout: {
     display: 'flax',
@@ -27,7 +27,7 @@ const styles = {
     padding: '5px 20px',
     borderRadius: '0 0 5px 5px',
     color: 'white',
-    fontSize: '1rem',
+    fontSize: size.smallText,
   },
 };
 

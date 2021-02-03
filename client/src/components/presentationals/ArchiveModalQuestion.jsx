@@ -1,16 +1,18 @@
 import React from 'react';
 
+import { size } from '../../static';
+
 const styles = {
   text: {
     fontWeight: 'bold',
-    fontSize: '1.3rem',
+    fontSize: size.text,
     marginTop: '1rem',
   },
   textarea: {
     display: 'block',
     width: '100%',
     height: '7rem',
-    fontSize: '1rem',
+    fontSize: size.smallText,
     padding: '0.7rem',
     boxSizing: 'border-box',
     borderRadius: '0.4rem',

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { colors } from '../../static';
+import { colors, size } from '../../static';
 
 const styles = {
   button: {
@@ -8,7 +8,7 @@ const styles = {
     height: '2rem',
     border: 'none',
     color: 'white',
-    fontSize: '1rem',
+    fontSize: size.smallText,
     fontWeight: 'bold',
     borderRadius: '0.4rem',
     cursor: 'pointer',
