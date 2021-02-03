@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { colors } from '../../static';
+
 const styles = {
   layout: {
     padding: '1rem 3rem',
-    boxShadow: '0 0 7px 1px #cfcfcf',
+    boxShadow: `0 0 7px 1px ${colors.faintWhite}`,
     borderRadius: '1rem',
     marginTop: '0.5rem',
     color: 'white',

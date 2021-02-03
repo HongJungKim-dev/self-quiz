@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { colors } from '../../static';
+
 const styles = {
   layout: {
     position: 'fixed',
@@ -9,7 +11,7 @@ const styles = {
     width: '40rem',
     borderRadius: '0.5rem',
     background: 'white',
-    boxShadow: '0 0 11px 0px #244a72',
+    boxShadow: `0 0 11px 0px ${colors.main}`,
     zIndex: 2,
     '@media (max-width: 720px)': {
       width: '90vw',
@@ -18,7 +20,7 @@ const styles = {
   title: {
     fontSize: '1.5rem',
     fontWeight: 'bold',
-    background: '#244a72',
+    background: `${colors.main}`,
     color: 'white',
     padding: '0.4rem 1rem',
     boxSizing: 'border-box',

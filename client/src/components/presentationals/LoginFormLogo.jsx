@@ -1,12 +1,14 @@
 import React from 'react';
 
+import { colors } from '../../static';
+
 const styles = {
   text: {
     marginTop: '2rem',
     textAlign: 'center',
     fontSize: '2rem',
     fontWeight: 'bold',
-    color: '#244a72',
+    color: `${colors.main}`,
   },
   logo: {
     width: '12rem',

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { colors } from '../../static';
+
 const styles = {
   button: {
     width: '50%',
@@ -10,7 +12,7 @@ const styles = {
     fontWeight: 'bold',
     borderRadius: '0.4rem',
     cursor: 'pointer',
-    background: '#244a72',
+    background: `${colors.main}`,
     outline: 'none',
   },
 };

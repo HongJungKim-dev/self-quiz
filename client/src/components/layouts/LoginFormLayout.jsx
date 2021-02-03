@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { colors } from '../../static';
+
 const styles = {
   layout: {
     position: 'absolute',
@@ -7,9 +9,9 @@ const styles = {
     left: '50%',
     transform: 'translate(-50%, 0)',
     width: '30rem',
-    borderRadius: '0.5rem',
+    borderRadius: '0.6rem',
     background: 'white',
-    boxShadow: '0 0 11px 0px #244a72',
+    boxShadow: `0 0 11px 0px ${colors.main}`,
     '@media (max-width: 480px)': {
       width: '100vw',
     },
@@ -19,7 +21,7 @@ const styles = {
     },
   },
   emptyHeader: {
-    background: '#092747',
+    background: `${colors.dark}`,
     height: '3rem',
     borderRadius: '0.5rem 0.5rem 0 0',
   },

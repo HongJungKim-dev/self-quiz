@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { colors } from '../../static';
+
 const style = {
   width: '100%',
   marginTop: '2rem',
@@ -7,7 +9,7 @@ const style = {
   fontSize: '1.4rem',
   fontWeight: 'bold',
   color: 'white',
-  background: '#244a72',
+  background: `${colors.main}`,
   border: 'none',
   borderRadius: '0.5rem',
 };

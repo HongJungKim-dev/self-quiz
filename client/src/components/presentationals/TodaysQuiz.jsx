@@ -2,6 +2,8 @@ import React from 'react';
 
 import TodaysQuizAnswer from './TodaysQuizAnswer';
 
+import { colors } from '../../static';
+
 const styles = {
   layout: {
     position: 'relative',
@@ -13,17 +15,19 @@ const styles = {
     fontSize: '3rem',
     marginBottom: '3rem',
   },
-
   button: {
     display: 'block',
     margin: '0 auto',
     padding: '0.5rem 1rem',
-    backgroundColor: '#2a5582',
+    backgroundColor: `${colors.main}`,
     color: 'white',
     border: 'none',
     borderRadius: '6px',
     fontWeight: 'bold',
     cursor: 'pointer',
+    '&:hover' : {
+      backgroundColor: `${colors.light}`,
+    }
   },
 };
 

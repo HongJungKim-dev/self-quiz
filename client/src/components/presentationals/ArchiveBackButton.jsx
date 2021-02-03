@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { colors } from '../../static';
+
 const styles = {
   button: {
     position: 'fixed',
@@ -8,12 +10,12 @@ const styles = {
     fontSize: '1rem',
     fontWeight: 'bold',
     color: 'white',
-    background: 'linear-gradient(90deg,#000000,#263443 )',
+    background: `linear-gradient(90deg, #000000, ${colors.dark})`,
     border: 'none',
     borderRadius: '0.6rem',
     cursor: 'pointer',
     margin: '2rem 1rem',
-    boxShadow: '0 0 8px 0px #ffffff',
+    boxShadow: `0 0 8px 0px ${colors.faintWhite}`,
     '@media (max-width: 960px)': {
       width: '12vw',
       fontSize: '2vw',
