@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { colors } from '../../static';
+import { color } from '../../static';
 
 const styles = {
   layout: {
     padding: '1rem 3rem',
-    boxShadow: `0 0 7px 1px ${colors.faintWhite}`,
+    boxShadow: `0 0 7px 1px ${color.faintWhite}`,
     borderRadius: '1rem',
     marginTop: '0.5rem',
     color: 'white',
     cursor: 'pointer',
     '&:hover': {
-      background: 'black',
+      backgroundColor: color.main,
     },
     '@media (max-width: 960px)': {
       padding: '1rem 5vw',

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { colors, size } from '../../static';
+import { color, size } from '../../static';
 
 const style = {
   fontSize: size.smallText,
@@ -15,7 +15,7 @@ const style = {
 };
 
 export default function LoginButton({ title, onClick }) {
-  style.backgroundColor = title === '로그인' ? colors.main : colors.light;
+  style.backgroundColor = title === '로그인' ? color.main : color.light;
 
   return (
     <button type="button" onClick={onClick} css={style}>

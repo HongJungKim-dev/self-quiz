@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { colors, size } from '../../static';
+import { color, size } from '../../static';
 
 const styles = {
   header: {
@@ -11,7 +11,7 @@ const styles = {
     paddingBottom: '1rem',
   },
   text: {
-    backgroundColor: `${colors.main}`,
+    backgroundColor: color.main,
     padding: '5px 50px',
     borderRadius: '3px 0 5px 0',
     color: 'white',
@@ -23,7 +23,7 @@ const styles = {
   },
   data: {
     marginLeft: '0.1em',
-    backgroundColor: `${colors.main}`,
+    backgroundColor: color.main,
     padding: '5px 20px',
     borderRadius: '0 0 5px 5px',
     color: 'white',

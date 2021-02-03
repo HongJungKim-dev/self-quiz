@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { colors } from '../../static';
+import { color } from '../../static';
 
 const style = {
-  background: `linear-gradient(90deg, ${colors.dark}, ${colors.main})`,
+  background: `linear-gradient(90deg, ${color.dark}, ${color.main})`,
   width: '100%',
 };
 

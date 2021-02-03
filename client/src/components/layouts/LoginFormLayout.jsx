@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { colors } from '../../static';
+import { color } from '../../static';
 
 const styles = {
   layout: {
@@ -10,8 +10,8 @@ const styles = {
     transform: 'translate(-50%, 0)',
     width: '30rem',
     borderRadius: '0.6rem',
-    background: 'white',
-    boxShadow: `0 0 11px 0px ${colors.main}`,
+    backgroundColor: 'white',
+    boxShadow: `0 0 11px 0px ${color.main}`,
     '@media (max-width: 480px)': {
       width: '100vw',
     },
@@ -21,7 +21,7 @@ const styles = {
     },
   },
   emptyHeader: {
-    background: `${colors.dark}`,
+    backgroundColor: color.dark,
     height: '3rem',
     borderRadius: '0.5rem 0.5rem 0 0',
   },

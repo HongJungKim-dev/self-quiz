@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { colors, size } from '../../static';
+import { color, size } from '../../static';
 
 const style = {
   border: 'none',
@@ -8,13 +8,13 @@ const style = {
   width: '20rem',
   height: '20rem',
   margin: '0.5rem',
-  boxShadow: `0 0 6px 0px ${colors.faintWhite}`,
+  boxShadow: `0 0 6px 0px ${color.faintWhite}`,
   background: 'linear-gradient(45deg, black, transparent)',
   color: 'white',
   fontSize: size.smallTitle,
   fontWeight: 'bold',
   '&:hover': {
-    background: `${colors.main}`,
+    backgroundColor: color.main,
     cursor: 'pointer',
   },
   '@media (max-width: 960px)': {

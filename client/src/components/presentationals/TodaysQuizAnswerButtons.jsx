@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { colors, size } from '../../static';
+import { color, size } from '../../static';
 
 const styles = {
   layout: {
@@ -30,19 +30,19 @@ export default function TodaysQuizAnswerButtons({ onFailClick, onKeepClick, onPa
     <div css={styles.layout}>
       <button
         type="button"
-        css={{ ...styles.button, backgroundColor: colors.red }}
+        css={{ ...styles.button, backgroundColor: color.red }}
         onClick={onFailClick}
       >FAIL
       </button>
       <button
         type="button"
-        css={{ ...styles.button, backgroundColor: colors.green }}
+        css={{ ...styles.button, backgroundColor: color.green }}
         onClick={onKeepClick}
       >KEEP
       </button>
       <button
         type="button"
-        css={{ ...styles.button, backgroundColor: colors.main }}
+        css={{ ...styles.button, backgroundColor: color.main }}
         onClick={onPassClick}
       >PASS
       </button>

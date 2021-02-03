@@ -16,7 +16,7 @@ const styles = {
     padding: '0.7rem',
     boxSizing: 'border-box',
     borderRadius: '0.4rem',
-    background: 'white',
+    backgroundColor: 'white',
     resize: 'none',
     '@media (max-width: 720px)': {
       fontSize: '2vw',

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { colors, size } from '../../static';
+import { color, size } from '../../static';
 
 const styles = {
   button: {
@@ -8,15 +8,15 @@ const styles = {
     right: 0,
     width: '7rem',
     height: '3rem',
-    fontSize: size.smallText,
+    fontSize: size.sm,
     fontWeight: 'bold',
     color: 'white',
-    background: `linear-gradient(90deg, ${colors.dark}, ${colors.main})`,
+    background: `linear-gradient(90deg, ${color.dark}, ${color.main})`,
     border: 'none',
     borderRadius: '0.6rem',
     cursor: 'pointer',
     margin: '2rem',
-    boxShadow: `0 0 8px 0px ${colors.faintWhite}`,
+    boxShadow: `0 0 8px 0px ${color.faintWhite}`,
     '@media (max-width: 680px)': {
       fontSize: '3vw',
       width: '20vw',

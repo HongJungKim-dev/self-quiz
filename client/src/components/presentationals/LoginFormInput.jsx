@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { colors, size } from '../../static';
+import { color, size } from '../../static';
 
 const style = {
   display: 'block',
@@ -8,7 +8,7 @@ const style = {
   width: '96%',
   height: '3rem',
   border: 'none',
-  borderBottom: `1px solid ${colors.light}`,
+  borderBottom: `1px solid ${color.light}`,
   paddingLeft: '1rem',
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 import TodaysQuizAnswer from './TodaysQuizAnswer';
 
-import { colors, size } from '../../static';
+import { color, size } from '../../static';
 
 const styles = {
   layout: {
@@ -19,14 +19,14 @@ const styles = {
     display: 'block',
     margin: '0 auto',
     padding: '0.5rem 1rem',
-    backgroundColor: `${colors.main}`,
+    backgroundColor: color.main,
     color: 'white',
     border: 'none',
     borderRadius: '6px',
     fontWeight: 'bold',
     cursor: 'pointer',
     '&:hover': {
-      backgroundColor: `${colors.light}`,
+      backgroundColor: color.light,
     },
   },
 };

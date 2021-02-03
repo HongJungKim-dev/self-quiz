@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { colors } from '../../static';
+import { color } from '../../static';
 
 const styles = {
   text: {
@@ -8,7 +8,7 @@ const styles = {
     textAlign: 'center',
     fontSize: '2rem',
     fontWeight: 'bold',
-    color: `${colors.main}`,
+    color: color.main,
   },
   logo: {
     width: '12rem',

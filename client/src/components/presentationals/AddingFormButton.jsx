@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { colors, size } from '../../static';
+import { color, size } from '../../static';
 
 const style = {
   width: '100%',
@@ -9,7 +9,7 @@ const style = {
   fontSize: size.smallTitle,
   fontWeight: 'bold',
   color: 'white',
-  background: `${colors.main}`,
+  backgroundColor: color.main,
   border: 'none',
   borderRadius: '0.5rem',
 };

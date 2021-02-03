@@ -9,7 +9,7 @@ const styles = {
     width: '100%',
     position: 'fixed',
     height: '100%',
-    background: '#00000070',
+    backgroundColor: '#00000070',
     zIndex: 1,
   },
 };
