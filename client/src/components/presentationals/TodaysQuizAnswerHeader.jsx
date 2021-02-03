@@ -32,7 +32,7 @@ const styles = {
 export default function TodaysQuizAnswerHeader({ quiz }) {
   const tagElement = quiz.tags.length === 0
     ? <span>#No Tags</span>
-    : quiz.tags.map((tag) => <span>#{tag} </span>);
+    : quiz.tags.map((tag) => <span key={tag}>#{tag} </span>);
 
   return (
     <div css={styles.header}>
