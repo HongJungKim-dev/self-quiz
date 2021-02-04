@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import { loadQuizzes } from '../slice';
+
+import BackButtonContainer from '../components/containers/BackButtonContainer';
 import ArchiveModalContainer from '../components/containers/ArchiveModalContainer';
 import ArchiveContainer from '../components/containers/ArchiveContainer';
-
-import { loadQuizzes } from '../slice';
 
 export default function ArchivePage() {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ export default function ArchivePage() {
 
   return (
     <>
+      <BackButtonContainer />
       {isArchiveModalOpened && <ArchiveModalContainer isEditMode={editting} />}
       <ArchiveContainer />
     </>

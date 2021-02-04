@@ -8,7 +8,6 @@ import { convertTagsToTagString } from '../../util';
 
 import ArchiveItems from '../presentationals/ArchiveItems';
 import ArchiveLayout from '../layouts/ArchiveLayout';
-import BackButtonContainer from './BackButtonContainer';
 
 export default function ArchiveContainer() {
   const dispatch = useDispatch();
@@ -29,14 +28,11 @@ export default function ArchiveContainer() {
   };
 
   return (
-    <>
-      <BackButtonContainer />
-      <ArchiveLayout>
-        <ArchiveItems
-          quizzes={quizzes}
-          handleItemClick={handleItemClick}
-        />
-      </ArchiveLayout>
-    </>
+    <ArchiveLayout>
+      <ArchiveItems
+        quizzes={quizzes}
+        handleItemClick={handleItemClick}
+      />
+    </ArchiveLayout>
   );
 }

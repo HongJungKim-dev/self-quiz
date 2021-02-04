@@ -41,18 +41,15 @@ export default function TodaysQuizContainer() {
   }
 
   return (
-    <>
-      <BackButtonContainer />
-      <TodaysQuizLayout>
-        <TodaysQuiz
-          quiz={targetQuiz}
-          answerOn={todays.answerOn}
-          onAnswerClick={handleShowAnswerButton}
-          onPassClick={handlePassButton}
-          onKeepClick={() => {}}
-          onFailClick={handleFailButton}
-        />
-      </TodaysQuizLayout>
-    </>
+    <TodaysQuizLayout>
+      <TodaysQuiz
+        quiz={targetQuiz}
+        answerOn={todays.answerOn}
+        onAnswerClick={handleShowAnswerButton}
+        onPassClick={handlePassButton}
+        onKeepClick={() => {}}
+        onFailClick={handleFailButton}
+      />
+    </TodaysQuizLayout>
   );
 }
