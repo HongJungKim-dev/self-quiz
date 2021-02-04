@@ -37,12 +37,14 @@ export default function ArchiveContainer() {
   };
 
   return (
-    <ArchiveLayout>
+    <>
       <ArchiveBackButton onClick={handleBackButtonClick} />
-      <ArchiveItems
-        quizzes={quizzes}
-        handleItemClick={handleItemClick}
-      />
-    </ArchiveLayout>
+      <ArchiveLayout>
+        <ArchiveItems
+          quizzes={quizzes}
+          handleItemClick={handleItemClick}
+        />
+      </ArchiveLayout>
+    </>
   );
 }

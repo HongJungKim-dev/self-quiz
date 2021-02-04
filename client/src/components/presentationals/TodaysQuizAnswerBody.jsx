@@ -6,11 +6,11 @@ const styles = {
   answer: {
     display: 'block',
     width: '100%',
-    height: '100%',
+    height: '75%',
     backgroundColor: 'white',
     fontSize: size.text,
     resize: 'none',
-    padding: '20px 35px',
+    padding: '1rem 2rem',
     boxSizing: 'border-box',
     border: 'none',
   },

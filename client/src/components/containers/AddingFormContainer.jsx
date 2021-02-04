@@ -14,7 +14,7 @@ import AddingFormTextarea from '../presentationals/AddingFormTextarea';
 import AddingFormInput from '../presentationals/AddingFormInput';
 import AddingFormButton from '../presentationals/AddingFormButton';
 
-export default function QuizFormContainer() {
+export default function AddingFormContainer() {
   const dispatch = useDispatch();
   const quizForm = useSelector((state) => state.quizForm);
   const { question, answer, tagString } = quizForm;

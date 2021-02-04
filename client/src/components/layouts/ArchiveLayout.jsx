@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { color } from '../../static';
-
 const style = {
-  background: `linear-gradient(90deg, ${color.dark}, ${color.main})`,
-  width: '100%',
+  width: '60rem',
+  margin: '0 auto',
 };
 
 export default function ArchiveLayout({ children }) {

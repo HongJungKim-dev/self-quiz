@@ -6,10 +6,11 @@ import { loadQuizzes, loadUserName, setToken } from '../slice';
 
 import { popupMessages } from '../util';
 
-import QuizFormContainer from '../components/containers/QuizFormContainer';
+import AddingFormContainer from '../components/containers/AddingFormContainer';
 import TabContainer from '../components/containers/TabContainer';
 import UserTitle from '../components/presentationals/UserTitle';
 import LogoutButton from '../components/presentationals/LogoutButton';
+import MainPageLayout from '../components/layouts/MainPageLayout';
 
 export default function MainPage() {
   const dispatch = useDispatch();
@@ -36,11 +37,13 @@ export default function MainPage() {
   }, []);
 
   return (
-    <div>
+    <>
       <LogoutButton onClick={handleLogoutButtonClick} />
-      {adding && <QuizFormContainer />}
-      <UserTitle user={user} todays={todays} />
-      <TabContainer />
-    </div>
+      {adding && <AddingFormContainer />}
+      <MainPageLayout>
+        <UserTitle user={user} todays={todays} />
+        <TabContainer />
+      </MainPageLayout>
+    </>
   );
 }

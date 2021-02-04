@@ -5,10 +5,10 @@ import ArchiveItem from './ArchiveItem';
 
 const styles = {
   layout: {
-    display: 'table',
+    display: 'flex',
+    flexDirection: 'column',
     margin: '0 auto',
-    padding: '0 0 10rem 0',
-    width: '50rem',
+    padding: '0 3rem 10rem 3rem',
   },
 };
 

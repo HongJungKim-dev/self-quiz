@@ -7,7 +7,7 @@ import TodaysQuizAnswerButtons from './TodaysQuizAnswerButtons';
 const styles = {
   layout: {
     width: '100%',
-    height: '35vh',
+    height: '25rem',
   },
 };
 

@@ -6,12 +6,16 @@ const styles = {
   layout: {
     display: 'flex',
     justifyContent: 'flex-end',
+    position: 'relative',
+    bottom: '1px',
     backgroundColor: 'white',
     padding: '0.5rem',
     borderRadius: '0 0 5px 5px',
+    height: '15%',
+    boxSizing: 'border-box',
   },
   button: {
-    padding: '10px 30px',
+    padding: '0 3rem',
     marginLeft: '5px',
     border: 'none',
     color: color.font,

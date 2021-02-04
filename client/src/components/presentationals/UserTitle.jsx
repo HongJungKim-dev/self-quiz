@@ -3,22 +3,16 @@ import { color, size } from '../../static';
 
 const styles = {
   title: {
-    width: '60rem',
-    display: 'table',
-    margin: '0 auto',
-    padding: '2rem',
+    padding: '3rem',
     boxSizing: 'border-box',
+    color: color.font,
   },
   name: {
     fontSize: size.title,
     fontWeight: 'bold',
-    color: color.font,
-    marginTop: '10rem',
   },
   text: {
     fontSize: size.smallTitle,
-    color: color.font,
-    marginBottom: '10rem',
   },
 };
 

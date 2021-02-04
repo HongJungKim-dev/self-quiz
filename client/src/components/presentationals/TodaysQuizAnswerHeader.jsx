@@ -6,9 +6,11 @@ const styles = {
   header: {
     display: 'flex',
     justifyContent: 'space-between',
+    position: 'relative',
+    top: '1px',
     backgroundColor: 'white',
     borderRadius: '5px 5px 0 0',
-    paddingBottom: '1rem',
+    height: '10%',
   },
   text: {
     backgroundColor: color.main,
@@ -18,8 +20,8 @@ const styles = {
     fontWeight: 'bold',
     fontSize: size.smallText,
   },
-  dataLayout: {
-    display: 'flax',
+  flexLayout: {
+    display: 'flex',
   },
   data: {
     marginLeft: '0.1em',
@@ -38,10 +40,10 @@ export default function TodaysQuizAnswerHeader({ quiz }) {
 
   return (
     <div css={styles.header}>
-      <div>
+      <div css={styles.flexLayout}>
         <div css={styles.text}>정답</div>
       </div>
-      <div css={styles.dataLayout}>
+      <div css={styles.flexLayout}>
         <div css={styles.data}>{tagElement}</div>
         <div css={styles.data}>{quiz.layer}레벨</div>
       </div>

@@ -5,9 +5,9 @@ import { color, size } from '../../static';
 const styles = {
   layout: {
     position: 'fixed',
-    top: '15%',
+    top: '50%',
     left: '50%',
-    transform: 'translate(-50%, 0)',
+    transform: 'translate(-50%, -50%)',
     width: '40rem',
     borderRadius: '0.5rem',
     backgroundColor: 'white',
@@ -19,16 +19,16 @@ const styles = {
     fontWeight: 'bold',
     backgroundColor: color.main,
     color: color.font,
-    padding: '0.4rem 1rem',
+    padding: '0.5rem 1rem',
     boxSizing: 'border-box',
-    borderRadius: '0.5rem 0.5rem 0 0',
+    borderRadius: '0.4rem 0.4rem 0 0',
   },
   body: {
     padding: '2rem',
   },
 };
 
-export default function AddingModalLayout({ title, children }) {
+export default function ModalLayout({ title, children }) {
   return (
     <div css={styles.layout}>
       <div css={styles.title}>{title}</div>

@@ -6,8 +6,8 @@ const styles = {
   button: {
     border: 'none',
     borderRadius: '1rem',
-    width: '20rem',
-    height: '20rem',
+    width: '18rem',
+    height: '17rem',
     margin: '0.5rem',
     boxShadow: `0 0 6px 0px ${color.faintWhite}`,
     background: 'linear-gradient(45deg, black, transparent)',
@@ -15,7 +15,7 @@ const styles = {
     fontSize: size.text,
     fontWeight: 'bold',
     '&:hover': {
-      backgroundColor: color.main,
+      backgroundColor: color.light,
       cursor: 'pointer',
     },
   },

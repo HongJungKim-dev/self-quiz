@@ -7,7 +7,8 @@ import { color, size } from '../../static';
 const styles = {
   layout: {
     position: 'relative',
-    top: '20%',
+    top: '50%',
+    transform: 'translateY(-50%)',
   },
   question: {
     textAlign: 'center',
@@ -17,7 +18,7 @@ const styles = {
   },
   button: {
     display: 'block',
-    margin: '0 auto',
+    margin: '0 auto 20rem auto',
     padding: '0.5rem 1rem',
     backgroundColor: color.main,
     color: color.font,
