@@ -100,4 +100,15 @@ export default {
       return false;
     }
   },
+
+  async keepQuiz(quizId) {
+    try {
+      const lastSolved = getCurrentDate();
+      await axios.patch(`${process.env.URL}/quiz/keep`, { quizId, lastSolved }, getHeaders());
+
+      return true;
+    } catch (error) {
+      return false;
+    }
+  },
 };

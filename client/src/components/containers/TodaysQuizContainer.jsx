@@ -12,7 +12,6 @@ import api from '../../apis/api';
 
 import TodaysQuiz from '../presentationals/TodaysQuiz';
 import TodaysQuizLayout from '../layouts/TodaysQuizLayout';
-import BackButtonContainer from './BackButtonContainer';
 
 export default function TodaysQuizContainer() {
   const dispatch = useDispatch();
@@ -25,6 +24,12 @@ export default function TodaysQuizContainer() {
 
   const handlePassButton = () => {
     api.passQuiz(targetQuiz._id);
+    dispatch(removeTodaysQuiz(targetQuiz._id));
+    dispatch(setTodaysAnswerOn(false));
+  };
+
+  const handleKeepButton = () => {
+    api.keepQuiz(targetQuiz._id);
     dispatch(removeTodaysQuiz(targetQuiz._id));
     dispatch(setTodaysAnswerOn(false));
   };
@@ -47,7 +52,7 @@ export default function TodaysQuizContainer() {
         answerOn={todays.answerOn}
         onAnswerClick={handleShowAnswerButton}
         onPassClick={handlePassButton}
-        onKeepClick={() => {}}
+        onKeepClick={handleKeepButton}
         onFailClick={handleFailButton}
       />
     </TodaysQuizLayout>
