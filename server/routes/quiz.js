@@ -15,6 +15,7 @@ router.get('/', errorCatcher(quizService.getQuizzes));
 router.patch('/edit', errorCatcher(quizService.editQuiz));
 router.patch('/pass', errorCatcher(quizService.passQuiz));
 router.patch('/fail', errorCatcher(quizService.failQuiz));
+router.patch('/keep', errorCatcher(quizService.keepQuiz));
 router.delete('/:quizId', errorCatcher(quizService.removeQuiz));
 
 module.exports = router;

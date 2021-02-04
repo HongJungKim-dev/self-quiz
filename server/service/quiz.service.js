@@ -54,6 +54,14 @@ module.exports = {
     res.status(200).json({ message: 'Complete to make quiz fail' });
   },
 
+  async keepQuiz(req, res) {
+    const { userId, quizId, lastSolved } = req.body;
+
+    await quizRepo.keepQuiz(userId, quizId, lastSolved);
+
+    res.status(200).json({ message: 'Complete to make quiz keep' });
+  },
+
   async removeQuiz(req, res) {
     const { userId } = req.body;
     const { quizId } = req.params;

@@ -26,9 +26,7 @@ module.exports = {
     await Quiz.updateOne(
       { userId, _id: quizId },
       {
-        $inc: {
-          layer: +1,
-        },
+        $inc: { layer: +1 },
         $set: { lastSolved },
       },
     );
@@ -38,9 +36,16 @@ module.exports = {
     await Quiz.updateOne(
       { userId, _id: quizId },
       {
-        $inc: {
-          layer: -1,
-        },
+        $inc: { layer: -1 },
+        $set: { lastSolved },
+      },
+    );
+  },
+
+  async keepQuiz(userId, quizId, lastSolved) {
+    await Quiz.updateOne(
+      { userId, _id: quizId },
+      {
         $set: { lastSolved },
       },
     );
