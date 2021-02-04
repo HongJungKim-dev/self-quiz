@@ -11,7 +11,7 @@ const styles = {
   },
   question: {
     textAlign: 'center',
-    color: 'white',
+    color: color.font,
     fontSize: size.title,
     marginBottom: '3rem',
   },
@@ -20,7 +20,7 @@ const styles = {
     margin: '0 auto',
     padding: '0.5rem 1rem',
     backgroundColor: color.main,
-    color: 'white',
+    color: color.font,
     border: 'none',
     borderRadius: '6px',
     fontWeight: 'bold',

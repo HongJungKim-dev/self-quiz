@@ -8,7 +8,7 @@ const styles = {
     boxShadow: `0 0 7px 1px ${color.faintWhite}`,
     borderRadius: '1rem',
     marginTop: '0.5rem',
-    color: 'white',
+    color: color.font,
     cursor: 'pointer',
     '&:hover': {
       backgroundColor: color.main,

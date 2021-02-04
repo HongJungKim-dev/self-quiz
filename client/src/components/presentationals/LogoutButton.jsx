@@ -10,7 +10,7 @@ const styles = {
     height: '3rem',
     fontSize: size.sm,
     fontWeight: 'bold',
-    color: 'white',
+    color: color.font,
     background: `linear-gradient(90deg, ${color.dark}, ${color.main})`,
     border: 'none',
     borderRadius: '0.6rem',

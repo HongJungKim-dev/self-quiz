@@ -21,7 +21,7 @@ const styles = {
     fontSize: size.smallTitle,
     fontWeight: 'bold',
     backgroundColor: color.main,
-    color: 'white',
+    color: color.font,
     padding: '0.4rem 1rem',
     boxSizing: 'border-box',
     borderRadius: '0.5rem 0.5rem 0 0',

@@ -7,7 +7,7 @@ const styles = {
     width: '50%',
     height: '2rem',
     border: 'none',
-    color: 'white',
+    color: color.font,
     fontSize: size.smallText,
     fontWeight: 'bold',
     borderRadius: '0.4rem',

@@ -14,7 +14,7 @@ const styles = {
     backgroundColor: color.main,
     padding: '5px 50px',
     borderRadius: '3px 0 5px 0',
-    color: 'white',
+    color: color.font,
     fontWeight: 'bold',
     fontSize: size.smallText,
   },
@@ -26,7 +26,7 @@ const styles = {
     backgroundColor: color.main,
     padding: '5px 20px',
     borderRadius: '0 0 5px 5px',
-    color: 'white',
+    color: color.font,
     fontSize: size.smallText,
   },
 };

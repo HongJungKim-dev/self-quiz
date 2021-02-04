@@ -14,7 +14,7 @@ const styles = {
     padding: '10px 30px',
     marginLeft: '5px',
     border: 'none',
-    color: 'white',
+    color: color.font,
     borderRadius: '3px',
     cursor: 'pointer',
     fontSize: size.smallText,

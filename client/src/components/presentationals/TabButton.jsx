@@ -11,7 +11,7 @@ const styles = {
     margin: '0.5rem',
     boxShadow: `0 0 6px 0px ${color.faintWhite}`,
     background: 'linear-gradient(45deg, black, transparent)',
-    color: 'white',
+    color: color.font,
     fontSize: size.smallTitle,
     fontWeight: 'bold',
     '&:hover': {

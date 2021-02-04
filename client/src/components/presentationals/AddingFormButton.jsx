@@ -8,7 +8,7 @@ const style = {
   height: '3rem',
   fontSize: size.smallTitle,
   fontWeight: 'bold',
-  color: 'white',
+  color: color.font,
   backgroundColor: color.main,
   border: 'none',
   borderRadius: '0.5rem',

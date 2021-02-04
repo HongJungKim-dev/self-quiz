@@ -5,7 +5,7 @@ import { color, size } from '../../static';
 const style = {
   fontSize: size.smallText,
   fontWeight: 'bold',
-  color: 'white',
+  color: color.font,
   width: '100%',
   height: '3rem',
   border: 'none',
