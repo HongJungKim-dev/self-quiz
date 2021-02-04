@@ -15,11 +15,14 @@ const styles = {
     color: color.font,
     fontSize: size.title,
     marginBottom: '3rem',
+    '@media (max-width: 768px)': {
+      fontSize: '4rem',
+    },
   },
   button: {
     display: 'block',
-    margin: '0 auto 20rem auto',
-    padding: '0.5rem 1rem',
+    margin: '0 auto',
+    padding: '1rem 3rem',
     backgroundColor: color.main,
     color: color.font,
     border: 'none',
@@ -28,6 +31,9 @@ const styles = {
     cursor: 'pointer',
     '&:hover': {
       backgroundColor: color.light,
+    },
+    '@media (max-width: 768px)': {
+      padding: '1.5rem 5rem',
     },
   },
 };

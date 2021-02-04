@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { color, size } from '../../static';
+import { color } from '../../static';
 
 const styles = {
   header: {
@@ -13,23 +13,25 @@ const styles = {
     height: '10%',
   },
   text: {
+    display: 'flex',
+    alignItems: 'center',
     backgroundColor: color.main,
-    padding: '5px 50px',
+    padding: '0 4rem',
     borderRadius: '3px 0 5px 0',
     color: color.font,
     fontWeight: 'bold',
-    fontSize: size.smallText,
   },
   flexLayout: {
     display: 'flex',
   },
   data: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0 1rem',
     marginLeft: '0.1em',
     backgroundColor: color.main,
-    padding: '5px 20px',
     borderRadius: '0 0 5px 5px',
     color: color.font,
-    fontSize: size.smallText,
   },
 };
 

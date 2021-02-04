@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { color, size } from '../../static';
+import { color } from '../../static';
 
 const styles = {
   layout: {
@@ -21,10 +21,12 @@ const styles = {
     color: color.font,
     borderRadius: '3px',
     cursor: 'pointer',
-    fontSize: size.smallText,
     fontWeight: 'bold',
     '&:hover': {
       opacity: '0.7',
+    },
+    '@media (max-width: 768px)': {
+      fontSize: '1rem',
     },
   },
 };

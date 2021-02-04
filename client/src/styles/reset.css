@@ -13,3 +13,19 @@ body {
   background: linear-gradient(90deg,#111d2a, #244a72);
   height: 100vh;
 }
+
+@media (max-width: 992px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 5px;
+  }
+}

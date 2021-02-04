@@ -11,6 +11,9 @@ const style = {
   boxSizing: 'border-box',
   border: '1px solid #767676',
   borderRadius: '0.4rem',
+  '@media (max-width: 768px)': {
+    height: '5rem',
+  },
 };
 
 export default function AddingFormInput({

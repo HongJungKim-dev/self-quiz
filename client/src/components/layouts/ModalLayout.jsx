@@ -13,6 +13,9 @@ const styles = {
     backgroundColor: 'white',
     boxShadow: `0 0 11px 0px ${color.main}`,
     zIndex: 2,
+    '@media (max-width: 768px)': {
+      width: '50rem',
+    },
   },
   title: {
     fontSize: size.smallTitle,

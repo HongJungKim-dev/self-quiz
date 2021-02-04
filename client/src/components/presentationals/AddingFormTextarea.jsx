@@ -11,6 +11,9 @@ const style = {
   boxSizing: 'border-box',
   borderRadius: '0.4rem',
   resize: 'none',
+  '@media (max-width: 768px)': {
+    height: '18rem',
+  },
 };
 
 export default function AddingFormTextarea({

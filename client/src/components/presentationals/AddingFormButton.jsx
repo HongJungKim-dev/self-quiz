@@ -12,6 +12,9 @@ const style = {
   backgroundColor: color.main,
   border: 'none',
   borderRadius: '0.5rem',
+  '@media (max-width: 768px)': {
+    height: '5rem',
+  },
 };
 
 export default function AddingFormButton({ title, onClick }) {

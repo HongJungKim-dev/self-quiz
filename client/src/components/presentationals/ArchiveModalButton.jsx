@@ -14,6 +14,9 @@ const styles = {
     cursor: 'pointer',
     backgroundColor: color.main,
     outline: 'none',
+    '@media (max-width: 768px)': {
+      height: '3rem',
+    },
   },
 };
 
