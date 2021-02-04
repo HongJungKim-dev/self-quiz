@@ -23,10 +23,12 @@ const styles = {
 
 export default function LogoutButton({ onClick }) {
   return (
-    <div title="로그아웃" css={styles.button}>
-      <LogoutIcon
-        onClick={onClick}
-      />
+    <div
+      title="로그아웃"
+      css={styles.button}
+      onClick={onClick}
+    >
+      <LogoutIcon />
     </div>
   );
 }
