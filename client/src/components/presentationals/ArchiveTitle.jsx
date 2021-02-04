@@ -9,6 +9,9 @@ const styles = {
     color: color.font,
     margin: '10rem 0 3rem 0',
     width: '100%',
+    '@media (max-width: 768px)': {
+      margin: '20rem 0 3rem 0',
+    },
   },
 };
 
