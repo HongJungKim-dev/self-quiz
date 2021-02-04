@@ -12,6 +12,7 @@ import api from '../../apis/api';
 
 import TodaysQuiz from '../presentationals/TodaysQuiz';
 import TodaysQuizLayout from '../layouts/TodaysQuizLayout';
+import BackButtonContainer from './BackButtonContainer';
 
 export default function TodaysQuizContainer() {
   const dispatch = useDispatch();
@@ -40,15 +41,18 @@ export default function TodaysQuizContainer() {
   }
 
   return (
-    <TodaysQuizLayout>
-      <TodaysQuiz
-        quiz={targetQuiz}
-        answerOn={todays.answerOn}
-        onAnswerClick={handleShowAnswerButton}
-        onPassClick={handlePassButton}
-        onKeepClick={() => {}}
-        onFailClick={handleFailButton}
-      />
-    </TodaysQuizLayout>
+    <>
+      <BackButtonContainer />
+      <TodaysQuizLayout>
+        <TodaysQuiz
+          quiz={targetQuiz}
+          answerOn={todays.answerOn}
+          onAnswerClick={handleShowAnswerButton}
+          onPassClick={handlePassButton}
+          onKeepClick={() => {}}
+          onFailClick={handleFailButton}
+        />
+      </TodaysQuizLayout>
+    </>
   );
 }

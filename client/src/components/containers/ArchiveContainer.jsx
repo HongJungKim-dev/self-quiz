@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { useHistory } from 'react-router-dom';
-
 import { useSelector, useDispatch } from 'react-redux';
 
 import { setArchiveQuizModal, setOverlay, setQuizForm } from '../../slice';
@@ -9,16 +7,10 @@ import { setArchiveQuizModal, setOverlay, setQuizForm } from '../../slice';
 import { convertTagsToTagString } from '../../util';
 
 import ArchiveItems from '../presentationals/ArchiveItems';
-import ArchiveBackButton from '../presentationals/ArchiveBackButton';
 import ArchiveLayout from '../layouts/ArchiveLayout';
+import BackButtonContainer from './BackButtonContainer';
 
 export default function ArchiveContainer() {
-  const history = useHistory();
-
-  const handleBackButtonClick = () => {
-    history.push('/');
-  };
-
   const dispatch = useDispatch();
   const quizzes = useSelector((state) => state.quizzes);
 
@@ -38,7 +30,7 @@ export default function ArchiveContainer() {
 
   return (
     <>
-      <ArchiveBackButton onClick={handleBackButtonClick} />
+      <BackButtonContainer />
       <ArchiveLayout>
         <ArchiveItems
           quizzes={quizzes}

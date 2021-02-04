@@ -20,7 +20,7 @@ const styles = {
   },
 };
 
-export default function ArchiveBackButton({ onClick }) {
+export default function BackButton({ onClick }) {
   return (
     <div
       title="돌아가기"
