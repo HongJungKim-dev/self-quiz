@@ -1,33 +1,32 @@
 import React from 'react';
 
-import { color, size } from '../../static';
+import { color } from '../../static';
+
+import LogoutIcon from '../icons/LogoutIcon';
 
 const styles = {
   button: {
+    width: '2.5rem',
     position: 'absolute',
-    right: 0,
-    width: '7rem',
-    height: '3rem',
-    fontSize: size.sm,
-    fontWeight: 'bold',
-    color: color.font,
-    background: `linear-gradient(90deg, ${color.dark}, ${color.main})`,
-    border: 'none',
-    borderRadius: '0.6rem',
+    right: '0',
+    color: '#ffffff',
     cursor: 'pointer',
     margin: '2rem',
-    boxShadow: `0 0 8px 0px ${color.faintWhite}`,
+    '&:hover': {
+      color: color.faintWhite,
+    },
+    '@media (max-width: 768px)': {
+      width: '5rem',
+    },
   },
 };
 
 export default function LogoutButton({ onClick }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      css={styles.button}
-    >
-      로그아웃
-    </button>
+    <div title="로그아웃" css={styles.button}>
+      <LogoutIcon
+        onClick={onClick}
+      />
+    </div>
   );
 }
