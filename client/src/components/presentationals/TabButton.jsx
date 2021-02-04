@@ -18,12 +18,6 @@ const styles = {
       backgroundColor: color.main,
       cursor: 'pointer',
     },
-    '@media (max-width: 960px)': {
-      height: '30vw',
-    },
-    '@media (max-width: 680px)': {
-      fontSize: '3vw',
-    },
   },
   icon: {
     width: '3rem',

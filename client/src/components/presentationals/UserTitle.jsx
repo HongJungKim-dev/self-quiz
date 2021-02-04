@@ -8,29 +8,17 @@ const styles = {
     margin: '0 auto',
     padding: '2rem',
     boxSizing: 'border-box',
-    '@media (max-width: 960px)': {
-      width: '100vw',
-    },
   },
   name: {
     fontSize: size.title,
     fontWeight: 'bold',
     color: color.font,
     marginTop: '10rem',
-    '@media (max-width: 680px)': {
-      fontSize: '7vw',
-    },
   },
   text: {
     fontSize: size.smallTitle,
     color: color.font,
     marginBottom: '10rem',
-    '@media (max-width: 960px)': {
-      marginBottom: '20vw',
-    },
-    '@media (max-width: 680px)': {
-      fontSize: '4vw',
-    },
   },
 };
 

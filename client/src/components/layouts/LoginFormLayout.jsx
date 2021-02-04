@@ -12,13 +12,6 @@ const styles = {
     borderRadius: '0.6rem',
     backgroundColor: 'white',
     boxShadow: `0 0 11px 0px ${color.main}`,
-    '@media (max-width: 480px)': {
-      width: '100vw',
-    },
-    '@media (max-height: 680px)': {
-      top: '0vw',
-      height: '100vh',
-    },
   },
   emptyHeader: {
     backgroundColor: color.dark,

@@ -13,9 +13,6 @@ const styles = {
     backgroundColor: 'white',
     boxShadow: `0 0 11px 0px ${color.main}`,
     zIndex: 2,
-    '@media (max-width: 720px)': {
-      width: '90vw',
-    },
   },
   title: {
     fontSize: size.smallTitle,

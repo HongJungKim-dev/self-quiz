@@ -18,10 +18,6 @@ const styles = {
     borderRadius: '0.4rem',
     backgroundColor: 'white',
     resize: 'none',
-    '@media (max-width: 720px)': {
-      height: '32vw',
-      fontSize: '2vw',
-    },
   },
 };
 

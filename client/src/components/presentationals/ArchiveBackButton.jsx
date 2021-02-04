@@ -16,10 +16,6 @@ const styles = {
     cursor: 'pointer',
     margin: '2rem 1rem',
     boxShadow: `0 0 8px 0px ${color.faintWhite}`,
-    '@media (max-width: 960px)': {
-      width: '12vw',
-      fontSize: '2vw',
-    },
   },
 };
 

@@ -13,9 +13,6 @@ const styles = {
     '&:hover': {
       backgroundColor: color.main,
     },
-    '@media (max-width: 960px)': {
-      padding: '1rem 5vw',
-    },
   },
 };
 

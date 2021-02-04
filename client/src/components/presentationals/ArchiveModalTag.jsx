@@ -3,9 +3,6 @@ import React from 'react';
 const styles = {
   readModeTag: {
     margin: '1rem 0',
-    '@media (max-width: 720px)': {
-      fontSize: '2vw',
-    },
   },
   editModeTag: {
     margin: '0.8rem 0',
@@ -15,9 +12,6 @@ const styles = {
     height: '1.5rem',
     padding: '0.1rem 0.4rem 0 0.4rem',
     boxSizing: 'border-box',
-    '@media (max-width: 720px)': {
-      fontSize: '2vw',
-    },
   },
 };
 

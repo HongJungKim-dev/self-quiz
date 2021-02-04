@@ -17,11 +17,6 @@ const styles = {
     cursor: 'pointer',
     margin: '2rem',
     boxShadow: `0 0 8px 0px ${color.faintWhite}`,
-    '@media (max-width: 680px)': {
-      fontSize: '3vw',
-      width: '20vw',
-      height: '10vw',
-    },
   },
 };
 
