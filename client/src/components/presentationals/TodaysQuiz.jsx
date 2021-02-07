@@ -10,6 +10,13 @@ const styles = {
     top: '50%',
     transform: 'translateY(-50%)',
   },
+  quizCount: {
+    width: 'max-content',
+    color: 'white',
+    fontSize: size.smallText,
+    borderBottom: '1px solid',
+    margin: '0 0 0 auto',
+  },
   question: {
     textAlign: 'center',
     color: color.font,
@@ -39,10 +46,11 @@ const styles = {
 };
 
 export default function TodaysQuiz({
-  quiz, answerOn, onAnswerClick, onPassClick, onKeepClick, onFailClick,
+  quiz, remainQuizCount, answerOn, onAnswerClick, onPassClick, onKeepClick, onFailClick,
 }) {
   return (
     <div css={styles.layout}>
+      <div css={styles.quizCount}>남은 문제: {remainQuizCount}개</div>
       <div css={styles.question}>Q. {quiz.question}</div>
       {answerOn
         ? (

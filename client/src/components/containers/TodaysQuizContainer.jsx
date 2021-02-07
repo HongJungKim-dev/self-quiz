@@ -49,6 +49,7 @@ export default function TodaysQuizContainer() {
     <TodaysQuizLayout>
       <TodaysQuiz
         quiz={targetQuiz}
+        remainQuizCount={todays.quizzes.length}
         answerOn={todays.answerOn}
         onAnswerClick={handleShowAnswerButton}
         onPassClick={handlePassButton}
