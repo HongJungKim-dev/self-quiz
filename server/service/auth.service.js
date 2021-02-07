@@ -14,6 +14,13 @@ module.exports = {
   async signUp(req, res) {
     const { userId, userPw, userName } = req.body;
 
+    const user = await userRepo.findUserById(userId);
+
+    if (user) {
+      res.status(403).json({ message: 'Can\'t create user with same id' });
+      return;
+    }
+
     await userRepo.signUpNewUser(userId, userPw, userName);
 
     res.status(200).json({ message: 'Complete to sign up' });
