@@ -3,6 +3,14 @@ const jwt = require('jsonwebtoken');
 const userRepo = require('../repository/user.repository.js');
 
 module.exports = {
+  async checkisValidId(req, res) {
+    const { userId } = req.body;
+
+    const user = await userRepo.findUserById(userId);
+
+    res.status(200).json({ idValidation: !!user });
+  },
+
   async signUp(req, res) {
     const { userId, userPw, userName } = req.body;
 
