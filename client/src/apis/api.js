@@ -9,6 +9,28 @@ const getHeaders = () => ({
 });
 
 export default {
+  async checkId(userId) {
+    try {
+      const { data } = await axios.post(`${process.env.URL}/auth/idcheck`, { userId });
+      const { idValidation } = data;
+
+      return idValidation;
+    } catch (error) {
+      return false;
+    }
+  },
+
+  async signUp(userId, userPw, userName) {
+    try {
+      const { data } = await axios.post(`${process.env.URL}/auth/signup`, { userId, userPw, userName });
+      const { state } = data;
+
+      return state;
+    } catch (error) {
+      return false;
+    }
+  },
+
   async login(userId, userPw) {
     try {
       const { data } = await axios.post(`${process.env.URL}/auth/login`, { userId, userPw });
