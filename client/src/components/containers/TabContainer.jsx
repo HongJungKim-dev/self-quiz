@@ -22,7 +22,11 @@ export default function Tab() {
   };
 
   const handleTodaysButton = () => {
-    history.push('/quiz');
+    history.push('/page/todaysquiz');
+  };
+
+  const handleArchiveButton = () => {
+    history.push('/page/archive');
   };
 
   return (
@@ -39,7 +43,7 @@ export default function Tab() {
       />
       <TabButton
         title="아카이브"
-        onClick={() => history.push('/archive')}
+        onClick={handleArchiveButton}
         IconComponent={FolderIcon}
       />
     </TabLayout>

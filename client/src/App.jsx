@@ -24,10 +24,10 @@ export default function App() {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route path="/quiz">
+          <Route path="/page/todaysquiz">
             <TodaysQuizPage />
           </Route>
-          <Route path="/archive">
+          <Route path="/page/archive">
             <ArchivePage />
           </Route>
         </Switch>
