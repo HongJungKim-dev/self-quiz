@@ -12,6 +12,15 @@ const style = {
   borderRadius: '0.5rem',
   marginTop: '0.5rem',
   cursor: 'pointer',
+  '@media (max-width: 768px)': {
+    fontSize: '2rem',
+    height: '6rem',
+  },
+  '@media (max-width: 480px)': {
+    fontSize: '3rem',
+    height: '10rem',
+    marginTop: '2rem',
+  },
 };
 
 export default function LoginButton({ title, onClick }) {

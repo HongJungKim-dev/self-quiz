@@ -47,25 +47,27 @@ export default function LoginFormContainer() {
   return (
     <LoginFormLayout>
       <LoginFormLogo />
-      <LoginFormInput
-        value={id}
-        onChange={handleLoginIdInput}
-        placeholder="아이디를 입력해주세요."
-      />
-      <LoginFormInput
-        value={pw}
-        onChange={handleLoginPwInput}
-        type="password"
-        placeholder="비밀번호를 입력해주세요."
-      />
-      <LoginFormButton
-        title="로그인"
-        onClick={handleLoginButtonClick}
-      />
-      <LoginFormButton
-        title="회원가입"
-        onClick={handleLoginButtonClick}
-      />
+      <div>
+        <LoginFormInput
+          value={id}
+          onChange={handleLoginIdInput}
+          placeholder="아이디를 입력해주세요."
+        />
+        <LoginFormInput
+          value={pw}
+          onChange={handleLoginPwInput}
+          type="password"
+          placeholder="비밀번호를 입력해주세요."
+        />
+        <LoginFormButton
+          title="로그인"
+          onClick={handleLoginButtonClick}
+        />
+        <LoginFormButton
+          title="회원가입"
+          onClick={handleLoginButtonClick}
+        />
+      </div>
     </LoginFormLayout>
   );
 }

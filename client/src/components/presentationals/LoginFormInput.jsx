@@ -10,6 +10,14 @@ const style = {
   border: 'none',
   borderBottom: `1px solid ${color.light}`,
   paddingLeft: '1rem',
+  '@media (max-width: 768px)': {
+    fontSize: '2rem',
+    height: '6rem',
+  },
+  '@media (max-width: 480px)': {
+    fontSize: '3rem',
+    height: '10rem',
+  },
 };
 
 export default function LoginFormInput({
