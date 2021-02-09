@@ -6,8 +6,8 @@ const styles = {
   button: {
     border: 'none',
     borderRadius: '1rem',
-    width: '18rem',
-    height: '17rem',
+    width: '100%',
+    height: '18rem',
     margin: '0.5rem',
     boxShadow: `0 0 6px 0px ${color.faintWhite}`,
     background: 'linear-gradient(45deg, black, transparent)',
@@ -20,6 +20,7 @@ const styles = {
     },
     '@media (max-width: 768px)': {
       fontSize: '2rem',
+      height: '30vw',
     },
   },
   icon: {
