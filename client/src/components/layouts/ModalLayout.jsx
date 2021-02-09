@@ -15,6 +15,7 @@ const styles = {
     zIndex: 2,
     '@media (max-width: 768px)': {
       width: '90vw',
+      borderRadius: '1.5rem',
     },
   },
   title: {
@@ -28,6 +29,7 @@ const styles = {
     '@media (max-width: 768px)': {
       fontSize: '5rem',
       padding: '1rem',
+      borderRadius: '1.4rem 1.4rem 0 0',
     },
   },
   body: {

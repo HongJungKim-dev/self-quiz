@@ -7,6 +7,9 @@ const style = {
   height: '100vh',
   margin: '0 auto',
   justifyContent: 'center',
+  '@media (max-width: 768px)': {
+    width: '100vw',
+  },
 };
 
 export default function MainPageLayout({ children }) {

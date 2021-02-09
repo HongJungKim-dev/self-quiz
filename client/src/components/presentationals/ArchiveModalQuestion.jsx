@@ -9,6 +9,7 @@ const styles = {
     marginTop: '1rem',
     '@media (max-width: 768px)': {
       fontSize: '4rem',
+      marginTop: '2rem',
     },
   },
   textarea: {

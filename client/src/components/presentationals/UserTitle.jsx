@@ -6,18 +6,21 @@ const styles = {
     padding: '3rem',
     boxSizing: 'border-box',
     color: color.font,
+    '@media (max-width: 768px)': {
+      marginBottom: '5rem',
+    },
   },
   name: {
     fontSize: size.title,
     fontWeight: 'bold',
     '@media (max-width: 768px)': {
-      fontSize: '8rem',
+      fontSize: '7rem',
     },
   },
   text: {
     fontSize: size.smallTitle,
     '@media (max-width: 768px)': {
-      fontSize: '4rem',
+      fontSize: '3rem',
     },
   },
 };

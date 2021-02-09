@@ -7,8 +7,9 @@ const styles = {
     height: '2rem',
     fontSize: size.smallText,
     '@media (max-width: 768px)': {
-      height: '5rem',
-      fontSize: '2rem',
+      height: '8rem',
+      fontSize: '3rem',
+      margin: '2rem 0',
     },
   },
   editModeTag: {
@@ -23,6 +24,7 @@ const styles = {
     '@media (max-width: 768px)': {
       height: '8rem',
       fontSize: '3rem',
+      margin: '2rem 0',
     },
   },
 };

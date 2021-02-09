@@ -19,14 +19,14 @@ const styles = {
       cursor: 'pointer',
     },
     '@media (max-width: 768px)': {
-      fontSize: '3rem',
+      fontSize: '2rem',
     },
   },
   icon: {
     width: '3rem',
     margin: '0 auto',
     '@media (max-width: 768px)': {
-      width: '5rem',
+      width: '4rem',
     },
   },
 };
