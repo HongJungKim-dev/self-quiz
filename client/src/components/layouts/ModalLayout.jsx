@@ -14,7 +14,7 @@ const styles = {
     boxShadow: `0 0 11px 0px ${color.main}`,
     zIndex: 2,
     '@media (max-width: 768px)': {
-      width: '80vw',
+      width: '90vw',
     },
   },
   title: {
@@ -26,7 +26,8 @@ const styles = {
     boxSizing: 'border-box',
     borderRadius: '0.4rem 0.4rem 0 0',
     '@media (max-width: 768px)': {
-      fontSize: '3rem',
+      fontSize: '4.5rem',
+      padding: '1rem',
     },
   },
   body: {

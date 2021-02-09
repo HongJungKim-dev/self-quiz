@@ -12,11 +12,13 @@ const styles = {
     borderRadius: '0.6rem',
     backgroundColor: 'white',
     '@media (max-width: 768px)': {
+      top: '45%',
       width: '50rem',
       height: '70rem',
     },
     '@media (max-width: 480px)': {
-      height: '96vh',
+      top: '45%',
+      height: '88vh',
       width: '96vw',
     },
   },
@@ -41,7 +43,7 @@ const styles = {
       height: '60rem',
     },
     '@media (max-width: 480px)': {
-      height: '85vh',
+      height: '76vh',
     },
   },
 };

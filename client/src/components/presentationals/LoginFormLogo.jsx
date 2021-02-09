@@ -12,7 +12,7 @@ const styles = {
       padding: '5rem 0 0 0',
     },
     '@media (max-width: 480px)': {
-      padding: '12vh 0 0 0',
+      padding: '8vh 0 0 0',
     },
   },
   text: {

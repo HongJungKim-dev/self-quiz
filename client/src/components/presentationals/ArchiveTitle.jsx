@@ -11,6 +11,7 @@ const styles = {
     width: '100%',
     '@media (max-width: 768px)': {
       margin: '20rem 0 3rem 0',
+      fontSize: '4rem',
     },
   },
 };

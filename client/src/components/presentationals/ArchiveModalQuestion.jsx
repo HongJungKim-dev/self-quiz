@@ -8,7 +8,7 @@ const styles = {
     fontSize: size.text,
     marginTop: '1rem',
     '@media (max-width: 768px)': {
-      fontSize: '2rem',
+      fontSize: '3rem',
     },
   },
   textarea: {
@@ -23,7 +23,7 @@ const styles = {
     resize: 'none',
     '@media (max-width: 768px)': {
       height: '18rem',
-      fontSize: '1.5rem',
+      fontSize: '2rem',
     },
   },
 };

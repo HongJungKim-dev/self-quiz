@@ -16,6 +16,9 @@ const styles = {
     fontSize: size.smallText,
     borderBottom: '1px solid',
     margin: '0 0 0 auto',
+    '@media (max-width: 768px)': {
+      fontSize: '2rem',
+    },
   },
   question: {
     textAlign: 'center',

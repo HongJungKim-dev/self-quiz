@@ -22,7 +22,7 @@ const styles = {
     fontWeight: 'bold',
     fontSize: size.smallText,
     '@media (max-width: 768px)': {
-      fontSize: '2rem',
+      fontSize: '2.5rem',
     },
   },
   flexLayout: {
@@ -38,7 +38,7 @@ const styles = {
     color: color.font,
     fontSize: size.smallText,
     '@media (max-width: 768px)': {
-      fontSize: '2rem',
+      fontSize: '2.5rem',
     },
   },
 };

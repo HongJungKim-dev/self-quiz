@@ -13,7 +13,7 @@ const style = {
   resize: 'none',
   '@media (max-width: 768px)': {
     height: '18rem',
-    fontSize: '1.5rem',
+    fontSize: '2rem',
   },
 };
 

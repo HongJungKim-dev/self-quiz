@@ -16,8 +16,8 @@ const styles = {
     },
     '@media (max-width: 768px)': {
       padding: '2rem 3rem',
-      fontSize: '2rem',
-      marginTop: '1rem',
+      fontSize: '3rem',
+      marginTop: '1.5rem',
     },
   },
 };
