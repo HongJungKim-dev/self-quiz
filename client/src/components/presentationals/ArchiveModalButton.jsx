@@ -15,8 +15,8 @@ const styles = {
     backgroundColor: color.main,
     outline: 'none',
     '@media (max-width: 768px)': {
-      height: '7rem',
-      fontSize: '3rem',
+      height: '10rem',
+      fontSize: '4rem',
     },
   },
 };

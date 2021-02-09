@@ -13,8 +13,8 @@ const style = {
   border: 'none',
   borderRadius: '0.5rem',
   '@media (max-width: 768px)': {
-    height: '7rem',
-    fontSize: '3rem',
+    height: '10rem',
+    fontSize: '4rem',
   },
 };
 

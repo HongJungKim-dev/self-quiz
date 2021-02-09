@@ -12,8 +12,8 @@ const style = {
   borderRadius: '0.4rem',
   resize: 'none',
   '@media (max-width: 768px)': {
-    height: '18rem',
-    fontSize: '2rem',
+    height: '24rem',
+    fontSize: '3rem',
   },
 };
 

@@ -26,7 +26,8 @@ const styles = {
       opacity: '0.7',
     },
     '@media (max-width: 768px)': {
-      fontSize: '2rem',
+      fontSize: '3rem',
+      padding: '0 5rem',
     },
   },
 };

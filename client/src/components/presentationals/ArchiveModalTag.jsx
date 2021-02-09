@@ -21,8 +21,8 @@ const styles = {
     padding: '0.1rem 0.4rem 0 0.4rem',
     boxSizing: 'border-box',
     '@media (max-width: 768px)': {
-      height: '5rem',
-      fontSize: '2rem',
+      height: '8rem',
+      fontSize: '3rem',
     },
   },
 };

@@ -18,6 +18,7 @@ const styles = {
       padding: '2rem 3rem',
       fontSize: '3rem',
       marginTop: '1.5rem',
+      borderRadius: '2rem',
     },
   },
 };

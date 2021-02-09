@@ -7,7 +7,7 @@ const style = {
   fontSize: size.text,
   marginTop: '1rem',
   '@media (max-width: 768px)': {
-    fontSize: '3rem',
+    fontSize: '4rem',
   },
 };
 

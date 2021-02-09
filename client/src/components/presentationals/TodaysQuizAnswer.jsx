@@ -12,7 +12,7 @@ const styles = {
     height: '25rem',
     fontSize: size.smallText,
     '@media (max-width: 768px)': {
-      height: '50rem',
+      height: '70rem',
     },
   },
 };

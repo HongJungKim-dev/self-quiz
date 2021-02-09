@@ -26,7 +26,7 @@ const styles = {
     boxSizing: 'border-box',
     borderRadius: '0.4rem 0.4rem 0 0',
     '@media (max-width: 768px)': {
-      fontSize: '4.5rem',
+      fontSize: '5rem',
       padding: '1rem',
     },
   },

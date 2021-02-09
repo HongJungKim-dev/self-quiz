@@ -12,8 +12,8 @@ const style = {
   border: '1px solid #767676',
   borderRadius: '0.4rem',
   '@media (max-width: 768px)': {
-    height: '5rem',
-    fontSize: '2rem',
+    height: '8rem',
+    fontSize: '3rem',
   },
 };
 

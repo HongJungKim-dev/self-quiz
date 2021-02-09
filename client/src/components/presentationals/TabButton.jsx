@@ -18,10 +18,16 @@ const styles = {
       backgroundColor: color.light,
       cursor: 'pointer',
     },
+    '@media (max-width: 768px)': {
+      fontSize: '3rem',
+    },
   },
   icon: {
     width: '3rem',
     margin: '0 auto',
+    '@media (max-width: 768px)': {
+      width: '5rem',
+    },
   },
 };
 
