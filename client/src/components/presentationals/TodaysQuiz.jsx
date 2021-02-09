@@ -23,7 +23,7 @@ const styles = {
     fontSize: size.title,
     marginBottom: '3rem',
     '@media (max-width: 768px)': {
-      fontSize: '4rem',
+      fontSize: '5rem',
     },
   },
   button: {
