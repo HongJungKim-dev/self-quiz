@@ -14,6 +14,7 @@ const style = {
   borderRadius: '0.5rem',
   '@media (max-width: 768px)': {
     height: '5rem',
+    fontSize: '1.5rem',
   },
 };
 
