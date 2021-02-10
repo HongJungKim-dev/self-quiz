@@ -18,7 +18,6 @@ export default function Tab() {
 
   const handleAddingButton = () => {
     dispatch(setModalState({ type: 'adding', showing: true }));
-    dispatch(setModalState({ type: 'overlay', showing: true }));
   };
 
   const handleTodaysButton = () => {

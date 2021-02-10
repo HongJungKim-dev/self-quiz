@@ -24,7 +24,6 @@ export default function ArchiveContainer() {
       _id, question, answer, tagString,
     }));
     dispatch(setModalState({ type: 'archive', showing: true }));
-    dispatch(setModalState({ type: 'overlay', showing: true }));
   };
 
   return (

@@ -84,6 +84,7 @@ export const { reducer, actions } = createSlice({
         modalShowing: {
           ...state.modalShowing,
           [type]: showing,
+          overlay: showing,
     },
       };
     },
@@ -101,8 +102,8 @@ export const { reducer, actions } = createSlice({
     closeAllModal(state) {
       return {
         ...state,
-        modal: {
-          ...state.modal,
+        modalShowing: {
+          ...state.modalShowing,
           archive: false,
           adding: false,
           overlay: false,

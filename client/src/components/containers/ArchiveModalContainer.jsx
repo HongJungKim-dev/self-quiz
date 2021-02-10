@@ -57,7 +57,6 @@ export default function ArchiveModalContainer({ isEditMode }) {
     await popupMessages.success('해당 퀴즈를 삭제하였습니다.');
     dispatch(removeQuiz(_id));
     dispatch(setModalState({ type: 'archive', showing: false }));
-    dispatch(setModalState({ type: 'overlay', showing: false }));
   };
 
   const handleEditCompleteButton = async () => {
