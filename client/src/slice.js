@@ -38,15 +38,25 @@ const { reducer, actions } = createSlice({
     },
   },
   reducers: {
-    setUserName(state, { payload }) {
-      return { ...state, user: { ...state.user, name: payload } };
+    setUserName(state, { payload: name }) {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          name,
+        },
+      };
     },
-    setToken(state, { payload }) {
-      return { ...state, user: { ...state.user, token: payload } };
+    setToken(state, { payload: token }) {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          token,
+        },
+      };
     },
-    setLoginForm(state, { payload }) {
-      const { type, value } = payload;
-
+    setLoginForm(state, { payload: { type, value } }) {
       return {
         ...state,
         form: {
@@ -58,14 +68,14 @@ const { reducer, actions } = createSlice({
         },
       };
     },
-    setQuizForm(state, { payload }) {
+    setQuizForm(state, { payload: quizFormData }) {
       return {
         ...state,
         form: {
           ...state.form,
           quiz: {
             ...state.form.quiz,
-            ...payload,
+            ...quizFormData,
           },
         },
       };
@@ -85,34 +95,39 @@ const { reducer, actions } = createSlice({
         },
       };
     },
-    setQuizzes(state, { payload }) {
-      return { ...state, quizzes: payload };
+    setQuizzes(state, { payload: quizzes }) {
+      return {
+        ...state,
+        quizzes,
+      };
     },
-    addQuiz(state, { payload }) {
-      return { ...state, quizzes: [...state.quizzes, payload] };
+    addQuiz(state, { payload: quiz }) {
+      return {
+        ...state,
+        quizzes: [
+          ...state.quizzes,
+          quiz,
+        ],
+      };
     },
-    removeQuiz(state, { payload: _id }) {
-      const filteredQuizzes = state.quizzes.filter((quiz) => quiz._id !== _id);
-      return { ...state, quizzes: filteredQuizzes };
+    removeQuiz(state, { payload: quizId }) {
+      return {
+        ...state,
+        quizzes: state.quizzes.filter((quiz) => quiz._id !== quizId),
+      };
     },
-    editQuiz(state, { payload }) {
-      const {
-        _id, question, answer, tagString,
-      } = payload;
+    editQuiz(state, { payload: quizData }) {
+      const { _id, tagString, ...updatedData } = quizData;
       const tags = convertTagStringToTags(tagString);
 
-      const index = state.quizzes.findIndex((quiz) => quiz._id === _id);
-      const copy = [...state.quizzes];
-
-      copy[index] = {
-        ...copy[index], question, answer, tags,
+      return {
+        ...state,
+        quizzes: state.quizzes.map(
+          (quiz) => (quiz._id !== _id ? quiz : { ...quiz, ...updatedData, tags }),
+        ),
       };
-
-      return { ...state, quizzes: copy };
     },
-    setModalState(state, { payload }) {
-      const { type, showing } = payload;
-
+    setModalState(state, { payload: { type, showing } }) {
       return {
         ...state,
         modalShowing: {
@@ -141,12 +156,12 @@ const { reducer, actions } = createSlice({
         },
       };
     },
-    setTodaysQuizzes(state, { payload }) {
+    setTodaysQuizzes(state, { payload: todaysQuizzes }) {
       return {
         ...state,
         todays: {
           ...state.todays,
-          quizzes: [...payload],
+          quizzes: [...todaysQuizzes],
         },
       };
     },
@@ -159,8 +174,14 @@ const { reducer, actions } = createSlice({
         },
       };
     },
-    setTodaysAnswerOn(state, { payload }) {
-      return { ...state, todays: { ...state.todays, answerOn: payload } };
+    setTodaysAnswerOn(state, { payload: answerOn }) {
+      return {
+        ...state,
+        todays: {
+          ...state.todays,
+          answerOn,
+        },
+      };
     },
   },
 });
