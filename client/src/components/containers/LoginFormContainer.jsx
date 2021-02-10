@@ -10,10 +10,9 @@ import { popupMessages } from '../../util';
 
 import api from '../../apis/api';
 
-import LoginFormInput from '../presentationals/LoginFormInput';
-import LoginFormButton from '../presentationals/LoginFormButton';
 import LoginFormLayout from '../layouts/LoginFormLayout';
 import LoginFormLogo from '../presentationals/LoginFormLogo';
+import LoginFormBody from '../presentationals/LoginFormBody';
 
 export default function LoginFormContainer() {
   const dispatch = useDispatch();
@@ -47,27 +46,13 @@ export default function LoginFormContainer() {
   return (
     <LoginFormLayout>
       <LoginFormLogo />
-      <div>
-        <LoginFormInput
-          value={id}
-          onChange={handleLoginIdInput}
-          placeholder="아이디를 입력해주세요."
-        />
-        <LoginFormInput
-          value={pw}
-          onChange={handleLoginPwInput}
-          type="password"
-          placeholder="비밀번호를 입력해주세요."
-        />
-        <LoginFormButton
-          title="로그인"
-          onClick={handleLoginButtonClick}
-        />
-        <LoginFormButton
-          title="회원가입"
-          onClick={handleLoginButtonClick}
-        />
-      </div>
+      <LoginFormBody
+        idInput={id}
+        pwInput={pw}
+        onIdInputChange={handleLoginIdInput}
+        onPwInputChange={handleLoginPwInput}
+        onLoginButtonClick={handleLoginButtonClick}
+      />
     </LoginFormLayout>
   );
 }
