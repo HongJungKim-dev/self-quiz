@@ -358,20 +358,20 @@ describe('<reducer 테스트>', () => {
         expect(state.todays.quizzes).toHaveLength(0);
       });
     });
-  });
 
-  describe('setTodaysAnswerOn 함수는', () => {
-    it('오늘의 퀴즈 정답을 on/off 한다.', () => {
-      const initialState = {
-        todays: {
-          answerOn: false,
-          quizzes: [],
-        },
-      };
+    describe('setTodaysAnswerOn 함수는', () => {
+      it('오늘의 퀴즈 정답을 on/off 한다.', () => {
+        const initialState = {
+          todays: {
+            answerOn: false,
+            quizzes: [],
+          },
+        };
 
-      const state = reducer(initialState, setTodaysAnswerOn(true));
+        const state = reducer(initialState, setTodaysAnswerOn(true));
 
-      expect(state.todays.answerOn).toBe(true);
+        expect(state.todays.answerOn).toBe(true);
+      });
     });
   });
 });
