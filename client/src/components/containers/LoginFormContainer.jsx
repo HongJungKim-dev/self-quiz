@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setLoginId, setLoginPw, setToken } from '../../slice';
+import { setLoginForm, setToken } from '../../slice';
 
 import { popupMessages } from '../../util';
 
@@ -14,14 +14,14 @@ import LoginFormBody from '../presentationals/LoginFormBody';
 
 export default function LoginFormContainer() {
   const dispatch = useDispatch();
-  const { id, pw } = useSelector((state) => state.login);
+  const { id, pw } = useSelector((state) => state.form.login);
 
   const handleLoginIdInput = (event) => {
-    dispatch(setLoginId(event.target.value));
+    dispatch(setLoginForm({ type: 'id', value: event.target.value }));
   };
 
   const handleLoginPwInput = (event) => {
-    dispatch(setLoginPw(event.target.value));
+    dispatch(setLoginForm({ type: 'pw', value: event.target.value }));
   };
 
   const handleLoginButtonClick = async () => {

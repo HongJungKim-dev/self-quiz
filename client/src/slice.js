@@ -13,12 +13,13 @@ export const { reducer, actions } = createSlice({
       name: '',
       token: localStorage.getItem('token'),
     },
+    form: {
     login: {
       id: '',
       pw: '',
     },
-    token: localStorage.getItem('token'),
-    quizzes: [],
+    },
+    },
     quizForm: {
       _id: '',
       question: '',
@@ -40,11 +41,19 @@ export const { reducer, actions } = createSlice({
     setUserName(state, { payload }) {
       return { ...state, user: { ...state.user, name: payload } };
     },
-    setLoginId(state, { payload }) {
-      return { ...state, login: { ...state.login, id: payload } };
+    setLoginForm(state, { payload }) {
+      const { type, value } = payload;
+
+      return {
+        ...state,
+        form: {
+          ...state.form,
+          login: {
+            ...state.form.login,
+            [type]: value,
     },
-    setLoginPw(state, { payload }) {
-      return { ...state, login: { ...state.login, pw: payload } };
+        },
+      };
     },
     setToken(state, { payload }) {
       return { ...state, user: { ...state.user, token: payload } };
@@ -145,8 +154,7 @@ export const { reducer, actions } = createSlice({
 
 export const {
   setUserName,
-  setLoginId,
-  setLoginPw,
+  setLoginForm,
   setToken,
   setQuizzes,
   addQuiz,
