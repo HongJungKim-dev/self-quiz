@@ -1,7 +1,11 @@
 import reducer, {
+  addQuiz,
+  editQuiz,
+  removeQuiz,
   resetQuizForm,
   setLoginForm,
   setQuizForm,
+  setQuizzes,
   setToken,
   setUserName,
 } from './slice';
@@ -121,6 +125,117 @@ describe('<reducer 테스트>', () => {
         expect(state.form.quiz.question).toBe('');
         expect(state.form.quiz.answer).toBe('');
         expect(state.form.quiz.tagString).toBe('');
+      });
+    });
+  });
+
+  describe('quizzes 상태에 대해서', () => {
+    describe('setQuizzes 함수는', () => {
+      it('퀴즈들을 저장한다.', () => {
+        const initialState = {
+          quizzes: [],
+        };
+        const newQuizzes = [
+          {
+            _id: 'test_id_1',
+            userId: 'test_user_1',
+            question: 'test_question_1',
+            answer: 'test_answer_1',
+            lastSolved: '2021-02-10',
+            layer: 3,
+            tags: ['JavaScript'],
+          },
+          {
+            _id: 'test_id_2',
+            userId: 'test_user_2',
+            question: 'test_question_2',
+            answer: 'test_answer_2',
+            lastSolved: '2021-03-12',
+            layer: 2,
+            tags: ['React'],
+          },
+        ];
+
+        const state = reducer(initialState, setQuizzes(newQuizzes));
+
+        expect(state.quizzes).toHaveLength(2);
+      });
+    });
+
+    describe('addQuiz 함수는', () => {
+      it('퀴즈를 추가한다.', () => {
+        const initialState = {
+          quizzes: [],
+        };
+        const newQuiz = {
+          _id: 'test_id',
+          userId: 'test_user',
+          question: 'test_question',
+          answer: 'test_answer',
+          lastSolved: '2021-02-10',
+          layer: 3,
+          tags: ['JavaScript'],
+        };
+
+        const state = reducer(initialState, addQuiz(newQuiz));
+
+        expect(state.quizzes).toHaveLength(1);
+      });
+    });
+
+    describe('removeQuiz 함수는', () => {
+      it('id에 해당하는 퀴즈를 제거한다.', () => {
+        const initialState = {
+          quizzes: [
+            {
+              _id: 'test_id',
+              userId: 'test_user',
+              question: 'test_question',
+              answer: 'test_answer',
+              lastSolved: '2021-02-10',
+              layer: 3,
+              tags: ['JavaScript'],
+            },
+          ],
+        };
+
+        const state = reducer(initialState, removeQuiz('test_id'));
+        expect(state.quizzes).toHaveLength(0);
+      });
+    });
+
+    describe('editQuiz 함수는', () => {
+      it('id에 해당하는 퀴즈를 수정한다.', () => {
+        const initialState = {
+          quizzes: [
+            {
+              _id: 'test_id',
+              userId: 'test_user',
+              question: 'test_question',
+              answer: 'test_answer',
+              lastSolved: '2021-02-10',
+              layer: 3,
+              tags: ['JavaScript'],
+            },
+          ],
+        };
+
+        const state = reducer(initialState, editQuiz({
+          _id: 'test_id',
+          question: 'modified_test_question',
+          answer: 'modified_test_answer',
+          tagString: '#todays #quiz',
+        }));
+
+        expect(state.quizzes[0]).toEqual({
+          _id: 'test_id',
+          userId: 'test_user',
+          question: 'modified_test_question',
+          answer: 'modified_test_answer',
+          lastSolved: '2021-02-10',
+          layer: 3,
+          tags: ['todays', 'quiz'],
+        });
       });
     });
   });
