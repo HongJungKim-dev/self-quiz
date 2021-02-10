@@ -2,9 +2,7 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  setLoginId, setLoginPw, setToken, setQuizzes,
-} from '../../slice';
+import { setLoginId, setLoginPw, setToken } from '../../slice';
 
 import { popupMessages } from '../../util';
 
@@ -38,9 +36,6 @@ export default function LoginFormContainer() {
 
     localStorage.setItem('token', token);
     dispatch(setToken(token));
-
-    const quizzes = await api.getQuizzes();
-    dispatch(setQuizzes(quizzes));
   };
 
   return (
