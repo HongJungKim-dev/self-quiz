@@ -41,6 +41,9 @@ export const { reducer, actions } = createSlice({
     setUserName(state, { payload }) {
       return { ...state, user: { ...state.user, name: payload } };
     },
+    setToken(state, { payload }) {
+      return { ...state, user: { ...state.user, token: payload } };
+    },
     setLoginForm(state, { payload }) {
       const { type, value } = payload;
 
@@ -66,9 +69,6 @@ export const { reducer, actions } = createSlice({
           },
         },
       };
-    },
-    setToken(state, { payload }) {
-      return { ...state, user: { ...state.user, token: payload } };
     },
     setQuizzes(state, { payload }) {
       return { ...state, quizzes: payload };
@@ -167,13 +167,13 @@ export const { reducer, actions } = createSlice({
 
 export const {
   setUserName,
-  setLoginForm,
   setToken,
+  setLoginForm,
+  setQuizForm,
   setQuizzes,
   addQuiz,
   removeQuiz,
   editQuiz,
-  setQuizForm,
   resetQuizForm,
   closeAllModal,
   setTodaysAnswerOn,
