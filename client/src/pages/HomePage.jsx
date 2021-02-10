@@ -6,7 +6,7 @@ import MainPage from './MainPage';
 import LoginFormContainer from '../components/containers/LoginFormContainer';
 
 export default function HomePage() {
-  const token = useSelector((state) => state.token);
+  const token = useSelector((state) => state.user.token);
 
   if (token) {
     return <MainPage />;
