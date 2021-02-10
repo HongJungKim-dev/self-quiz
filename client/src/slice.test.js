@@ -1,9 +1,11 @@
 import reducer, {
   addQuiz,
+  closeAllModal,
   editQuiz,
   removeQuiz,
   resetQuizForm,
   setLoginForm,
+  setModalState,
   setQuizForm,
   setQuizzes,
   setToken,
@@ -236,6 +238,58 @@ describe('<reducer 테스트>', () => {
           layer: 3,
           tags: ['todays', 'quiz'],
         });
+      });
+    });
+  });
+
+  describe('modalShowing 상태에 대해서', () => {
+    describe('setModalState 함수는', () => {
+      const initialState = {
+        modalShowing: {
+          overlay: false,
+          adding: false,
+          archive: false,
+          editting: false,
+        },
+      };
+
+      it('adding 모달의 상태를 변경한다.', () => {
+        const state = reducer(initialState, setModalState({ type: 'adding', showing: true }));
+
+        expect(state.modalShowing.adding).toBe(true);
+        expect(state.modalShowing.overlay).toBe(true);
+      });
+      it('archive 모달의 상태를 변경한다.', () => {
+        const state = reducer(initialState, setModalState({ type: 'archive', showing: true }));
+
+        expect(state.modalShowing.archive).toBe(true);
+        expect(state.modalShowing.overlay).toBe(true);
+      });
+      it('editting 모달의 상태를 변경한다.', () => {
+        const state = reducer(initialState, setModalState({ type: 'editting', showing: true }));
+
+        expect(state.modalShowing.editting).toBe(true);
+        expect(state.modalShowing.overlay).toBe(true);
+      });
+    });
+
+    describe('closeAllModal 함수는', () => {
+      const initialState = {
+        modalShowing: {
+          overlay: true,
+          adding: false,
+          archive: true,
+          editting: true,
+        },
+      };
+
+      it('모든 모달의 상태를 false로 바꾼다.', () => {
+        const state = reducer(initialState, closeAllModal());
+
+        expect(state.modalShowing.overlay).toBe(false);
+        expect(state.modalShowing.adding).toBe(false);
+        expect(state.modalShowing.archive).toBe(false);
+        expect(state.modalShowing.editting).toBe(false);
       });
     });
   });
