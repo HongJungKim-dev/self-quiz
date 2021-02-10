@@ -28,7 +28,6 @@ export const { reducer, actions } = createSlice({
       adding: false,
       archive: {},
       editting: false,
-      todays: false,
     },
     todays: {
       answerOn: false,
