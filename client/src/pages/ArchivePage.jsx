@@ -12,7 +12,6 @@ export default function ArchivePage() {
   const dispatch = useDispatch();
   const { quizzes, modal } = useSelector((state) => state);
   const { archive, editting } = modal;
-  const isArchiveModalOpened = Object.keys(archive).length > 0;
 
   useEffect(() => {
     if (quizzes.length === 0) {
@@ -23,7 +22,7 @@ export default function ArchivePage() {
   return (
     <>
       <BackButtonContainer />
-      {isArchiveModalOpened && <ArchiveModalContainer isEditMode={editting} />}
+      {archive && <ArchiveModalContainer isEditMode={editting} />}
       <ArchiveContainer />
     </>
   );

@@ -19,6 +19,7 @@ export const { reducer, actions } = createSlice({
     token: localStorage.getItem('token'),
     quizzes: [],
     quizForm: {
+      _id: '',
       question: '',
       answer: '',
       tagString: '',
@@ -26,7 +27,7 @@ export const { reducer, actions } = createSlice({
     modal: {
       overlay: false,
       adding: false,
-      archive: {},
+      archive: false,
       editting: false,
     },
     todays: {
@@ -93,13 +94,7 @@ export const { reducer, actions } = createSlice({
       };
     },
     setArchiveQuizModal(state, { payload }) {
-      return {
-        ...state,
-        modal: {
-          ...state.modal,
-          archive: { ...payload },
-        },
-      };
+      return { ...state, modal: { ...state.modal, archive: payload } };
     },
     setEdittingModal(state, { payload }) {
       return { ...state, modal: { ...state.modal, editting: payload } };
@@ -109,7 +104,7 @@ export const { reducer, actions } = createSlice({
         ...state,
         modal: {
           ...state.modal,
-          archive: {},
+          archive: false,
           adding: false,
           overlay: false,
           editting: false,

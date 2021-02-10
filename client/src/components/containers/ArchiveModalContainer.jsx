@@ -27,11 +27,9 @@ export default function ArchiveModalContainer({ isEditMode }) {
 
   const quizForm = useSelector((state) => state.quizForm);
 
-  const { modal } = useSelector((state) => state);
-  const { archive } = modal;
-  const { question, answer, tagString } = quizForm;
-
-  const { _id } = archive;
+  const {
+    _id, question, answer, tagString,
+  } = quizForm;
 
   const handleInputChange = (propName) => {
     if (!isEditMode) {
@@ -60,7 +58,7 @@ export default function ArchiveModalContainer({ isEditMode }) {
 
     await popupMessages.success('해당 퀴즈를 삭제하였습니다.');
     dispatch(removeQuiz(_id));
-    dispatch(setArchiveQuizModal({}));
+    dispatch(setArchiveQuizModal(false));
     dispatch(setOverlay(false));
   };
 

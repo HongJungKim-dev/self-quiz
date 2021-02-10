@@ -15,15 +15,15 @@ export default function ArchiveContainer() {
 
   const handleItemClick = (quiz) => () => {
     const {
-      question, answer, lastSolved, layer, tags, _id,
+      question, answer, tags, _id,
     } = quiz;
 
     const tagString = convertTagsToTagString(tags);
 
-    dispatch(setArchiveQuizModal({
-      question, answer, lastSolved, layer, tagString, _id,
+    dispatch(setQuizForm({
+      _id, question, answer, tagString,
     }));
-    dispatch(setQuizForm({ question, answer, tagString }));
+    dispatch(setArchiveQuizModal(true));
     dispatch(setOverlay(true));
   };
 
