@@ -10,8 +10,17 @@ export const color = {
 
 export const size = {
   '#1': '3rem',
+  '#2': '2rem',
   '#3': '1.5rem',
   '#4': '1.2rem',
   '#5': '1rem',
 };
+
+export const mobileSize = {
+  '#1': '7rem',
+  '#2': '5rem',
+  '#3': '4rem',
+  '#4': '3rem',
+  '#5': '2.5rem',
+  '#6': '2rem',
 };

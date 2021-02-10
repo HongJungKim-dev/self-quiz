@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { color, size } from '../../static';
+import { color, mobileSize, size } from '../../static';
 
 const styles = {
   button: {
@@ -19,7 +19,7 @@ const styles = {
       cursor: 'pointer',
     },
     '@media (max-width: 768px)': {
-      fontSize: '2rem',
+      fontSize: mobileSize['#6'],
       height: '30vw',
     },
   },

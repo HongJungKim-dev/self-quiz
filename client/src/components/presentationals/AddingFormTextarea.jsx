@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { size } from '../../static';
+import { mobileSize, size } from '../../static';
 
 const style = {
   display: 'block',
@@ -13,7 +13,7 @@ const style = {
   resize: 'none',
   '@media (max-width: 768px)': {
     height: '24rem',
-    fontSize: '3rem',
+    fontSize: mobileSize['#4'],
     borderRadius: '1.4rem',
   },
 };

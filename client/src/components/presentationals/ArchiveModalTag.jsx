@@ -1,5 +1,5 @@
 import React from 'react';
-import { size } from '../../static';
+import { mobileSize, size } from '../../static';
 
 const styles = {
   readModeTag: {
@@ -8,7 +8,7 @@ const styles = {
     fontSize: size['#5'],
     '@media (max-width: 768px)': {
       height: '8rem',
-      fontSize: '3rem',
+      fontSize: mobileSize['#4'],
       margin: '2rem 0',
     },
   },
@@ -23,7 +23,7 @@ const styles = {
     boxSizing: 'border-box',
     '@media (max-width: 768px)': {
       height: '8rem',
-      fontSize: '3rem',
+      fontSize: mobileSize['#4'],
       margin: '2rem 0',
     },
   },

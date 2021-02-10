@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { size } from '../../static';
+import { mobileSize, size } from '../../static';
 
 const styles = {
   answer: {
@@ -14,7 +14,7 @@ const styles = {
     boxSizing: 'border-box',
     border: 'none',
     '@media (max-width: 768px)': {
-      fontSize: '3rem',
+      fontSize: mobileSize['#4'],
       padding: '3rem 3rem',
     },
   },

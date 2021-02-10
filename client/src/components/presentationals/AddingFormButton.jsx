@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { color, size } from '../../static';
+import { color, mobileSize, size } from '../../static';
 
 const style = {
   width: '100%',
@@ -14,7 +14,7 @@ const style = {
   borderRadius: '0.5rem',
   '@media (max-width: 768px)': {
     height: '10rem',
-    fontSize: '4rem',
+    fontSize: mobileSize['#3'],
     marginTop: '4rem',
     borderRadius: '1.5rem',
   },

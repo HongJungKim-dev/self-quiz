@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { color, size } from '../../static';
+import { color, mobileSize, size } from '../../static';
 
 const styles = {
   header: {
@@ -22,7 +22,7 @@ const styles = {
     fontWeight: 'bold',
     fontSize: size['#5'],
     '@media (max-width: 768px)': {
-      fontSize: '2.5rem',
+      fontSize: mobileSize['#5'],
     },
   },
   flexLayout: {
@@ -38,7 +38,7 @@ const styles = {
     color: color.font,
     fontSize: size['#5'],
     '@media (max-width: 768px)': {
-      fontSize: '2.5rem',
+      fontSize: mobileSize['#5'],
     },
   },
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { color, size } from '../../static';
+import { color, mobileSize, size } from '../../static';
 
 const styles = {
   layout: {
@@ -16,7 +16,7 @@ const styles = {
     },
     '@media (max-width: 768px)': {
       padding: '2rem 3rem',
-      fontSize: '3rem',
+      fontSize: mobileSize['#4'],
       marginTop: '1.5rem',
       borderRadius: '2rem',
     },

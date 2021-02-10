@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { color } from '../../static';
+import { color, mobileSize, size } from '../../static';
 
 const styles = {
   layout: {
@@ -16,14 +16,14 @@ const styles = {
     },
   },
   text: {
-    fontSize: '2rem',
+    fontSize: size['#2'],
     fontWeight: 'bold',
     color: color.main,
     '@media (max-width: 768px)': {
-      fontSize: '5rem',
+      fontSize: mobileSize['#2'],
     },
     '@media (max-width: 480px)': {
-      fontSize: '7rem',
+      fontSize: mobileSize['#1'],
     },
   },
   logo: {

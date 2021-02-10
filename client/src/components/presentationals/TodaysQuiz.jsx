@@ -2,7 +2,7 @@ import React from 'react';
 
 import TodaysQuizAnswer from './TodaysQuizAnswer';
 
-import { color, size } from '../../static';
+import { color, mobileSize, size } from '../../static';
 
 const styles = {
   layout: {
@@ -17,7 +17,7 @@ const styles = {
     borderBottom: '1px solid',
     margin: '0 0 0 auto',
     '@media (max-width: 768px)': {
-      fontSize: '2rem',
+      fontSize: mobileSize['#6'],
     },
   },
   question: {
@@ -26,7 +26,7 @@ const styles = {
     fontSize: size['#1'],
     marginBottom: '3rem',
     '@media (max-width: 768px)': {
-      fontSize: '5rem',
+      fontSize: mobileSize['#2'],
     },
   },
   button: {

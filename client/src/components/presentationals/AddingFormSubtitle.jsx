@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { size } from '../../static';
+import { mobileSize, size } from '../../static';
 
 const style = {
   fontWeight: 'bold',
   fontSize: size['#4'],
   marginTop: '1rem',
   '@media (max-width: 768px)': {
-    fontSize: '4rem',
+    fontSize: mobileSize['#3'],
     marginTop: '2rem',
   },
 };

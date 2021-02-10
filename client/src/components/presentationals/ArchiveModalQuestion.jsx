@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { size } from '../../static';
+import { mobileSize, size } from '../../static';
 
 const styles = {
   text: {
@@ -8,7 +8,7 @@ const styles = {
     fontSize: size['#4'],
     marginTop: '1rem',
     '@media (max-width: 768px)': {
-      fontSize: '4rem',
+      fontSize: mobileSize['#3'],
       marginTop: '2rem',
     },
   },
@@ -24,7 +24,7 @@ const styles = {
     resize: 'none',
     '@media (max-width: 768px)': {
       height: '24rem',
-      fontSize: '3rem',
+      fontSize: mobileSize['#4'],
     },
   },
 };
