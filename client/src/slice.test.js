@@ -3,11 +3,14 @@ import reducer, {
   closeAllModal,
   editQuiz,
   removeQuiz,
+  removeTodaysQuiz,
   resetQuizForm,
   setLoginForm,
   setModalState,
   setQuizForm,
   setQuizzes,
+  setTodaysAnswerOn,
+  setTodaysQuizzes,
   setToken,
   setUserName,
 } from './slice';
@@ -291,6 +294,84 @@ describe('<reducer 테스트>', () => {
         expect(state.modalShowing.archive).toBe(false);
         expect(state.modalShowing.editting).toBe(false);
       });
+    });
+  });
+
+  describe('todays 상태에 대해서', () => {
+    describe('setTodaysQuizzes 함수는', () => {
+      const initialState = {
+        todays: {
+          answerOn: false,
+          quizzes: [],
+        },
+      };
+
+      it('오늘의 퀴즈들을 설정한다.', () => {
+        const newQuizzes = [
+          {
+            _id: 'test_id_1',
+            userId: 'test_user_1',
+            question: 'test_question_1',
+            answer: 'test_answer_1',
+            lastSolved: '2021-02-10',
+            layer: 3,
+            tags: ['JavaScript'],
+          },
+          {
+            _id: 'test_id_2',
+            userId: 'test_user_2',
+            question: 'test_question_2',
+            answer: 'test_answer_2',
+            lastSolved: '2021-03-12',
+            layer: 2,
+            tags: ['React'],
+          },
+        ];
+
+        const state = reducer(initialState, setTodaysQuizzes(newQuizzes));
+
+        expect(state.todays.quizzes).toHaveLength(2);
+      });
+    });
+
+    describe('removeTodaysQuiz 함수는', () => {
+      it('id에 해당하는 오늘의 퀴즈를 제거한다.', () => {
+        const initialState = {
+          todays: {
+            answerOn: false,
+            quizzes: [
+              {
+                _id: 'test_id',
+                userId: 'test_user',
+                question: 'test_question',
+                answer: 'test_answer',
+                lastSolved: '2021-02-10',
+                layer: 3,
+                tags: ['JavaScript'],
+              },
+            ],
+          },
+        };
+
+        const state = reducer(initialState, removeTodaysQuiz('test_id'));
+
+        expect(state.todays.quizzes).toHaveLength(0);
+      });
+    });
+  });
+
+  describe('setTodaysAnswerOn 함수는', () => {
+    it('오늘의 퀴즈 정답을 on/off 한다.', () => {
+      const initialState = {
+        todays: {
+          answerOn: false,
+          quizzes: [],
+        },
+      };
+
+      const state = reducer(initialState, setTodaysAnswerOn(true));
+
+      expect(state.todays.answerOn).toBe(true);
     });
   });
 });
