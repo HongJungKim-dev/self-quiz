@@ -10,7 +10,7 @@ const styles = {
   layout: {
     width: '100%',
     height: '25rem',
-    fontSize: size.smallText,
+    fontSize: size['#5'],
     '@media (max-width: 768px)': {
       height: '70rem',
     },

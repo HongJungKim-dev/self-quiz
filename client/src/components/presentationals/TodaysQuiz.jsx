@@ -13,7 +13,7 @@ const styles = {
   quizCount: {
     width: 'max-content',
     color: 'white',
-    fontSize: size.smallText,
+    fontSize: size['#5'],
     borderBottom: '1px solid',
     margin: '0 0 0 auto',
     '@media (max-width: 768px)': {
@@ -23,7 +23,7 @@ const styles = {
   question: {
     textAlign: 'center',
     color: color.font,
-    fontSize: size.title,
+    fontSize: size['#1'],
     marginBottom: '3rem',
     '@media (max-width: 768px)': {
       fontSize: '5rem',

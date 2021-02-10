@@ -4,7 +4,7 @@ import { size } from '../../static';
 
 const style = {
   fontWeight: 'bold',
-  fontSize: size.text,
+  fontSize: size['#4'],
   marginTop: '1rem',
   '@media (max-width: 768px)': {
     fontSize: '4rem',

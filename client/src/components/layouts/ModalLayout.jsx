@@ -19,7 +19,7 @@ const styles = {
     },
   },
   title: {
-    fontSize: size.smallTitle,
+    fontSize: size['#3'],
     fontWeight: 'bold',
     backgroundColor: color.main,
     color: color.font,

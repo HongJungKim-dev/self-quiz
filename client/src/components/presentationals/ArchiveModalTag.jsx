@@ -5,7 +5,7 @@ const styles = {
   readModeTag: {
     margin: '1rem 0',
     height: '2rem',
-    fontSize: size.smallText,
+    fontSize: size['#5'],
     '@media (max-width: 768px)': {
       height: '8rem',
       fontSize: '3rem',
@@ -16,7 +16,7 @@ const styles = {
     margin: '0.8rem 0',
     width: '100%',
     height: '2rem',
-    fontSize: size.smallText,
+    fontSize: size['#5'],
     border: '1px solid #767676',
     borderRadius: '0.4rem',
     padding: '0.1rem 0.4rem 0 0.4rem',

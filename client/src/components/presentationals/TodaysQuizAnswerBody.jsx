@@ -8,7 +8,7 @@ const styles = {
     width: '100%',
     height: '75%',
     backgroundColor: 'white',
-    fontSize: size.text,
+    fontSize: size['#4'],
     resize: 'none',
     padding: '1rem 2rem',
     boxSizing: 'border-box',

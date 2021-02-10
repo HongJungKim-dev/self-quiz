@@ -6,7 +6,7 @@ const style = {
   width: '100%',
   marginTop: '2rem',
   height: '3rem',
-  fontSize: size.smallTitle,
+  fontSize: size['#3'],
   fontWeight: 'bold',
   color: color.font,
   backgroundColor: color.main,

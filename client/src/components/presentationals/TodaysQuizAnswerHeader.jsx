@@ -20,7 +20,7 @@ const styles = {
     borderRadius: '3px 0 5px 0',
     color: color.font,
     fontWeight: 'bold',
-    fontSize: size.smallText,
+    fontSize: size['#5'],
     '@media (max-width: 768px)': {
       fontSize: '2.5rem',
     },
@@ -36,7 +36,7 @@ const styles = {
     backgroundColor: color.main,
     borderRadius: '0 0 5px 5px',
     color: color.font,
-    fontSize: size.smallText,
+    fontSize: size['#5'],
     '@media (max-width: 768px)': {
       fontSize: '2.5rem',
     },

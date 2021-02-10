@@ -4,7 +4,7 @@ import { color, size } from '../../static';
 
 const styles = {
   title: {
-    fontSize: size.smallTitle,
+    fontSize: size['#3'],
     fontWeight: 'bold',
     color: color.font,
     margin: '10rem 0 3rem 0',

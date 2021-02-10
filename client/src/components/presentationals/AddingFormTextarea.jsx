@@ -6,7 +6,7 @@ const style = {
   display: 'block',
   width: '100%',
   height: '8rem',
-  fontSize: size.smallText,
+  fontSize: size['#5'],
   padding: '0.7rem',
   boxSizing: 'border-box',
   borderRadius: '0.4rem',

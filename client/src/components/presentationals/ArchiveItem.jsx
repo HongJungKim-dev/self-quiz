@@ -10,7 +10,7 @@ const styles = {
     marginTop: '0.5rem',
     color: color.font,
     cursor: 'pointer',
-    fontSize: size.smallText,
+    fontSize: size['#5'],
     '&:hover': {
       backgroundColor: color.main,
     },

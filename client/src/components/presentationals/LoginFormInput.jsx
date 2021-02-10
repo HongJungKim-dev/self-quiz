@@ -4,7 +4,7 @@ import { color, size } from '../../static';
 
 const style = {
   display: 'block',
-  fontSize: size.smallText,
+  fontSize: size['#5'],
   width: '96%',
   height: '3rem',
   border: 'none',

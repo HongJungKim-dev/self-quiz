@@ -9,8 +9,9 @@ export const color = {
 };
 
 export const size = {
-  title: '3rem',
-  smallTitle: '1.5rem',
-  text: '1.2rem',
-  smallText: '1rem',
+  '#1': '3rem',
+  '#3': '1.5rem',
+  '#4': '1.2rem',
+  '#5': '1rem',
+};
 };

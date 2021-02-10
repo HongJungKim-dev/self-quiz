@@ -8,7 +8,7 @@ const styles = {
     height: '2rem',
     border: 'none',
     color: color.font,
-    fontSize: size.smallText,
+    fontSize: size['#5'],
     fontWeight: 'bold',
     borderRadius: '0.4rem',
     cursor: 'pointer',

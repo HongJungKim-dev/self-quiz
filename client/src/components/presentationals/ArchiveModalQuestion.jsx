@@ -5,7 +5,7 @@ import { size } from '../../static';
 const styles = {
   text: {
     fontWeight: 'bold',
-    fontSize: size.text,
+    fontSize: size['#4'],
     marginTop: '1rem',
     '@media (max-width: 768px)': {
       fontSize: '4rem',
@@ -16,7 +16,7 @@ const styles = {
     display: 'block',
     width: '100%',
     height: '7rem',
-    fontSize: size.smallText,
+    fontSize: size['#5'],
     padding: '0.7rem',
     boxSizing: 'border-box',
     borderRadius: '0.4rem',

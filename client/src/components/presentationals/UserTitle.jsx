@@ -11,14 +11,14 @@ const styles = {
     },
   },
   name: {
-    fontSize: size.title,
+    fontSize: size['#1'],
     fontWeight: 'bold',
     '@media (max-width: 768px)': {
       fontSize: '7rem',
     },
   },
   text: {
-    fontSize: size.smallTitle,
+    fontSize: size['#3'],
     '@media (max-width: 768px)': {
       fontSize: '3rem',
     },

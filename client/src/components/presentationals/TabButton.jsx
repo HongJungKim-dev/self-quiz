@@ -12,7 +12,7 @@ const styles = {
     boxShadow: `0 0 6px 0px ${color.faintWhite}`,
     background: 'linear-gradient(45deg, black, transparent)',
     color: color.font,
-    fontSize: size.text,
+    fontSize: size['#4'],
     fontWeight: 'bold',
     '&:hover': {
       backgroundColor: color.light,

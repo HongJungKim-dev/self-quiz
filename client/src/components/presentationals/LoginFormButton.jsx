@@ -3,7 +3,7 @@ import React from 'react';
 import { color, size } from '../../static';
 
 const style = {
-  fontSize: size.smallText,
+  fontSize: size['#5'],
   fontWeight: 'bold',
   color: color.font,
   width: '100%',
