@@ -14,18 +14,18 @@ export const { reducer, actions } = createSlice({
       token: localStorage.getItem('token'),
     },
     form: {
-    login: {
-      id: '',
-      pw: '',
+      login: {
+        id: '',
+        pw: '',
+      },
+      quiz: {
+        _id: '',
+        question: '',
+        answer: '',
+        tagString: '',
+      },
     },
-    },
-    },
-    quizForm: {
-      _id: '',
-      question: '',
-      answer: '',
-      tagString: '',
-    },
+    quizzes: [],
     modalShowing: {
       overlay: false,
       adding: false,
@@ -51,7 +51,19 @@ export const { reducer, actions } = createSlice({
           login: {
             ...state.form.login,
             [type]: value,
+          },
+        },
+      };
     },
+    setQuizForm(state, { payload }) {
+      return {
+        ...state,
+        form: {
+          ...state.form,
+          quiz: {
+            ...state.form.quiz,
+            ...payload,
+          },
         },
       };
     },
@@ -83,9 +95,6 @@ export const { reducer, actions } = createSlice({
 
       return { ...state, quizzes: copy };
     },
-    setQuizForm(state, { payload }) {
-      return { ...state, quizForm: { ...state.quizForm, ...payload } };
-    },
     setModalState(state, { payload }) {
       const { type, showing } = payload;
 
@@ -95,17 +104,21 @@ export const { reducer, actions } = createSlice({
           ...state.modalShowing,
           [type]: showing,
           overlay: showing,
-    },
+        },
       };
     },
     resetQuizForm(state) {
       return {
         ...state,
-        quizForm: {
-          ...state.quizForm,
-          question: '',
-          answer: '',
-          tagString: '',
+        form: {
+          ...state.form,
+          quiz: {
+            ...state.form.quiz,
+            _id: '',
+            question: '',
+            answer: '',
+            tagString: '',
+          },
         },
       };
     },

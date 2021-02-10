@@ -23,7 +23,7 @@ import ArchiveModalButton from '../presentationals/ArchiveModalButton';
 export default function ArchiveModalContainer({ isEditMode }) {
   const dispatch = useDispatch();
 
-  const quizForm = useSelector((state) => state.quizForm);
+  const quizForm = useSelector((state) => state.form.quiz);
 
   const {
     _id, question, answer, tagString,
