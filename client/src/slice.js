@@ -76,11 +76,16 @@ export const { reducer, actions } = createSlice({
     setQuizForm(state, { payload }) {
       return { ...state, quizForm: { ...state.quizForm, ...payload } };
     },
-    setOverlay(state, { payload }) {
-      return { ...state, modal: { ...state.modal, overlay: payload } };
+    setModalState(state, { payload }) {
+      const { type, showing } = payload;
+
+      return {
+        ...state,
+        modal: {
+          ...state.modal,
+          [type]: showing,
     },
-    setAddingModal(state, { payload }) {
-      return { ...state, modal: { ...state.modal, adding: payload } };
+      };
     },
     resetQuizForm(state) {
       return {
@@ -92,12 +97,6 @@ export const { reducer, actions } = createSlice({
           tagString: '',
         },
       };
-    },
-    setArchiveQuizModal(state, { payload }) {
-      return { ...state, modal: { ...state.modal, archive: payload } };
-    },
-    setEdittingModal(state, { payload }) {
-      return { ...state, modal: { ...state.modal, editting: payload } };
     },
     closeAllModal(state) {
       return {
@@ -152,15 +151,12 @@ export const {
   removeQuiz,
   editQuiz,
   setQuizForm,
-  setOverlay,
-  setAddingModal,
   resetQuizForm,
-  setArchiveQuizModal,
-  setEdittingModal,
   closeAllModal,
   setTodaysAnswerOn,
   setTodaysQuizzes,
   removeTodaysQuiz,
+  setModalState,
 } = actions;
 
 export const loadQuizzes = () => async (dispatch) => {

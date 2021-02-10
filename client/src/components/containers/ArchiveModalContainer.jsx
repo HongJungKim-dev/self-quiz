@@ -3,10 +3,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {
-  setArchiveQuizModal,
-  setOverlay,
+  setModalState,
   removeQuiz,
-  setEdittingModal,
   editQuiz,
   closeAllModal,
   setQuizForm,
@@ -45,7 +43,7 @@ export default function ArchiveModalContainer({ isEditMode }) {
   };
 
   const handleEditButton = async () => {
-    dispatch(setEdittingModal(true));
+    dispatch(setModalState({ type: 'editting', showing: true }));
   };
 
   const handleDeleteButton = async () => {
@@ -58,8 +56,8 @@ export default function ArchiveModalContainer({ isEditMode }) {
 
     await popupMessages.success('해당 퀴즈를 삭제하였습니다.');
     dispatch(removeQuiz(_id));
-    dispatch(setArchiveQuizModal(false));
-    dispatch(setOverlay(false));
+    dispatch(setModalState({ type: 'archive', showing: false }));
+    dispatch(setModalState({ type: 'overlay', showing: false }));
   };
 
   const handleEditCompleteButton = async () => {

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setArchiveQuizModal, setOverlay, setQuizForm } from '../../slice';
+import { setModalState, setQuizForm } from '../../slice';
 
 import { convertTagsToTagString } from '../../util';
 
@@ -23,8 +23,8 @@ export default function ArchiveContainer() {
     dispatch(setQuizForm({
       _id, question, answer, tagString,
     }));
-    dispatch(setArchiveQuizModal(true));
-    dispatch(setOverlay(true));
+    dispatch(setModalState({ type: 'archive', showing: true }));
+    dispatch(setModalState({ type: 'overlay', showing: true }));
   };
 
   return (

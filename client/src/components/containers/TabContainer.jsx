@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import { useHistory } from 'react-router-dom';
 
-import { setAddingModal, setOverlay } from '../../slice';
+import { setModalState } from '../../slice';
 
 import TabLayout from '../layouts/TabLayout';
 import TabButton from '../presentationals/TabButton';
@@ -17,8 +17,8 @@ export default function Tab() {
   const history = useHistory();
 
   const handleAddingButton = () => {
-    dispatch(setAddingModal(true));
-    dispatch(setOverlay(true));
+    dispatch(setModalState({ type: 'adding', showing: true }));
+    dispatch(setModalState({ type: 'overlay', showing: true }));
   };
 
   const handleTodaysButton = () => {
