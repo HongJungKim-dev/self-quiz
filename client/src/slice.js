@@ -24,7 +24,7 @@ export const { reducer, actions } = createSlice({
       answer: '',
       tagString: '',
     },
-    modal: {
+    modalShowing: {
       overlay: false,
       adding: false,
       archive: false,
@@ -81,8 +81,8 @@ export const { reducer, actions } = createSlice({
 
       return {
         ...state,
-        modal: {
-          ...state.modal,
+        modalShowing: {
+          ...state.modalShowing,
           [type]: showing,
     },
       };

@@ -14,11 +14,11 @@ import TodaysQuizPage from './pages/TodaysQuizPage';
 import ArchivePage from './pages/ArchivePage';
 
 export default function App() {
-  const { overlay } = useSelector((state) => state.modal);
+  const modalShowing = useSelector((state) => state.modalShowing);
 
   return (
     <>
-      {overlay && <Overlay />}
+      {modalShowing.overlay && <Overlay />}
       <Router>
         <Switch>
           <Route exact path="/">

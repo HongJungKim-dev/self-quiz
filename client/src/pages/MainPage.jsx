@@ -15,9 +15,8 @@ import MainPageLayout from '../components/layouts/MainPageLayout';
 export default function MainPage() {
   const dispatch = useDispatch();
   const {
-    quizzes, modal, user, todays,
+    quizzes, modalShowing, user, todays,
   } = useSelector((state) => state);
-  const { adding } = modal;
 
   const handleLogoutButtonClick = async () => {
     localStorage.removeItem('token');
@@ -39,7 +38,7 @@ export default function MainPage() {
   return (
     <>
       <LogoutButton onClick={handleLogoutButtonClick} />
-      {adding && <AddingFormContainer />}
+      {modalShowing.adding && <AddingFormContainer />}
       <MainPageLayout>
         <UserTitle user={user} todays={todays} />
         <TabContainer />
