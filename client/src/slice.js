@@ -6,7 +6,7 @@ import { filterTodaysQuiz, sortByCurrent } from './algorithm';
 
 import api from './apis/api';
 
-export const { reducer, actions } = createSlice({
+const { reducer, actions } = createSlice({
   name: 'self-quiz',
   initialState: {
     user: {
