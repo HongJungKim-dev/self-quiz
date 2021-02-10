@@ -70,6 +70,21 @@ const { reducer, actions } = createSlice({
         },
       };
     },
+    resetQuizForm(state) {
+      return {
+        ...state,
+        form: {
+          ...state.form,
+          quiz: {
+            ...state.form.quiz,
+            _id: '',
+            question: '',
+            answer: '',
+            tagString: '',
+          },
+        },
+      };
+    },
     setQuizzes(state, { payload }) {
       return { ...state, quizzes: payload };
     },
@@ -107,21 +122,6 @@ const { reducer, actions } = createSlice({
         },
       };
     },
-    resetQuizForm(state) {
-      return {
-        ...state,
-        form: {
-          ...state.form,
-          quiz: {
-            ...state.form.quiz,
-            _id: '',
-            question: '',
-            answer: '',
-            tagString: '',
-          },
-        },
-      };
-    },
     closeAllModal(state) {
       return {
         ...state,
@@ -141,9 +141,6 @@ const { reducer, actions } = createSlice({
         },
       };
     },
-    setTodaysAnswerOn(state, { payload }) {
-      return { ...state, todays: { ...state.todays, answerOn: payload } };
-    },
     setTodaysQuizzes(state, { payload }) {
       return {
         ...state,
@@ -162,6 +159,9 @@ const { reducer, actions } = createSlice({
         },
       };
     },
+    setTodaysAnswerOn(state, { payload }) {
+      return { ...state, todays: { ...state.todays, answerOn: payload } };
+    },
   },
 });
 
@@ -170,16 +170,16 @@ export const {
   setToken,
   setLoginForm,
   setQuizForm,
+  resetQuizForm,
   setQuizzes,
   addQuiz,
   removeQuiz,
   editQuiz,
-  resetQuizForm,
+  setModalState,
   closeAllModal,
-  setTodaysAnswerOn,
   setTodaysQuizzes,
   removeTodaysQuiz,
-  setModalState,
+  setTodaysAnswerOn,
 } = actions;
 
 export const loadQuizzes = () => async (dispatch) => {
