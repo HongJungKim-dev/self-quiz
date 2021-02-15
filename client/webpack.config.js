@@ -4,6 +4,8 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const Dotenv = require('dotenv-webpack');
 
 module.exports = (env, options) => ({
@@ -43,6 +45,11 @@ module.exports = (env, options) => ({
       filename: 'index.html',
     }),
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/styles', to: 'src/styles' },
+      ],
+    }),
     new Dotenv({
       path: `env/${options.stage || 'development'}.env`,
     }),

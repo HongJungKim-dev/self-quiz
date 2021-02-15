@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "NotoSansKR-Medium";
+  src: local(※), url("NotoSansKR-Medium.woff2") format("woff2");
+}
+
+* {
+  font-family: "NotoSansKR-Medium";
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(90deg,#111d2a, #244a72);
+  height: 100vh;
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 5px;
+  }
+}
