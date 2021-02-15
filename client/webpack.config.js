@@ -25,6 +25,10 @@ module.exports = (env, options) => ({
         test: /\.(jpg|jpeg|png|otf)$/,
         use: 'file-loader',
       },
+      {
+        test: /\.(woff|woff2|ttf|eot)$/,
+        use: 'file-loader?name=fonts/[name].[ext]!static',
+      },
     ],
   },
   resolve: {
