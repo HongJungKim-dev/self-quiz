@@ -2,6 +2,8 @@ const express = require('express');
 
 const cors = require('cors');
 
+const compression = require('compression');
+
 const app = express();
 
 const path = require('path');
@@ -15,6 +17,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors({ origin: "*", credentials: true }));
 app.use(express.static('public'));
+app.use(compression());
 
 app.use('/', require('./routes'));
 
