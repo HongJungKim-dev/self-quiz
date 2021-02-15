@@ -2,13 +2,15 @@ const path = require('path');
 
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 const Dotenv = require('dotenv-webpack');
 
 module.exports = (env, options) => ({
   entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, '../server/public/'),
-    filename: 'main.js',
+    filename: 'main.[chunkhash].js',
   },
   module: {
     rules: [
@@ -40,6 +42,7 @@ module.exports = (env, options) => ({
       template: './index.html',
       filename: 'index.html',
     }),
+    new CleanWebpackPlugin(),
     new Dotenv({
       path: `env/${options.stage || 'development'}.env`,
     }),
