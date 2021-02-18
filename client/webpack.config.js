@@ -15,6 +15,23 @@ module.exports = (env, options) => ({
   output: {
     path: path.resolve(__dirname, '../server/public/'),
     filename: 'main.[chunkhash].js',
+    chunkFilename: 'main.[chunkhash].js',
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          chunks: 'all',
+          priority: 1,
+        },
+        reactBundle: {
+          test: /[\\/]node_modules[\\/](react|react-dom)/,
+          chunks: 'all',
+          priority: 2,
+        },
+      },
+    },
   },
   module: {
     rules: [
