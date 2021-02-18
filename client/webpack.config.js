@@ -40,11 +40,11 @@ module.exports = (env, options) => ({
   },
   devtool: 'inline-source-map',
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
       template: './index.html',
       filename: 'index.html',
     }),
-    new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         { from: 'src/styles', to: 'src/styles' },
