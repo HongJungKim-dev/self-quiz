@@ -8,8 +8,9 @@ import {
   Route,
 } from 'react-router-dom';
 
-const HomePage = lazy(() => import('./pages/HomePage'));
-const Overlay = lazy(() => import('./pages/Overlay'));
+import HomePage from './pages/HomePage';
+import Overlay from './pages/Overlay';
+
 const TodaysQuizPage = lazy(() => import('./pages/TodaysQuizPage'));
 const ArchivePage = lazy(() => import('./pages/ArchivePage'));
 

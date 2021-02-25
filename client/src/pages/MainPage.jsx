@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -7,11 +7,10 @@ import { loadQuizzes, loadUserName, setToken } from '../slice';
 import { popupMessages } from '../util';
 
 import TabContainer from '../components/containers/TabContainer';
+import AddingFormContainer from '../components/containers/AddingFormContainer';
 import UserTitle from '../components/presentationals/UserTitle';
 import LogoutButton from '../components/presentationals/LogoutButton';
 import MainPageLayout from '../components/layouts/MainPageLayout';
-
-const AddingFormContainer = lazy(() => import('../components/containers/AddingFormContainer'));
 
 export default function MainPage() {
   const dispatch = useDispatch();
@@ -39,9 +38,7 @@ export default function MainPage() {
   return (
     <>
       <LogoutButton onClick={handleLogoutButtonClick} />
-      <Suspense fallback={<div>로딩중</div>}>
-        {modalShowing.adding && <AddingFormContainer />}
-      </Suspense>
+      {modalShowing.adding && <AddingFormContainer />}
       <MainPageLayout>
         <UserTitle user={user} todays={todays} />
         <TabContainer />
