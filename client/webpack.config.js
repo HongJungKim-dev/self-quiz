@@ -8,8 +8,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const Dotenv = require('dotenv-webpack');
 
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-
 module.exports = (env, options) => ({
   entry: './src/index.jsx',
   output: {
@@ -59,7 +57,6 @@ module.exports = (env, options) => ({
   },
   devtool: 'inline-source-map',
   plugins: [
-    new BundleAnalyzerPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
       template: './index.html',
