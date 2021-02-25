@@ -148,12 +148,6 @@ const { reducer, actions } = createSlice({
           editting: false,
           todays: false,
         },
-        quizForm: {
-          ...state.quizForm,
-          question: '',
-          answer: '',
-          tagString: '',
-        },
       };
     },
     setTodaysQuizzes(state, { payload: todaysQuizzes }) {

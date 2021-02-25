@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useDispatch } from 'react-redux';
 
-import { closeAllModal } from '../slice';
+import { resetQuizForm, closeAllModal } from '../slice';
 
 const styles = {
   overlay: {
@@ -19,6 +19,7 @@ export default function Overlay() {
 
   const handleOverlay = () => {
     dispatch(closeAllModal());
+    dispatch(resetQuizForm());
   };
 
   return (
