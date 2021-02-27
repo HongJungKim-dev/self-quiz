@@ -8,7 +8,7 @@ module.exports = {
 
     const user = await userRepo.findUserById(userId);
 
-    res.status(200).json({ idValidation: !!user });
+    res.status(200).json({ idValidation: !user });
   },
 
   async signUp(req, res) {
