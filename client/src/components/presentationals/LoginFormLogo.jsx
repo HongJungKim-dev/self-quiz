@@ -38,10 +38,10 @@ const styles = {
   },
 };
 
-export default function LoginFormLogo() {
+export default function LoginFormLogo({ signup }) {
   return (
     <div css={styles.layout}>
-      <div css={styles.text}>오늘의 문제</div>
+      <div css={styles.text}>{signup ? '회원가입' : '오늘의 문제'}</div>
       <img src="src/styles/logo.png" alt="로고" css={styles.logo} />
     </div>
   );
