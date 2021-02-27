@@ -18,6 +18,12 @@ const { reducer, actions } = createSlice({
         id: '',
         pw: '',
       },
+      signup: {
+        name: '',
+        id: '',
+        pw1: '',
+        pw2: '',
+      },
       quiz: {
         _id: '',
         question: '',
@@ -63,6 +69,18 @@ const { reducer, actions } = createSlice({
           ...state.form,
           login: {
             ...state.form.login,
+            [type]: value,
+          },
+        },
+      };
+    },
+    setSignupForm(state, { payload: { type, value } }) {
+      return {
+        ...state,
+        form: {
+          ...state.form,
+          signup: {
+            ...state.form.signup,
             [type]: value,
           },
         },
@@ -184,6 +202,7 @@ export const {
   setUserName,
   setToken,
   setLoginForm,
+  setSignupForm,
   setQuizForm,
   resetQuizForm,
   setQuizzes,

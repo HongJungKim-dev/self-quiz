@@ -9,6 +9,7 @@ import reducer, {
   setModalState,
   setQuizForm,
   setQuizzes,
+  setSignupForm,
   setTodaysAnswerOn,
   setTodaysQuizzes,
   setToken,
@@ -61,6 +62,40 @@ describe('<reducer 테스트>', () => {
         const state = reducer(initialState, setLoginForm({ type: 'pw', value: 'test_pw' }));
 
         expect(state.form.login.pw).toBe('test_pw');
+      });
+    });
+
+    describe('setSignupForm 함수는', () => {
+      const initialState = {
+        form: {
+          signup: {
+            name: '',
+            id: '',
+            pw1: '',
+            pw2: '',
+          },
+        },
+      };
+
+      it('회원가입 폼의 name을 변경한다.', () => {
+        const state = reducer(initialState, setSignupForm({ type: 'name', value: 'test_name' }));
+
+        expect(state.form.signup.name).toBe('test_name');
+      });
+      it('회원가입 폼의 id를 변경한다.', () => {
+        const state = reducer(initialState, setSignupForm({ type: 'id', value: 'test_id' }));
+
+        expect(state.form.signup.id).toBe('test_id');
+      });
+      it('회원가입 폼의 pw1을 변경한다.', () => {
+        const state = reducer(initialState, setSignupForm({ type: 'pw1', value: 'test_pw1' }));
+
+        expect(state.form.signup.pw1).toBe('test_pw1');
+      });
+      it('회원가입 폼의 pw2를 변경한다.', () => {
+        const state = reducer(initialState, setSignupForm({ type: 'pw2', value: 'test_pw2' }));
+
+        expect(state.form.signup.pw2).toBe('test_pw2');
       });
     });
 
