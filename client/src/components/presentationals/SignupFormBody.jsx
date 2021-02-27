@@ -43,39 +43,42 @@ const styles = {
   },
 };
 
-export default function SignupFormBody() {
+export default function SignupFormBody({
+  nameInput, idInput, pw1Input, pw2Input,
+  onNameInputChange, onIdInputChange, onPw1InputChange, onPw2InputChange, onSignupButtonClick,
+}) {
   return (
     <div>
       <input
-        value=""
+        value={nameInput}
         css={styles.input}
-        onChange
+        onChange={onNameInputChange}
         placeholder="이름을 입력해주세요."
       />
       <input
-        value=""
+        value={idInput}
         css={styles.input}
-        onChange
+        onChange={onIdInputChange}
         placeholder="아이디를 입력해주세요."
       />
       <input
-        value=""
+        value={pw1Input}
         css={styles.input}
-        onChange
+        onChange={onPw1InputChange}
         type="password"
         placeholder="비밀번호를 입력해주세요."
       />
       <input
-        value=""
+        value={pw2Input}
         css={styles.input}
-        onChange
+        onChange={onPw2InputChange}
         type="password"
         placeholder="비밀번호를 다시 입력해주세요."
       />
       <button
         type="button"
         css={styles.button}
-        onClick
+        onClick={onSignupButtonClick}
       >회원가입
       </button>
     </div>
