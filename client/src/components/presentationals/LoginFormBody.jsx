@@ -42,7 +42,7 @@ const styles = {
 };
 
 export default function LoginFormBody({
-  idInput, pwInput, onIdInputChange, onPwInputChange, onLoginButtonClick,
+  idInput, pwInput, onIdInputChange, onPwInputChange, onLoginButtonClick, onSignupButtonClick,
 }) {
   return (
     <div>
@@ -68,7 +68,7 @@ export default function LoginFormBody({
       <button
         type="button"
         css={{ ...styles.button, backgroundColor: color.light }}
-        onClick={onLoginButtonClick}
+        onClick={onSignupButtonClick}
       >회원가입
       </button>
     </div>

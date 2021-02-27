@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import { useHistory } from 'react-router-dom';
+
 import { setLoginForm, setToken } from '../../slice';
 
 import { popupMessages } from '../../util';
@@ -38,6 +40,12 @@ export default function LoginFormContainer() {
     dispatch(setToken(token));
   };
 
+  const history = useHistory();
+
+  const handleSignupButtonClick = () => {
+    history.push('/page/signup');
+  };
+
   return (
     <LoginFormLayout>
       <LoginFormLogo />
@@ -47,6 +55,7 @@ export default function LoginFormContainer() {
         onIdInputChange={handleLoginIdInput}
         onPwInputChange={handleLoginPwInput}
         onLoginButtonClick={handleLoginButtonClick}
+        onSignupButtonClick={handleSignupButtonClick}
       />
     </LoginFormLayout>
   );
