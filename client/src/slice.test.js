@@ -5,6 +5,7 @@ import reducer, {
   removeQuiz,
   removeTodaysQuiz,
   resetQuizForm,
+  resetSignupForm,
   setLoginForm,
   setModalState,
   setQuizForm,
@@ -96,6 +97,28 @@ describe('<reducer 테스트>', () => {
         const state = reducer(initialState, setSignupForm({ type: 'pw2', value: 'test_pw2' }));
 
         expect(state.form.signup.pw2).toBe('test_pw2');
+      });
+    });
+
+    describe('resetSignupForm 함수는', () => {
+      const initialState = {
+        form: {
+          signup: {
+            name: 'test_name',
+            id: 'test_id',
+            pw1: 'test_pw1',
+            pw2: 'test_pw2',
+          },
+        },
+      };
+
+      it('회원가입 폼의 상태를 모두 초기화시킨다.', () => {
+        const state = reducer(initialState, resetSignupForm());
+
+        expect(state.form.signup.name).toBe('');
+        expect(state.form.signup.id).toBe('');
+        expect(state.form.signup.pw1).toBe('');
+        expect(state.form.signup.pw2).toBe('');
       });
     });
 

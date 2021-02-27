@@ -86,6 +86,21 @@ const { reducer, actions } = createSlice({
         },
       };
     },
+    resetSignupForm(state) {
+      return {
+        ...state,
+        form: {
+          ...state.form,
+          signup: {
+            ...state.form.signup,
+            name: '',
+            id: '',
+            pw1: '',
+            pw2: '',
+          },
+        },
+      };
+    },
     setQuizForm(state, { payload: quizFormData }) {
       return {
         ...state,
@@ -203,6 +218,7 @@ export const {
   setToken,
   setLoginForm,
   setSignupForm,
+  resetSignupForm,
   setQuizForm,
   resetQuizForm,
   setQuizzes,
