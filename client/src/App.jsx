@@ -10,6 +10,7 @@ import {
 
 import HomePage from './pages/HomePage';
 import Overlay from './pages/Overlay';
+import SignupPage from './pages/SignupPage';
 
 const TodaysQuizPage = lazy(() => import('./pages/TodaysQuizPage'));
 const ArchivePage = lazy(() => import('./pages/ArchivePage'));
@@ -25,6 +26,9 @@ export default function App() {
           <Switch>
             <Route exact path="/">
               <HomePage />
+            </Route>
+            <Route path="/page/signup">
+              <SignupPage />
             </Route>
             <Route path="/page/todaysquiz">
               <TodaysQuizPage />
