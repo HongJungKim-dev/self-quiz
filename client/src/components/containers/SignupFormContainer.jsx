@@ -20,20 +20,8 @@ export default function SignupFormContainer() {
     name, id, pw1, pw2,
   } = useSelector((state) => state.form.signup);
 
-  const handleSignupNameInput = (event) => {
-    dispatch(setSignupForm({ type: 'name', value: event.target.value }));
-  };
-
-  const handleSignupIdInput = (event) => {
-    dispatch(setSignupForm({ type: 'id', value: event.target.value }));
-  };
-
-  const handleSignupPw1Input = (event) => {
-    dispatch(setSignupForm({ type: 'pw1', value: event.target.value }));
-  };
-
-  const handleSignupPw2Input = (event) => {
-    dispatch(setSignupForm({ type: 'pw2', value: event.target.value }));
+  const handleInput = (type) => (event) => {
+    dispatch(setSignupForm({ type, value: event.target.value }));
   };
 
   const history = useHistory();
@@ -86,10 +74,7 @@ export default function SignupFormContainer() {
         idInput={id}
         pw1Input={pw1}
         pw2Input={pw2}
-        onNameInputChange={handleSignupNameInput}
-        onIdInputChange={handleSignupIdInput}
-        onPw1InputChange={handleSignupPw1Input}
-        onPw2InputChange={handleSignupPw2Input}
+        onInputChange={handleInput}
         onSignupButtonClick={handleSignupButtonClick}
       />
     </LoginFormLayout>

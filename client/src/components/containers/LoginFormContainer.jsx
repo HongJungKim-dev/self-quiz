@@ -18,12 +18,8 @@ export default function LoginFormContainer() {
   const dispatch = useDispatch();
   const { id, pw } = useSelector((state) => state.form.login);
 
-  const handleLoginIdInput = (event) => {
-    dispatch(setLoginForm({ type: 'id', value: event.target.value }));
-  };
-
-  const handleLoginPwInput = (event) => {
-    dispatch(setLoginForm({ type: 'pw', value: event.target.value }));
+  const handleInput = (type) => (event) => {
+    dispatch(setLoginForm({ type, value: event.target.value }));
   };
 
   const handleLoginButtonClick = async () => {
@@ -52,8 +48,7 @@ export default function LoginFormContainer() {
       <LoginFormBody
         idInput={id}
         pwInput={pw}
-        onIdInputChange={handleLoginIdInput}
-        onPwInputChange={handleLoginPwInput}
+        onInputChange={handleInput}
         onLoginButtonClick={handleLoginButtonClick}
         onSignupButtonClick={handleSignupButtonClick}
       />

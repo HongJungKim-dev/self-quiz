@@ -42,20 +42,20 @@ const styles = {
 };
 
 export default function LoginFormBody({
-  idInput, pwInput, onIdInputChange, onPwInputChange, onLoginButtonClick, onSignupButtonClick,
+  idInput, pwInput, onInputChange, onLoginButtonClick, onSignupButtonClick,
 }) {
   return (
     <div>
       <input
         value={idInput}
         css={styles.input}
-        onChange={onIdInputChange}
+        onChange={onInputChange('id')}
         placeholder="아이디를 입력해주세요."
       />
       <input
         value={pwInput}
         css={styles.input}
-        onChange={onPwInputChange}
+        onChange={onInputChange('pw')}
         type="password"
         placeholder="비밀번호를 입력해주세요."
       />
