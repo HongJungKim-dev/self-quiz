@@ -1,5 +1,5 @@
 import React from 'react';
-import { color } from '../../static';
+import { color, mobileSize } from '../../static';
 import Loading from './Loading';
 
 const styles = {
@@ -14,6 +14,7 @@ const styles = {
   loading: {
     display: 'flex',
     alignItems: 'center',
+    width: 'max-content',
     position: 'absolute',
     left: '50%',
     top: '50%',
@@ -22,6 +23,11 @@ const styles = {
   text: {
     color: color.faintWhite,
     marginLeft: '5px',
+    '@media (max-width: 768px)': {
+      fontSize: mobileSize['#5'],
+      padding: '1rem',
+      borderRadius: '1.4rem 1.4rem 0 0',
+    },
   },
 };
 
