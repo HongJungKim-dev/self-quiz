@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { color, mobileSize } from '../../static';
+
 import Loading from './Loading';
 
 const styles = {
@@ -19,6 +21,9 @@ const styles = {
     left: '50%',
     top: '50%',
     transform: 'translate(-50%, -50%)',
+    '@media (max-width: 768px)': {
+      flexDirection: 'column',
+    },
   },
   text: {
     color: color.faintWhite,
