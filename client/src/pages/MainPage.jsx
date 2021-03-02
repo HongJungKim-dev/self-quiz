@@ -10,6 +10,7 @@ import TabContainer from '../components/containers/TabContainer';
 import AddingFormContainer from '../components/containers/AddingFormContainer';
 import UserTitle from '../components/presentationals/UserTitle';
 import LogoutButton from '../components/presentationals/LogoutButton';
+import LoadingOverlay from '../components/presentationals/LoadingOverlay';
 import MainPageLayout from '../components/layouts/MainPageLayout';
 
 export default function MainPage() {
@@ -37,6 +38,7 @@ export default function MainPage() {
 
   return (
     <>
+      {(!user.name || quizzes.length === 0) && <LoadingOverlay />}
       <LogoutButton onClick={handleLogoutButtonClick} />
       {modalShowing.adding && <AddingFormContainer />}
       <MainPageLayout>
