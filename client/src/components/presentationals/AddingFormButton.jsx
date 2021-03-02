@@ -2,6 +2,8 @@ import React from 'react';
 
 import { color, mobileSize, size } from '../../static';
 
+import Loading from './Loading';
+
 const style = {
   width: '100%',
   marginTop: '2rem',
@@ -20,10 +22,10 @@ const style = {
   },
 };
 
-export default function AddingFormButton({ title, onClick }) {
+export default function AddingFormButton({ title, onClick, isLoading }) {
   return (
-    <button onClick={onClick} css={style} type="button">
-      {title}
+    <button onClick={onClick} css={style} type="button" disabled={isLoading}>
+      {isLoading ? <Loading size={20} /> : title}
     </button>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -15,6 +15,7 @@ import AddingFormInput from '../presentationals/AddingFormInput';
 import AddingFormButton from '../presentationals/AddingFormButton';
 
 export default function AddingFormContainer() {
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const quizForm = useSelector((state) => state.form.quiz);
   const { question, answer, tagString } = quizForm;
@@ -27,8 +28,12 @@ export default function AddingFormContainer() {
   };
 
   const handleAddingButtonClick = async () => {
+    setIsLoading(true);
+
     const tags = convertTagStringToTags(tagString);
     const newQuiz = await api.addQuiz(question, answer, tags);
+
+    setIsLoading(false);
 
     if (!newQuiz) {
       await popupMessages.fail('실패했습니다. 다시 시도해주세요.');
@@ -63,6 +68,7 @@ export default function AddingFormContainer() {
       <AddingFormButton
         title="확인"
         onClick={handleAddingButtonClick}
+        isLoading={isLoading}
       />
     </ModalLayout>
   );
