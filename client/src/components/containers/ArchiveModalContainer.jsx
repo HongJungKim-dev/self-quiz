@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -21,6 +21,8 @@ import ArchiveModalTag from '../presentationals/ArchiveModalTag';
 import ArchiveModalButton from '../presentationals/ArchiveModalButton';
 
 export default function ArchiveModalContainer({ isEditMode }) {
+  const [isEditLoading, setIsEditLoading] = useState(false);
+  const [isDeleteLoading, setIsDeleteLoading] = useState(false);
   const dispatch = useDispatch();
 
   const quizForm = useSelector((state) => state.form.quiz);
@@ -47,7 +49,11 @@ export default function ArchiveModalContainer({ isEditMode }) {
   };
 
   const handleDeleteButton = async () => {
+    setIsDeleteLoading(true);
+
     const success = await api.deleteQuiz(_id);
+
+    setIsDeleteLoading(false);
 
     if (!success) {
       await popupMessages.fail('삭제하지 못했습니다. 다시 시도해주세요.');
@@ -60,8 +66,12 @@ export default function ArchiveModalContainer({ isEditMode }) {
   };
 
   const handleEditCompleteButton = async () => {
+    setIsEditLoading(true);
+
     const tags = convertTagStringToTags(tagString);
     const success = await api.editQuiz(_id, question, answer, tags);
+
+    setIsEditLoading(false);
 
     if (!success) {
       await popupMessages.fail('수정하지 못했습니다. 다시 시도해주세요.');
@@ -94,6 +104,8 @@ export default function ArchiveModalContainer({ isEditMode }) {
       />
       <ArchiveModalButton
         isEditMode={isEditMode}
+        isEditLoading={isEditLoading}
+        isDeleteLoading={isDeleteLoading}
         handleEditButton={handleEditButton}
         handleDeleteButton={handleDeleteButton}
         handleEditCompleteButton={handleEditCompleteButton}

@@ -2,6 +2,8 @@ import React from 'react';
 
 import { color, mobileSize, size } from '../../static';
 
+import Loading from './Loading';
+
 const styles = {
   button: {
     width: '50%',
@@ -23,7 +25,8 @@ const styles = {
 };
 
 export default function ArchiveModalButton({
-  isEditMode, handleEditButton, handleDeleteButton, handleEditCompleteButton,
+  isEditMode, isEditLoading, isDeleteLoading,
+  handleEditButton, handleDeleteButton, handleEditCompleteButton,
 }) {
   if (isEditMode) {
     return (
@@ -31,8 +34,9 @@ export default function ArchiveModalButton({
         type="button"
         onClick={handleEditCompleteButton}
         css={{ ...styles.button, width: '100%' }}
+        disabled={isEditLoading}
       >
-        수정
+        {isEditLoading ? <Loading size={20} /> : '수정'}
       </button>
     );
   }
@@ -50,8 +54,9 @@ export default function ArchiveModalButton({
         type="button"
         onClick={handleDeleteButton}
         css={{ ...styles.button, background: 'black' }}
+        disabled={isDeleteLoading}
       >
-        삭제
+        {isDeleteLoading ? <Loading size={20} /> : '삭제'}
       </button>
     </>
   );
